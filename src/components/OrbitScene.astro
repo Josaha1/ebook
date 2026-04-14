@@ -1,0 +1,48 @@
+---
+import ARCube from './ARCube.astro';
+import Phone3D from './Phone3D.astro';
+---
+<div class="relative w-full aspect-square max-w-[520px] mx-auto">
+  <div class="absolute inset-0 ar-dot-bg opacity-40 rounded-3xl"></div>
+
+  <!-- orbit rings -->
+  <svg class="absolute inset-0 w-full h-full spin-y" viewBox="0 0 400 400" aria-hidden="true">
+    <ellipse cx="200" cy="200" rx="180" ry="60" fill="none" stroke="rgba(124, 58, 237, 0.2)" stroke-width="1.5" stroke-dasharray="4 6"/>
+    <ellipse cx="200" cy="200" rx="120" ry="40" fill="none" stroke="rgba(219, 39, 119, 0.18)" stroke-width="1.5" stroke-dasharray="2 8"/>
+  </svg>
+
+  <!-- central phone -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <Phone3D variant="ar" />
+  </div>
+
+  <!-- floating elements around -->
+  <div class="absolute top-4 right-6 float-y-slow">
+    <ARCube size={110} label="AR" />
+  </div>
+  <div class="absolute bottom-10 left-4 float-y">
+    <div class="w-20 h-20 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg grid place-items-center">
+      <svg viewBox="0 0 100 100" class="w-12 h-12" aria-hidden="true">
+        <rect x="5" y="5" width="25" height="25" fill="currentColor" class="text-slate-900 dark:text-slate-100" />
+        <rect x="70" y="5" width="25" height="25" fill="currentColor" class="text-slate-900 dark:text-slate-100" />
+        <rect x="5" y="70" width="25" height="25" fill="currentColor" class="text-slate-900 dark:text-slate-100" />
+        <g class="text-slate-900 dark:text-slate-100" fill="currentColor">
+          <rect x="40" y="10" width="6" height="6"/><rect x="50" y="20" width="6" height="6"/><rect x="40" y="40" width="6" height="6"/><rect x="50" y="50" width="6" height="6"/><rect x="60" y="45" width="6" height="6"/><rect x="70" y="60" width="6" height="6"/><rect x="42" y="62" width="6" height="6"/><rect x="55" y="75" width="6" height="6"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="absolute bottom-6 right-12 float-y-slow" style="animation-delay: -2s;">
+    <div class="w-16 h-16 rounded-full ar-gradient shadow-xl grid place-items-center text-white font-display font-black">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" class="w-8 h-8">
+        <path d="M3 13h4l2-5 4 10 2-5h6"/>
+      </svg>
+    </div>
+  </div>
+  <div class="absolute top-14 left-2 float-y" style="animation-delay: -1s;">
+    <div class="paper rounded-xl px-3 py-2 text-[11px] font-semibold shadow-md">
+      <div class="text-purple-700 dark:text-purple-300">📡 Aurasma</div>
+      <div class="text-slate-500 text-[10px]">Marker detected</div>
+    </div>
+  </div>
+</div>

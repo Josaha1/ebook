@@ -1,13 +1,28 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ChapterIntro from '../components/ChapterIntro.astro';
+import ChapterSidebar from '../components/ChapterSidebar.astro';
 import ScrollReveal from '../components/ScrollReveal.astro';
 import Section from '../components/Section.astro';
 import StatCounter from '../components/StatCounter.astro';
 import Pullquote from '../components/Pullquote.astro';
+import Phone3D from '../components/Phone3D.astro';
+import HeartbeatIcon from '../components/HeartbeatIcon.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const toc = [
+  { id: 'section-1-1', label: '1.1 ความเป็นมาและความสำคัญของปัญหา' },
+  { id: 'section-stats', label: 'สถิติข้อร้องเรียน' },
+  { id: 'section-ar-solution', label: 'เหตุผลในการใช้ AR' },
+  { id: 'section-1-2', label: '1.2 วัตถุประสงค์' },
+  { id: 'section-1-3', label: '1.3 ประโยชน์ที่คาดว่าจะได้รับ' },
+  { id: 'section-1-4', label: '1.4 ระยะเวลาดำเนินการ' },
+  { id: 'section-1-5', label: '1.5 ขอบเขตการศึกษา' },
+  { id: 'section-1-6', label: '1.6 นิยามศัพท์' },
+  { id: 'section-1-7', label: '1.7 กลุ่มเป้าหมาย' },
+];
 ---
-<BaseLayout title="บทที่ 1 · บทนำ · รายงานการศึกษา">
+<BaseLayout title="บทที่ 1 · บทนำ · รายงานการศึกษา AR">
   <ChapterIntro
     number="01"
     title="บทนำ"
@@ -15,138 +30,187 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     meta={[
       { label: 'หน้าต้นฉบับ', value: '3 หน้า' },
       { label: 'จำนวนคำ', value: '901 คำ' },
-      { label: 'ช่วงเวลาศึกษา', value: 'เม.ย. – ส.ค. 2560' },
+      { label: 'ช่วงเวลา', value: 'เม.ย.–ส.ค. 2560' },
     ]}
   />
 
-  <div class="max-w-3xl mx-auto px-6 py-16 md:py-20 space-y-20">
+  <div class="max-w-6xl mx-auto px-6 py-14 md:py-16">
+    <div class="grid lg:grid-cols-[240px_1fr] gap-10 lg:gap-14">
+      <ChapterSidebar items={toc} current={1} />
 
-    <ScrollReveal>
-      <Section num="1.1" title="ความเป็นมาและความสำคัญของปัญหา">
-        <p>
-          บทบาทอิสระบทบาทหนึ่งของวิชาชีพพยาบาลคือ <strong>บทบาทการสอน การให้ความรู้ และคำแนะนำผู้ป่วย</strong> ซึ่งรูปแบบการสอนและการให้คำแนะนำแต่เดิมจะใช้คนหรือตัวพยาบาลพูดสอนหรือสื่อสารผู้ป่วยด้วยวาจาและท่าทางเป็นรายเดี่ยวหรือรายกลุ่ม แต่การให้ข้อมูล การให้คำแนะนำ หรือการสอนผู้ป่วยและญาติโดยใช้คนสู่คน นอกจากจะทำให้เสียเวลาการทำกิจกรรมทางการพยาบาลช่วยเหลือผู้ป่วยและญาติแล้ว การสอนปากเปล่าอาจไม่ครบถ้วนตามเอกสารหรือครอบคลุมครบถ้วน
-        </p>
-        <p>
-          การใช้คนยังมีข้อจำกัด เริ่มตั้งแต่บุคลิก ท่าทาง การถ่ายทอดผู้พูดไม่จูงใจให้ผู้รับฟังสนใจ หรือไม่เข้าใจ อีกทั้งสัมพันธภาพในการสอนหรือการให้คำแนะนำทางสุขภาพของพยาบาลไม่เหมือนกับการสอนระหว่างครูกับศิษย์ ครูกับศิษย์มีจุดมุ่งหมายคล้ายๆกันคือครูต้องการให้ความรู้ในขณะที่ศิษย์ก็ต้องการความรู้เช่นกัน แต่สำหรับพยาบาลที่จำเป็นต้องให้ความรู้ คำแนะนำให้ผู้ป่วยได้รับการดูแลสุขภาพที่ดีตามสภาพที่เป็นไปได้ในชุมชน ซึ่งอาจมีญาติหรือผู้ดูแลบางรายที่พบพยาบาลแต่ไม่ต้องการข้อมูลคำแนะนำนั้น เนื่องจากรอผู้ดูแลตัวจริงซึ่งอาจติดภาระอยู่ที่บ้าน ที่ทำงาน หรือวางแผนให้เจ้าหน้าที่สุขภาพทีมอื่นมาดูแลต่อเนื่อง การเข้าถึงข้อมูลอาจไม่ตรงความมุ่งหมายที่พยาบาลทำกิจกรรมการสอน
-        </p>
-        <p>
-          ต่อมายุคสื่อและอุปกรณ์ต่างๆ พยาบาลเริ่มนำสื่อและอุปกรณ์ทางเทคโนโลยีการสื่อสารมาใช้ เช่น การบันทึกภาพเป็นภาพนิ่งลงกระดาษ บันทึกเสียง สื่อวีดีทัศน์ และใช้อุปกรณ์ต่างๆ มาพัฒนาใช้ทางการพยาบาลเพื่อเพิ่มจุดสนใจมากขึ้น เพื่อลดการใช้คน ลดข้อจำกัดในการสื่อสารหรือสอนผู้ป่วยโดยใช้คน แต่ในทางปฏิบัติการนำความรู้ที่เป็นกลับบ้านยังเป็นรูปแบบเอกสารเป็นส่วนใหญ่ การใช้ภาพ เสียงในรูปวีดีทัศน์ คลิปวีดีโอ (Clip VDO) ยังเป็นสิ่งที่ยุ่งยาก การนำเอาสารกลับบ้านอาจไม่ได้หยิบมาอ่านหรือทบทวนอีกเลย หรือฉีกขาดสูญหายไป
-        </p>
-      </Section>
-    </ScrollReveal>
+      <div class="min-w-0 space-y-20">
+        <ScrollReveal>
+          <Section num="1.1" title="ความเป็นมาและความสำคัญของปัญหา" anchor="section-1-1">
+            <p>
+              บทบาทอิสระบทบาทหนึ่งของวิชาชีพพยาบาลคือ <strong>บทบาทการสอน การให้ความรู้ และคำแนะนำผู้ป่วย</strong> ซึ่งรูปแบบการสอนและการให้คำแนะนำแต่เดิมจะใช้คนหรือตัวพยาบาลพูดสอนหรือสื่อสารผู้ป่วยด้วยวาจาและท่าทางเป็นรายเดี่ยวหรือรายกลุ่ม แต่การให้ข้อมูล การให้คำแนะนำ หรือการสอนผู้ป่วยและญาติโดยใช้คนสู่คน นอกจากจะทำให้เสียเวลาการทำกิจกรรมทางการพยาบาลช่วยเหลือผู้ป่วยและญาติแล้ว การสอนปากเปล่าอาจไม่ครบถ้วนตามเอกสารหรือครอบคลุมครบถ้วน
+            </p>
+            <p>
+              การใช้คนยังมีข้อจำกัด เริ่มตั้งแต่บุคลิก ท่าทาง การถ่ายทอดผู้พูดไม่จูงใจให้ผู้รับฟังสนใจ หรือไม่เข้าใจ อีกทั้งสัมพันธภาพในการสอนหรือการให้คำแนะนำทางสุขภาพของพยาบาลไม่เหมือนกับการสอนระหว่างครูกับศิษย์ ครูกับศิษย์มีจุดมุ่งหมายคล้ายๆกันคือครูต้องการให้ความรู้ในขณะที่ศิษย์ก็ต้องการความรู้เช่นกัน แต่สำหรับพยาบาลที่จำเป็นต้องให้ความรู้ คำแนะนำให้ผู้ป่วยได้รับการดูแลสุขภาพที่ดีตามสภาพที่เป็นไปได้ในชุมชน ซึ่งอาจมีญาติหรือผู้ดูแลบางรายที่พบพยาบาลแต่ไม่ต้องการข้อมูลคำแนะนำนั้น เนื่องจากรอผู้ดูแลตัวจริงซึ่งอาจติดภาระอยู่ที่บ้าน ที่ทำงาน หรือวางแผนให้เจ้าหน้าที่สุขภาพทีมอื่นมาดูแลต่อเนื่อง การเข้าถึงข้อมูลอาจไม่ตรงความมุ่งหมายที่พยาบาลทำกิจกรรมการสอน
+            </p>
 
-    <ScrollReveal>
-      <div class="paper rounded-2xl p-6 md:p-10">
-        <div class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">สถิติอ้างอิง</div>
-        <h3 class="mt-2 text-xl md:text-2xl font-bold">ข้อร้องเรียนด้านการสื่อสาร</h3>
-        <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          <StatCounter value={17} label="ข้อร้องเรียนผ่านหนังสือพิมพ์ ปี 2555" suffix=" เรื่อง" />
-          <StatCounter value={50} label="เกิดจากการขาดการสื่อสารที่เหมาะสม" suffix="%" />
-          <StatCounter value={7} label="ข้อร้องเรียน รพ.นภาลัย ปี 2557" suffix=" ราย" />
-          <StatCounter value={4} label="ข้อร้องเรียน ปี 2558 และ 2559" suffix=" ราย" />
-        </div>
-        <p class="mt-8 text-sm text-slate-500 dark:text-slate-400">
-          ที่มา: กระทรวงสาธารณสุข, สภาการพยาบาลแห่งประเทศไทย (พ.ศ. 2551–2557), และพรชัย ดีไพศาลสกุล
-        </p>
+            <div class="my-10 grid md:grid-cols-[1fr_auto] gap-8 items-center paper rounded-2xl p-6 md:p-8">
+              <div>
+                <div class="text-[11px] uppercase tracking-widest text-slate-500 font-semibold">ปัญหาของสื่อยุคเก่า</div>
+                <h4 class="mt-2 text-xl font-bold">เอกสารกระดาษ = เข้าถึงยาก ชำรุดง่าย</h4>
+                <p class="mt-3 text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                  การนำเอาสารกลับบ้านอาจไม่ได้หยิบมาอ่านหรือทบทวนอีกเลย หรือฉีกขาดสูญหายไป
+                </p>
+              </div>
+              <div class="flex justify-center md:justify-end float-y">
+                <Phone3D variant="doc" />
+              </div>
+            </div>
+
+            <p>
+              ต่อมายุคสื่อและอุปกรณ์ต่างๆ พยาบาลเริ่มนำสื่อและอุปกรณ์ทางเทคโนโลยีการสื่อสารมาใช้ เช่น การบันทึกภาพเป็นภาพนิ่งลงกระดาษ บันทึกเสียง สื่อวีดีทัศน์ และใช้อุปกรณ์ต่างๆ มาพัฒนาใช้ทางการพยาบาลเพื่อเพิ่มจุดสนใจมากขึ้น เพื่อลดการใช้คน ลดข้อจำกัดในการสื่อสารหรือสอนผู้ป่วยโดยใช้คน แต่ในทางปฏิบัติการนำความรู้ที่เป็นกลับบ้านยังเป็นรูปแบบเอกสารเป็นส่วนใหญ่ การใช้ภาพ เสียงในรูปวีดีทัศน์ คลิปวีดีโอ (Clip VDO) ยังเป็นสิ่งที่ยุ่งยาก การนำเอาสารกลับบ้านอาจไม่ได้หยิบมาอ่านหรือทบทวนอีกเลย หรือฉีกขาดสูญหายไป
+            </p>
+          </Section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <div id="section-stats" class="scroll-mt-24 paper rounded-2xl p-6 md:p-10 relative overflow-hidden">
+            <div class="absolute -top-16 -right-16 w-56 h-56 ar-gradient opacity-5 blur-3xl rounded-full"></div>
+            <div class="relative">
+              <div class="flex items-center gap-4">
+                <HeartbeatIcon size={56} />
+                <div>
+                  <div class="text-[11px] uppercase tracking-widest text-slate-500 font-semibold">สถิติอ้างอิง</div>
+                  <h3 class="mt-1 text-xl md:text-2xl font-bold">ข้อร้องเรียนด้านการสื่อสาร</h3>
+                </div>
+              </div>
+              <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <StatCounter value={17} label="ข้อร้องเรียน ปี 2555" suffix=" เรื่อง" />
+                <StatCounter value={50} label="เกิดจากการสื่อสาร" suffix="%" />
+                <StatCounter value={7} label="รพ.นภาลัย ปี 2557" suffix=" ราย" />
+                <StatCounter value={4} label="ปี 2558 และ 2559" suffix=" ราย" />
+              </div>
+              <p class="mt-8 text-xs md:text-sm text-slate-500 dark:text-slate-400">
+                ที่มา: กระทรวงสาธารณสุข · สภาการพยาบาลแห่งประเทศไทย (พ.ศ. 2551–2557) · พรชัย ดีไพศาลสกุล
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <Section anchor="section-ar-solution">
+            <p>
+              จากสถิติข้อร้องเรียนของกระทรวงสาธารณสุขพบว่า ข้อร้องเรียนการให้บริการของโรงพยาบาลในสังกัดกระทรวงสาธารณสุขจากประชาชน ผ่านทางหนังสือพิมพ์ในปี 2555 มีถึง <strong>17 เรื่อง</strong> สาเหตุส่วนใหญ่มาจากพฤติกรรมการบริการ และ<strong>ร้อยละ 50 เกิดจากการขาดการสื่อสารที่เหมาะสม</strong>
+            </p>
+            <p>
+              ในขณะที่ผลการศึกษาการร้องเรียนผู้ประกอบวิชาชีพการพยาบาลต่อสภาการพยาบาลแห่งประเทศไทย ศึกษาเรื่องร้องเรียนมายังสภาการพยาบาลตั้งแต่ปี พ.ศ. 2551 ถึง พ.ศ. 2557 อ้างถึงการศึกษาของการวิจัยของ<strong>พรชัย ดีไพศาลสกุล</strong> ว่า ความเข้าใจของผู้ใช้บริการในสาเหตุที่ทำให้พยาบาลเกิดแรงกดดันจากการทำงาน อาทิ อัตราบุคลากรไม่เพียงพอกับภาระงาน รับผิดชอบหลายหน้าที่ และงานเร่งรีบไม่เพียงพอต่อการระงับความไม่พึงพอใจของผู้ใช้บริการ ทำให้พยาบาลได้รับการตำหนิจากผู้ใช้บริการบ่อยครั้ง และนำมาสู่เหตุให้เกิดการร้องเรียน/ฟ้องร้อง
+            </p>
+            <p>
+              โดยปัญหาพฤติกรรมที่ไม่พึงประสงค์ อันเป็นเหตุให้เกิดการร้องเรียน ได้แก่ ปัญหาการแสดงสีหน้า อาการ การสื่อสาร และลักษณะสัมพันธภาพกับผู้ใช้บริการ และเมื่อทบทวนสถิติข้อร้องเรียนจากพฤติกรรมการบริการผู้ป่วยใน<strong>โรงพยาบาลนภาลัย</strong> ปี 2557 จำนวน 7 ราย ปี 2558 จำนวน 4 ราย และปี 2559 จำนวน 4 ราย ซึ่งในความเป็นจริงเมื่อสืบค้นปัญหาความพึงพอใจในการบริการผู้ป่วยแล้วพบว่าพฤติกรรมการบริการโดยใช้คำพูดและท่าทางของเจ้าหน้าที่มีทุกเดือน
+            </p>
+            <p>
+              ปัจจุบัน การสื่อสารในระบบ <strong>iOS</strong> และ <strong>Android</strong> มีบทบาทสำคัญในการสื่อสารและเติบโตขึ้นอย่างรวดเร็ว ทำให้ทุกคนไม่สนใจการเรียนรู้ด้วยวิธีเดิมๆ หรือแบบเก่าอีก แทบทุกคนทุกบ้านจะมีอุปกรณ์ที่จำเป็นใช้นั่นคือ มือถือ Tablet และ Smart Phone การหันกลับมาอ่านเอกสารคำแนะนำจากกระดาษและภาพอย่างเดียวไม่จูงใจให้สนใจ สิ้นเปลือง ไม่เหมาะกับสภาพการพัฒนาเทคโนโลยีปัจจุบัน
+            </p>
+
+            <div class="my-10 grid md:grid-cols-[auto_1fr] gap-8 items-center paper rounded-2xl p-6 md:p-8">
+              <div class="flex justify-center md:justify-start">
+                <Phone3D variant="ar" />
+              </div>
+              <div>
+                <div class="text-[11px] uppercase tracking-widest text-purple-700 dark:text-purple-300 font-semibold">ทางออก</div>
+                <h4 class="mt-2 text-xl md:text-2xl font-bold">Augmented Reality = สื่อมีชีวิต</h4>
+                <p class="mt-3 text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                  นำภาพ 3D, 2D และวิดีโอมาซ้อนทับบนฉากจริง ผู้รับบริการเข้าถึงข้อมูลสุขภาพได้สะดวก ทันสมัย ประหยัดกระดาษและเวลาบุคลากร
+                </p>
+              </div>
+            </div>
+
+            <p>
+              การให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัยโดยใช้สื่อเทคโนโลยีเรียนรู้ผ่านสื่อบนมือถือด้วย <strong>Augmented Reality</strong> หรือเทคโนโลยีใหม่ที่พัฒนารูปแบบ <strong>Human-Machine Interface</strong> ที่อาศัยเทคโนโลยีคอมพิวเตอร์ และระบบความจริงเสริมโดยการเอาภาพกราฟิกของคอมพิวเตอร์ทั้งในรูปแบบที่เป็น 3D, 2D หรือ Video มาซ้อนทับเข้ากับฉากหลังซึ่งเป็นภาพในเวลาจริง จะช่วยให้ผู้รับบริการทางสุขภาพเข้าถึงข้อมูลได้มาก หรือผู้ให้บริการได้เผยแพร่ความรู้คำแนะนำทางด้านสุขภาพได้รวดเร็วทันสมัย ไม่สิ้นเปลืองคน กระดาษ สิ่งของหรือทรัพยากรต่างๆ ซึ่งเป็นประโยชน์ต่อการดูแลสุขภาพผู้ป่วยระยะยาว
+            </p>
+          </Section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <Section num="1.2" title="วัตถุประสงค์" anchor="section-1-2">
+            <Pullquote>พัฒนาการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ด้วยสื่อมือถือ</Pullquote>
+          </Section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <Section num="1.3" title="ประโยชน์ที่คาดว่าจะได้รับ" anchor="section-1-3">
+            <ol class="list-none space-y-3 not-prose">
+              {[
+                'ผู้เข้าบริการในโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ได้รับข้อมูลทางสุขภาพสะดวกรวดเร็ว',
+                'เปลี่ยนการให้คำแนะนำทางด้านสุขภาพจากเอกสารเป็นสื่อมีชีวิต',
+                'ลดต้นทุนการใช้กระดาษในการให้ข้อมูลทางสุขภาพผู้ป่วย',
+                'ลดคนในการให้ข้อมูลผู้รับบริการ',
+                'ลดข้อขัดแย้งจากการสื่อสารโดยคนสู่คน',
+              ].map((t, i) => (
+                <li class="paper rounded-xl p-5 flex gap-4">
+                  <span class="flex-shrink-0 w-10 h-10 rounded-lg ar-gradient text-white font-bold grid place-items-center display-num">{i + 1}</span>
+                  <span class="pt-1.5">{t}</span>
+                </li>
+              ))}
+            </ol>
+          </Section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <div class="grid md:grid-cols-2 gap-5">
+            <Section num="1.4" title="ระยะเวลาดำเนินการ" anchor="section-1-4">
+              <div class="paper rounded-xl p-6">
+                <div class="text-3xl md:text-4xl font-bold display-num ar-gradient-text">เม.ย. – ส.ค.</div>
+                <div class="mt-1 text-sm text-slate-500">พ.ศ. 2560 · 5 เดือน</div>
+              </div>
+            </Section>
+            <Section num="1.7" title="กลุ่มเป้าหมาย" anchor="section-1-7">
+              <div class="paper rounded-xl p-6">
+                <div class="text-3xl md:text-4xl font-bold display-num ar-gradient-text">20 – 30 ราย</div>
+                <div class="mt-1 text-sm text-slate-500">ผู้รับบริการใน รพ.นภาลัย ต.กระดังงา อ.บางคนที</div>
+              </div>
+            </Section>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <Section num="1.5" title="ขอบเขตการศึกษา" anchor="section-1-5">
+            <p>
+              การศึกษาครั้งนี้เป็นการศึกษาวิธีการให้ข้อมูลหรือการให้ความรู้ คำแนะนำผู้รับบริการในโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม โดยใช้เทคโนโลยีเรียนรู้ผ่านสื่อบนมือถือด้วย <strong>Augmented Reality</strong> คือเทคโนโลยีใหม่ที่พัฒนารูปแบบ Human-Machine Interface ที่อาศัยเทคโนโลยีคอมพิวเตอร์ และระบบความจริงเสริมโดยการเอาภาพกราฟิกของคอมพิวเตอร์ทั้งในรูปแบบที่เป็น 3D, 2D หรือ Video มาซ้อนทับเข้ากับฉากหลังซึ่งเป็นภาพในเวลาจริง ด้วยโปรแกรมแอพพลิเคชัน <strong>Aurasma</strong> และ <strong>QR code LINE</strong> แสกนบาร์โค้ด
+            </p>
+            <p>
+              แล้วเปรียบเทียบการสอนกับการสอนแบบเดิม คือการใช้คนสื่อสารโดยบรรยายคำพูด ท่าทางและแจกเอกสารคำแนะนำ ประเมินผลการสอนโดยสื่อมือถือ
+            </p>
+          </Section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <Section num="1.6" title="นิยามศัพท์" anchor="section-1-6">
+            <dl class="space-y-4 not-prose">
+              {[
+                { term: 'ผู้รับบริการในโรงพยาบาลนภาลัย', def: 'หมายถึง ผู้ป่วยและญาติผู้ป่วยและผู้เข้ารับการบริการในโรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม' },
+                { term: 'การให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย', def: 'หมายถึง กิจกรรมการสอน การให้ความรู้ การให้คำแนะนำแก่ผู้เข้ารับบริการในโรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม' },
+                { term: 'ความพึงพอใจต่อการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย', def: 'หมายถึง ค่าระดับความพึงพอใจในนวัตกรรมการให้ข้อมูล ซึ่งแบ่งออกเป็น 4 ระดับ คือ มากที่สุด · มาก · ปานกลาง · น้อย' },
+              ].map(({ term, def }) => (
+                <div class="paper rounded-xl p-5 md:p-6 border-l-4 border-purple-600 dark:border-purple-400">
+                  <dt class="font-bold text-slate-900 dark:text-white">{term}</dt>
+                  <dd class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">{def}</dd>
+                </div>
+              ))}
+              <div class="paper rounded-xl p-5 md:p-6 border-l-4 border-purple-600 dark:border-purple-400">
+                <dt class="font-bold text-slate-900 dark:text-white">สื่อมือถือ</dt>
+                <dd class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">หมายถึง โปรแกรมการสอนโดยใช้
+                  <ol class="mt-3 ml-4 list-decimal space-y-1.5">
+                    <li>แอพพลิเคชัน Aurasma ซึ่งติดตั้งในโทรศัพท์มือถือได้ทั้งระบบแอนดรอยด์ (Android) และระบบไอโอเอส (iOS)</li>
+                    <li>โดยผ่าน QR code LINE ซึ่ง QR code ในโปรแกรม LINE จะติดตั้งมาให้พร้อมใช้งานในโทรศัพท์มือถือทุกเครื่องทั้ง Smart Phone หรือ Tablet</li>
+                  </ol>
+                </dd>
+              </div>
+            </dl>
+          </Section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <nav class="flex items-center justify-between pt-10 border-t border-slate-200 dark:border-slate-800">
+            <a href={`${base}/`} class="text-sm text-slate-500 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-300">← หน้าหลัก</a>
+            <a href={`${base}/chapter-2`} class="inline-flex items-center gap-2 px-6 py-3 ar-gradient text-white rounded-xl font-semibold shadow-lg shadow-purple-600/25 hover:shadow-xl transition">บทที่ 2 · วรรณกรรมและงานวิจัย →</a>
+          </nav>
+        </ScrollReveal>
       </div>
-    </ScrollReveal>
-
-    <ScrollReveal>
-      <Section>
-        <p>
-          จากสถิติข้อร้องเรียนของกระทรวงสาธารณสุขพบว่า ข้อร้องเรียนการให้บริการของโรงพยาบาลในสังกัดกระทรวงสาธารณสุขจากประชาชน ผ่านทางหนังสือพิมพ์ในปี 2555 มีถึง <strong>17 เรื่อง</strong> สาเหตุส่วนใหญ่มาจากพฤติกรรมการบริการ และ<strong>ร้อยละ 50 เกิดจากการขาดการสื่อสารที่เหมาะสม</strong>
-        </p>
-        <p>
-          ในขณะที่ผลการศึกษาการร้องเรียนผู้ประกอบวิชาชีพการพยาบาลต่อสภาการพยาบาลแห่งประเทศไทย ศึกษาเรื่องร้องเรียนมายังสภาการพยาบาลตั้งแต่ปี พ.ศ. 2551 ถึง พ.ศ. 2557 อ้างถึงการศึกษาของการวิจัยของ<strong>พรชัย ดีไพศาลสกุล</strong> ว่า ความเข้าใจของผู้ใช้บริการในสาเหตุที่ทำให้พยาบาลเกิดแรงกดดันจากการทำงาน อาทิ อัตราบุคลากรไม่เพียงพอกับภาระงาน รับผิดชอบหลายหน้าที่ และงานเร่งรีบไม่เพียงพอต่อการระงับความไม่พึงพอใจของผู้ใช้บริการ ทำให้พยาบาลได้รับการตำหนิจากผู้ใช้บริการบ่อยครั้ง และนำมาสู่เหตุให้เกิดการร้องเรียน/ฟ้องร้อง
-        </p>
-        <p>
-          โดยปัญหาพฤติกรรมที่ไม่พึงประสงค์ อันเป็นเหตุให้เกิดการร้องเรียน ได้แก่ ปัญหาการแสดงสีหน้า อาการ การสื่อสาร และลักษณะสัมพันธภาพกับผู้ใช้บริการ และเมื่อทบทวนสถิติข้อร้องเรียนจากพฤติกรรมการบริการผู้ป่วยใน<strong>โรงพยาบาลนภาลัย</strong> ปี 2557 จำนวน 7 ราย ปี 2558 จำนวน 4 ราย และปี 2559 จำนวน 4 ราย ซึ่งในความเป็นจริงเมื่อสืบค้นปัญหาความพึงพอใจในการบริการผู้ป่วยแล้วพบว่าพฤติกรรมการบริการโดยใช้คำพูดและท่าทางของเจ้าหน้าที่มีทุกเดือน
-        </p>
-        <p>
-          ปัจจุบัน การสื่อสารในระบบ <strong>iOS</strong> และ <strong>Android</strong> มีบทบาทสำคัญในการสื่อสารและเติบโตขึ้นอย่างรวดเร็ว ทำให้ทุกคนไม่สนใจการเรียนรู้ด้วยวิธีเดิมๆ หรือแบบเก่าอีก แทบทุกคนทุกบ้านจะมีอุปกรณ์ที่จำเป็นใช้นั่นคือ มือถือ Tablet และ Smart Phone การหันกลับมาอ่านเอกสารคำแนะนำจากกระดาษและภาพอย่างเดียวไม่จูงใจให้สนใจ สิ้นเปลือง ไม่เหมาะกับสภาพการพัฒนาเทคโนโลยีปัจจุบัน
-        </p>
-        <p>
-          การให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัยโดยใช้สื่อเทคโนโลยีเรียนรู้ผ่านสื่อบนมือถือด้วย <strong>Augmented Reality</strong> หรือเทคโนโลยีใหม่ที่พัฒนารูปแบบ <strong>Human-Machine Interface</strong> ที่อาศัยเทคโนโลยีคอมพิวเตอร์ และระบบความจริงเสริมโดยการเอาภาพกราฟิกของคอมพิวเตอร์ทั้งในรูปแบบที่เป็น 3D, 2D หรือ Video มาซ้อนทับเข้ากับฉากหลังซึ่งเป็นภาพในเวลาจริง จะช่วยให้ผู้รับบริการทางสุขภาพเข้าถึงข้อมูลได้มาก หรือผู้ให้บริการได้เผยแพร่ความรู้คำแนะนำทางด้านสุขภาพได้รวดเร็วทันสมัย ไม่สิ้นเปลืองคน กระดาษ สิ่งของหรือทรัพยากรต่างๆ ซึ่งเป็นประโยชน์ต่อการดูแลสุขภาพผู้ป่วยระยะยาว
-        </p>
-      </Section>
-    </ScrollReveal>
-
-    <ScrollReveal>
-      <Section num="1.2" title="วัตถุประสงค์">
-        <Pullquote>
-          พัฒนาการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ด้วยสื่อมือถือ
-        </Pullquote>
-      </Section>
-    </ScrollReveal>
-
-    <ScrollReveal>
-      <Section num="1.3" title="ประโยชน์ที่คาดว่าจะได้รับ">
-        <ol class="list-none space-y-3 not-prose">
-          <li class="flex gap-4 paper rounded-xl p-5"><span class="section-num min-w-[2ch]">1.</span><span>ผู้เข้าบริการในโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ได้รับข้อมูลทางสุขภาพสะดวกรวดเร็ว</span></li>
-          <li class="flex gap-4 paper rounded-xl p-5"><span class="section-num min-w-[2ch]">2.</span><span>เปลี่ยนการให้คำแนะนำทางด้านสุขภาพจากเอกสารเป็นสื่อมีชีวิต</span></li>
-          <li class="flex gap-4 paper rounded-xl p-5"><span class="section-num min-w-[2ch]">3.</span><span>ลดต้นทุนการใช้กระดาษในการให้ข้อมูลทางสุขภาพผู้ป่วย</span></li>
-          <li class="flex gap-4 paper rounded-xl p-5"><span class="section-num min-w-[2ch]">4.</span><span>ลดคนในการให้ข้อมูลผู้รับบริการ</span></li>
-          <li class="flex gap-4 paper rounded-xl p-5"><span class="section-num min-w-[2ch]">5.</span><span>ลดข้อขัดแย้งจากการสื่อสารโดยคนสู่คน</span></li>
-        </ol>
-      </Section>
-    </ScrollReveal>
-
-    <ScrollReveal>
-      <Section num="1.4" title="ระยะเวลาดำเนินการ">
-        <p>เดือนเมษายน – สิงหาคม พ.ศ. 2560</p>
-      </Section>
-    </ScrollReveal>
-
-    <ScrollReveal>
-      <Section num="1.5" title="ขอบเขตการศึกษา">
-        <p>
-          การศึกษาครั้งนี้เป็นการศึกษาวิธีการให้ข้อมูลหรือการให้ความรู้ คำแนะนำผู้รับบริการในโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม โดยใช้เทคโนโลยีเรียนรู้ผ่านสื่อบนมือถือด้วย <strong>Augmented Reality</strong> คือเทคโนโลยีใหม่ที่พัฒนารูปแบบ Human-Machine Interface ที่อาศัยเทคโนโลยีคอมพิวเตอร์ และระบบความจริงเสริมโดยการเอาภาพกราฟิกของคอมพิวเตอร์ทั้งในรูปแบบที่เป็น 3D, 2D หรือ Video มาซ้อนทับเข้ากับฉากหลังซึ่งเป็นภาพในเวลาจริง ด้วยโปรแกรมแอพพลิเคชัน <strong>Aurasma</strong> และ <strong>QR code LINE</strong> แสกนบาร์โค้ด
-        </p>
-        <p>
-          แล้วเปรียบเทียบการสอนกับการสอนแบบเดิม คือการใช้คนสื่อสารโดยบรรยายคำพูด ท่าทางและแจกเอกสารคำแนะนำ ประเมินผลการสอนโดยสื่อมือถือ
-        </p>
-      </Section>
-    </ScrollReveal>
-
-    <ScrollReveal>
-      <Section num="1.6" title="นิยามศัพท์">
-        <dl class="space-y-5 not-prose">
-          <div class="paper rounded-xl p-5 md:p-6">
-            <dt class="font-bold text-purple-700 dark:text-purple-300">ผู้รับบริการในโรงพยาบาลนภาลัย</dt>
-            <dd class="mt-2 text-slate-700 dark:text-slate-300">หมายถึง ผู้ป่วยและญาติผู้ป่วยและผู้เข้ารับการบริการในโรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม</dd>
-          </div>
-          <div class="paper rounded-xl p-5 md:p-6">
-            <dt class="font-bold text-purple-700 dark:text-purple-300">การให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย</dt>
-            <dd class="mt-2 text-slate-700 dark:text-slate-300">หมายถึง กิจกรรมการสอน การให้ความรู้ การให้คำแนะนำแก่ผู้เข้ารับบริการในโรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม</dd>
-          </div>
-          <div class="paper rounded-xl p-5 md:p-6">
-            <dt class="font-bold text-purple-700 dark:text-purple-300">สื่อมือถือ</dt>
-            <dd class="mt-2 text-slate-700 dark:text-slate-300">หมายถึง โปรแกรมการสอนโดยใช้
-              <ol class="mt-2 ml-4 list-decimal space-y-1">
-                <li>แอพพลิเคชัน Aurasma ซึ่งติดตั้งในโทรศัพท์มือถือได้ทั้งระบบแอนดรอยด์ (Android) และระบบไอโอเอส (iOS)</li>
-                <li>โดยผ่าน QR code LINE ซึ่ง QR code ในโปรแกรม LINE จะติดตั้งมาให้พร้อมใช้งานในโทรศัพท์มือถือทุกเครื่องทั้ง Smart Phone หรือ Tablet</li>
-              </ol>
-            </dd>
-          </div>
-          <div class="paper rounded-xl p-5 md:p-6">
-            <dt class="font-bold text-purple-700 dark:text-purple-300">ความพึงพอใจต่อการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย</dt>
-            <dd class="mt-2 text-slate-700 dark:text-slate-300">หมายถึง ค่าระดับความพึงพอใจในนวัตกรรมการให้ข้อมูล ซึ่งแบ่งออกเป็น 4 ระดับ คือ มากที่สุด · มาก · ปานกลาง · น้อย</dd>
-          </div>
-        </dl>
-      </Section>
-    </ScrollReveal>
-
-    <ScrollReveal>
-      <Section num="1.7" title="กลุ่มเป้าหมาย">
-        <p>ผู้รับที่เข้ารับบริการในโรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม จำนวน <strong>20–30 ราย</strong></p>
-      </Section>
-    </ScrollReveal>
-
-    <ScrollReveal>
-      <nav class="flex items-center justify-between pt-8 border-t border-slate-200 dark:border-slate-800">
-        <a href={`${base}/`} class="text-sm text-slate-500 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-300">← หน้าหลัก</a>
-        <a href={`${base}/chapter-2`} class="inline-flex items-center gap-2 px-6 py-3 ar-gradient text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition">บทที่ 2 · วรรณกรรมและงานวิจัยที่เกี่ยวข้อง →</a>
-      </nav>
-    </ScrollReveal>
+    </div>
   </div>
 </BaseLayout>
