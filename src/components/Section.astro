@@ -1,0 +1,15 @@
+---
+const { num, title, anchor } = Astro.props;
+const id = anchor ?? (num ? `section-${String(num).replace(/\./g, '-')}` : undefined);
+---
+<section id={id} class="scroll-mt-24">
+  {title && (
+    <h2 class="flex items-baseline gap-3 text-2xl md:text-3xl font-bold mb-6 leading-snug">
+      {num && <span class="section-num text-lg md:text-xl">{num}</span>}
+      <span>{title}</span>
+    </h2>
+  )}
+  <div class="space-y-5 text-slate-700 dark:text-slate-300 leading-[1.95] text-[1.02rem]">
+    <slot />
+  </div>
+</section>

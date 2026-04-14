@@ -1,0 +1,17 @@
+---
+const { src, alt, caption, number, maxW = 'max-w-2xl' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const full = src.startsWith('http') ? src : `${base}${src.startsWith('/') ? '' : '/'}${src}`;
+---
+<figure class={`my-10 mx-auto ${maxW}`}>
+  <div class="paper rounded-xl overflow-hidden">
+    <img src={full} alt={alt} loading="lazy" class="w-full h-auto" />
+  </div>
+  {(number || caption) && (
+    <figcaption class="figure-caption">
+      {number && <span class="font-semibold not-italic text-slate-700 dark:text-slate-300">ภาพที่ {number}</span>}
+      {number && caption && ' · '}
+      {caption}
+    </figcaption>
+  )}
+</figure>

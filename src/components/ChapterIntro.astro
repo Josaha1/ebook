@@ -1,14 +1,34 @@
 ---
-const { number, title, subtitle, eyebrow = 'บทที่' } = Astro.props;
+const { number, title, subtitle, meta = [] } = Astro.props;
 ---
-<header class="relative min-h-[60vh] flex items-end pb-14 pt-28 md:pt-36 px-6 overflow-hidden">
-  <div class="absolute inset-0 -z-10 ar-gradient-radial opacity-60"></div>
-  <div class="absolute top-10 right-0 w-72 h-72 rounded-full ar-gradient opacity-20 blur-3xl"></div>
+<header class="relative border-b border-slate-200 dark:border-slate-800">
+  <div class="absolute inset-0 -z-10" aria-hidden="true">
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900"></div>
+    <div class="absolute top-0 right-0 w-1/3 h-full ar-gradient opacity-[0.07]"></div>
+  </div>
 
-  <div class="max-w-4xl mx-auto w-full">
-    <p class="text-sm uppercase tracking-[0.3em] text-ar-pink font-semibold">{eyebrow}</p>
-    <div class="text-[8rem] md:text-[12rem] leading-[0.85] font-black ar-gradient-text -ml-1 -mb-3 select-none">{number}</div>
-    <h1 class="mt-2 text-3xl md:text-5xl font-bold leading-tight">{title}</h1>
-    {subtitle && <p class="mt-4 text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-2xl">{subtitle}</p>}
+  <div class="max-w-4xl mx-auto px-6 pt-28 md:pt-36 pb-14">
+    <div class="flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400 font-semibold">
+      <span class="h-px w-10 bg-slate-400"></span>
+      บทที่ {parseInt(number)}
+    </div>
+    <div class="mt-6 flex items-end gap-6 md:gap-10">
+      <div class="text-7xl md:text-9xl font-black ar-gradient-text leading-none font-display select-none">{number}</div>
+      <div class="pb-2 md:pb-4">
+        <h1 class="text-3xl md:text-5xl font-bold leading-[1.15]">{title}</h1>
+      </div>
+    </div>
+    {subtitle && <p class="mt-6 text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">{subtitle}</p>}
+    {meta.length > 0 && (
+      <dl class="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        {meta.map((m: any) => (
+          <div class="flex items-baseline gap-2">
+            <dt class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">{m.label}</dt>
+            <dd class="font-semibold">{m.value}</dd>
+          </div>
+        ))}
+      </dl>
+    )}
+    <div class="mt-8 h-[3px] rule rounded-full w-24"></div>
   </div>
 </header>

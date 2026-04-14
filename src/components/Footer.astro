@@ -2,36 +2,44 @@
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const year = new Date().getFullYear();
 ---
-<footer class="mt-24 border-t border-slate-200 dark:border-slate-800">
-  <div class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8">
+<footer class="mt-24 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/30">
+  <div class="max-w-5xl mx-auto px-6 py-14 grid md:grid-cols-[1.3fr_1fr_1fr] gap-10">
     <div>
-      <div class="font-bold text-lg ar-gradient-text">AR E-Book</div>
-      <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
-        เทคโนโลยีความจริงเสริม (AR) เพื่อการให้ข้อมูลผู้รับบริการ<br/>
-        โรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม
+      <div class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">รายงานการศึกษา</div>
+      <div class="mt-2 font-bold text-lg leading-tight">
+        ผลการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ด้วยสื่อมือถือ
+      </div>
+      <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+        โรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม<br/>
+        ระยะเวลาดำเนินการ: เมษายน – สิงหาคม พ.ศ. 2560
       </p>
     </div>
     <div>
-      <div class="font-semibold mb-3">เนื้อหา</div>
-      <ul class="space-y-1 text-sm text-slate-600 dark:text-slate-400">
-        <li><a href={`${base}/chapter-1`} class="hover:text-ar-pink">บทที่ 1 บทนำ</a></li>
-        <li><a href={`${base}/chapter-2`} class="hover:text-ar-pink">บทที่ 2 เอกสารที่เกี่ยวข้อง</a></li>
-        <li><a href={`${base}/chapter-3`} class="hover:text-ar-pink">บทที่ 3 วิธีดำเนินการศึกษา</a></li>
+      <div class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold mb-3">สารบัญ</div>
+      <ul class="space-y-1.5 text-sm">
+        <li><a href={`${base}/chapter-1`} class="text-slate-700 dark:text-slate-300 hover:text-purple-700 dark:hover:text-purple-300">บทที่ 1 · บทนำ</a></li>
+        <li><a href={`${base}/chapter-2`} class="text-slate-700 dark:text-slate-300 hover:text-purple-700 dark:hover:text-purple-300">บทที่ 2 · วรรณกรรมและงานวิจัยที่เกี่ยวข้อง</a></li>
+        <li><a href={`${base}/chapter-3`} class="text-slate-700 dark:text-slate-300 hover:text-purple-700 dark:hover:text-purple-300">บทที่ 3 · วิธีดำเนินการวิจัย</a></li>
       </ul>
     </div>
     <div>
-      <div class="font-semibold mb-3">แชร์</div>
-      <div class="flex gap-2">
-        <button id="share-copy" class="px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-700 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">📋 คัดลอกลิงก์</button>
-        <a id="share-fb" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-700 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">Facebook</a>
-        <a id="share-line" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-700 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">Line</a>
+      <div class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold mb-3">แชร์เอกสาร</div>
+      <div class="flex flex-wrap gap-2 text-sm">
+        <button id="share-copy" class="px-3 py-1.5 rounded-md border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">คัดลอกลิงก์</button>
+        <a id="share-fb" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-md border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">Facebook</a>
+        <a id="share-line" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-md border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">LINE</a>
       </div>
     </div>
   </div>
-  <div class="text-center text-xs text-slate-500 pb-8">© {year} AR E-Book · เผยแพร่เพื่อการศึกษา</div>
+  <div class="border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-5xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400">
+      <div>© {year} · เผยแพร่เพื่อการศึกษาและนำเสนองานวิชาการ</div>
+      <div>Interactive Academic E-Book · Augmented Reality</div>
+    </div>
+  </div>
 </footer>
 <button id="to-top" aria-label="กลับด้านบน"
-  class="fixed bottom-6 right-6 w-11 h-11 rounded-full ar-gradient text-white shadow-lg shadow-pink-500/30 opacity-0 pointer-events-none transition-opacity hover:scale-110 z-40">↑</button>
+  class="fixed bottom-6 right-6 w-11 h-11 rounded-md ar-gradient text-white shadow-lg shadow-purple-900/30 opacity-0 pointer-events-none transition-opacity hover:scale-110 z-40">↑</button>
 <script>
   const copyBtn = document.getElementById('share-copy');
   const fb = document.getElementById('share-fb') as HTMLAnchorElement | null;
@@ -40,7 +48,7 @@ const year = new Date().getFullYear();
   if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
   if (line) line.href = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(url)}`;
   copyBtn?.addEventListener('click', async () => {
-    try { await navigator.clipboard.writeText(window.location.href); copyBtn.textContent = '✓ คัดลอกแล้ว'; setTimeout(() => copyBtn.textContent = '📋 คัดลอกลิงก์', 1500); } catch {}
+    try { await navigator.clipboard.writeText(window.location.href); copyBtn.textContent = '✓ คัดลอกแล้ว'; setTimeout(() => copyBtn.textContent = 'คัดลอกลิงก์', 1500); } catch {}
   });
 
   const toTop = document.getElementById('to-top');

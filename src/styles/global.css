@@ -1,51 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Prompt:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700;800&family=Prompt:wght@500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'IBM Plex Sans Thai', 'Prompt', system-ui, sans-serif;
-  --font-display: 'Prompt', 'IBM Plex Sans Thai', system-ui, sans-serif;
-  --color-ar-purple: #7C3AED;
-  --color-ar-pink: #EC4899;
-  --color-ar-orange: #F97316;
+  --font-sans: 'Sarabun', 'IBM Plex Sans Thai', system-ui, sans-serif;
+  --font-serif: 'Sarabun', 'IBM Plex Sans Thai', system-ui, serif;
+  --font-display: 'Prompt', 'Sarabun', system-ui, sans-serif;
+  --color-ar-indigo: #1E3A8A;
+  --color-ar-purple: #6D28D9;
+  --color-ar-pink: #DB2777;
+  --color-ar-orange: #EA580C;
+  --color-ink: #0F172A;
+  --color-paper: #FAFAF7;
 }
 
 @layer base {
   html { scroll-behavior: smooth; }
   body {
     font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
-    background: #ffffff;
-    color: #0f172a;
+    background: #FAFAF7;
+    color: #0F172A;
     overflow-x: hidden;
   }
-  html.dark body { background: #0a0a14; color: #e2e8f0; }
+  html.dark body { background: #0B1020; color: #E2E8F0; }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.01em; }
 }
 
 @layer utilities {
   .ar-gradient {
-    background: linear-gradient(135deg, #7C3AED 0%, #EC4899 50%, #F97316 100%);
+    background: linear-gradient(135deg, #1E3A8A 0%, #6D28D9 55%, #DB2777 100%);
   }
   .ar-gradient-text {
-    background: linear-gradient(135deg, #7C3AED, #EC4899, #F97316);
+    background: linear-gradient(135deg, #1E3A8A, #6D28D9, #DB2777);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
   }
-  .ar-gradient-radial {
-    background: radial-gradient(circle at 30% 20%, rgba(124, 58, 237, 0.35), transparent 40%),
-                radial-gradient(circle at 70% 60%, rgba(236, 72, 153, 0.3), transparent 40%),
-                radial-gradient(circle at 50% 90%, rgba(249, 115, 22, 0.25), transparent 40%);
+  .paper {
+    background: #fff;
+    border: 1px solid rgb(226 232 240);
   }
-  .glass {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-  .dark .glass {
-    background: rgba(10, 10, 20, 0.6);
-  }
+  .dark .paper { background: #111827; border-color: rgb(30 41 59); }
+  .rule { background-image: linear-gradient(to right, #1E3A8A, #6D28D9 60%, #DB2777); }
 }
+
+/* Figure & academic elements */
+.figure-caption { font-size: 0.875rem; color: #475569; margin-top: 0.75rem; text-align: center; font-style: italic; }
+.dark .figure-caption { color: #94A3B8; }
+.section-num { font-variant-numeric: tabular-nums; font-weight: 700; color: #6D28D9; }
+.dark .section-num { color: #A78BFA; }
 
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }

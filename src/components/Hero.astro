@@ -1,60 +1,69 @@
 ---
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<section class="relative min-h-[calc(100vh-3.5rem)] flex items-center overflow-hidden">
-  <div class="absolute inset-0 -z-10 ar-gradient-radial"></div>
-  <div class="absolute -top-20 -left-20 w-96 h-96 rounded-full ar-gradient opacity-20 blur-3xl animate-pulse"></div>
-  <div class="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-ar-pink opacity-20 blur-3xl"></div>
+<section class="relative min-h-[calc(100vh-3.5rem)] flex items-center overflow-hidden border-b border-slate-200 dark:border-slate-800">
+  <div class="absolute inset-0 -z-10" aria-hidden="true">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"></div>
+    <div class="absolute -top-40 -right-20 w-[28rem] h-[28rem] rounded-full ar-gradient opacity-10 blur-3xl"></div>
+  </div>
 
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center w-full py-12 relative">
-    <div>
-      <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 text-xs font-semibold text-ar-pink tracking-widest uppercase backdrop-blur">
-        <span class="w-1.5 h-1.5 rounded-full bg-ar-pink animate-pulse"></span>
-        Interactive E-Book
-      </p>
-      <h1 class="mt-5 text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight">
-        เปิดโลก<br/>
-        <span class="ar-gradient-text">Augmented</span><br/>
-        <span class="ar-gradient-text">Reality</span>
+  <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.15fr_1fr] gap-10 items-center w-full py-16 md:py-24">
+    <div class="max-w-2xl">
+      <div class="flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400 font-semibold">
+        <span class="h-px w-10 bg-slate-400"></span>
+        รายงานการศึกษา · Academic E-Book
+      </div>
+      <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight">
+        ผลการให้ข้อมูลผู้รับบริการ<br/>
+        โรงพยาบาลนภาลัย<br/>
+        จังหวัดสมุทรสงคราม<br/>
+        <span class="ar-gradient-text">ด้วยสื่อมือถือ</span>
       </h1>
-      <p class="mt-6 text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-md leading-relaxed">
-        เทคโนโลยีความจริงเสริมเพื่อการให้ข้อมูลผู้รับบริการ —
-        <span class="font-semibold text-slate-900 dark:text-white">ส่องมือถือแล้วเห็น 3D ลอยจริง</span>
-        ในหน้าหนังสือ
+      <p class="mt-6 text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl">
+        การศึกษากึ่งทดลองโดยใช้เทคโนโลยีความจริงเสริม (Augmented Reality) ผ่านแอพพลิเคชัน Aurasma และ QR code LINE
+        เพื่อยกระดับการสื่อสารและการให้ข้อมูลผู้รับบริการในโรงพยาบาล
       </p>
+      <dl class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm">
+        <div class="paper rounded-xl p-4">
+          <dt class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">รูปแบบการศึกษา</dt>
+          <dd class="mt-1 font-semibold">กึ่งทดลอง</dd>
+        </div>
+        <div class="paper rounded-xl p-4">
+          <dt class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">ช่วงเวลา</dt>
+          <dd class="mt-1 font-semibold">เม.ย. – ส.ค. 2560</dd>
+        </div>
+        <div class="paper rounded-xl p-4">
+          <dt class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">กลุ่มตัวอย่าง</dt>
+          <dd class="mt-1 font-semibold">20–44 ราย</dd>
+        </div>
+      </dl>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href={`${base}/chapter-1`}
-          class="group inline-flex items-center gap-2 px-7 py-3.5 ar-gradient text-white rounded-full font-semibold shadow-xl shadow-pink-500/30 hover:shadow-2xl hover:shadow-pink-500/40 hover:scale-105 active:scale-95 transition-all">
-          เริ่มอ่าน
-          <span class="transition-transform group-hover:translate-x-1">→</span>
+        <a href={`${base}/chapter-1`} class="inline-flex items-center gap-2 px-6 py-3 ar-gradient text-white rounded-lg font-semibold shadow-lg shadow-purple-900/20 hover:shadow-xl transition">
+          เริ่มอ่านบทที่ 1
+          <span>→</span>
         </a>
-        <a href="#toc"
-          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+        <a href="#toc" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
           สารบัญ
         </a>
       </div>
     </div>
 
-    <div class="relative aspect-square max-w-lg mx-auto w-full">
-      <div class="absolute inset-0 ar-gradient rounded-[40%] blur-3xl opacity-40 animate-pulse"></div>
-      <model-viewer
-        src={`${base}/models/hero.glb`}
-        alt="3D Astronaut"
-        auto-rotate
-        camera-controls
-        interaction-prompt="none"
-        exposure="1.1"
-        shadow-intensity="0.8"
-        camera-orbit="-15deg 80deg 3m"
-        class="relative w-full h-full"
-        style="background: transparent;"
-      ></model-viewer>
+    <div class="relative aspect-square max-w-md mx-auto w-full hidden md:block">
+      <div class="absolute inset-0 ar-gradient rounded-3xl opacity-10 blur-2xl"></div>
+      <div class="relative paper rounded-3xl overflow-hidden">
+        <model-viewer
+          src={`${base}/models/hero.glb`}
+          alt="3D model for AR demonstration"
+          auto-rotate camera-controls interaction-prompt="none"
+          exposure="1.0" shadow-intensity="0.6"
+          camera-orbit="-10deg 80deg 3m"
+          style="width:100%; height: 420px; background: transparent;"
+        ></model-viewer>
+        <div class="px-4 py-3 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 text-center">
+          <span class="font-semibold text-slate-700 dark:text-slate-300">ภาพที่ 1</span> · แบบจำลอง 3 มิติเพื่อประกอบการนำเสนอเทคโนโลยี AR
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-slate-500 dark:text-slate-400 text-xs flex flex-col items-center gap-1">
-    <span>เลื่อนลงเพื่ออ่านต่อ</span>
-    <span class="animate-bounce text-lg">↓</span>
   </div>
 </section>
 <script>

@@ -2,117 +2,154 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ChapterIntro from '../components/ChapterIntro.astro';
 import ScrollReveal from '../components/ScrollReveal.astro';
-import Timeline from '../components/Timeline.astro';
-import Prose from '../components/Prose.astro';
+import Section from '../components/Section.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-
-const steps = [
-  {
-    step: '1.1',
-    label: 'ขั้นเตรียมการ',
-    title: 'ค้นหาปัญหา',
-    description: 'เดิมการให้คำแนะนำและสอนผู้ดูแลให้กลับไปปฏิบัติตนที่บ้านใช้เอกสารกระดาษเป็นหลัก ทำให้เกิดปัญหาเอกสารชำรุด จำไม่ได้ ต้องนำมาอ่านซ้ำ หรือบางรายสูญหายไปแล้ว หรืออ่านแล้วไม่เข้าใจ',
-  },
-  {
-    step: '1.2',
-    label: 'ขั้นเตรียมการ',
-    title: 'ศึกษานวัตกรรมการสอนอื่น',
-    description: 'ใช้หลัก สะดวก เข้าถึงง่าย ทันยุคสมัย ลดต้นทุน ผู้ศึกษาคัดเลือกแอพพลิเคชันในมือถือมา 2 แบบ',
-    points: ['แอพพลิเคชัน Aurasma', 'QR code ใน LINE'],
-  },
-  {
-    step: '2.1',
-    label: 'ขั้นดำเนินการ',
-    title: 'ปรับเนื้อหาให้ทันสมัย',
-    description: 'นำเอกสารคำแนะนำการปฏิบัติตนมาปรับให้ทันสมัยและถูกต้องตามหลักวิชาการ ผ่านการตรวจความตรง ความถูกต้องและความเที่ยงจากผู้เชี่ยวชาญ โดยมุ่งเน้นกลุ่มโรค',
-    points: ['ผู้ป่วยช่วยเหลือตนเองได้น้อย (ป้องกันแผลกดทับ)', 'แผลเรื้อรังและอุปกรณ์ต่อพ่วง', 'ผู้ป่วยมะเร็งระยะแพร่กระจาย'],
-  },
-  {
-    step: '2.2',
-    label: 'ขั้นดำเนินการ',
-    title: 'สร้างสื่อด้วย Aurasma + QR code',
-    description: 'แปลงเนื้อหาเป็นสื่อมีเดียผ่านแอพพลิเคชัน Aurasma และ QR code ใน LINE เพื่อให้ผู้ใช้สามารถเข้าถึงเนื้อหาผ่านมือถือได้ทันที',
-  },
-  {
-    step: '2.3',
-    label: 'ขั้นดำเนินการ',
-    title: 'ทดลองใช้จริง',
-    description: 'ทดลองใช้กับผู้รับบริการในโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ระหว่างเดือนเมษายน – สิงหาคม 2560 จำนวน 44 ราย',
-    points: [
-      'เอกสารคำแนะนำโรคแผลเรื้อรัง (กดทับ, เบาหวาน, แผลผ่าตัด)',
-      'คู่มือดูแลผู้ป่วยที่มีอุปกรณ์ต่อพ่วง (สายให้อาหาร, สายสวน, ท่อหายใจ)',
-      'แผ่นพับดูแลผู้ป่วยมะเร็งและการจัดการความปวด',
-      'คลิปวีดีโอใน YouTube',
-      'แบบประเมินผลผ่าน QR code',
-    ],
-  },
-  {
-    step: '3',
-    label: 'สรุป',
-    title: 'สรุปและประเมินผล',
-    description: 'สรุปผลการให้ข้อมูลผู้รับบริการด้วยสื่อมือถือ ประเมินความพึงพอใจผ่านแบบประเมิน online โดยการสแกน QR code',
-  },
-];
 ---
-<BaseLayout title="บทที่ 3 · วิธีดำเนินการศึกษา · AR E-Book">
+<BaseLayout title="บทที่ 3 · วิธีดำเนินการวิจัย · รายงานการศึกษา">
   <ChapterIntro
     number="03"
-    title="วิธีดำเนินการศึกษา"
-    subtitle="การศึกษากึ่งทดลองกับผู้รับบริการ 20–30 ราย ในโรงพยาบาลนภาลัย โดยใช้สื่อมือถือผ่าน Aurasma และ QR code LINE"
+    title="วิธีดำเนินการวิจัย"
+    subtitle="การออกแบบการศึกษากึ่งทดลอง กลุ่มตัวอย่าง เครื่องมือ และการพิทักษ์สิทธิ์ผู้เข้าร่วมการศึกษา"
+    meta={[
+      { label: 'หน้าต้นฉบับ', value: '2 หน้า' },
+      { label: 'จำนวนคำ', value: '525 คำ' },
+      { label: 'กลุ่มตัวอย่าง', value: '44 ราย' },
+    ]}
   />
 
-  <div class="max-w-4xl mx-auto px-6 py-16 md:py-20 space-y-16">
+  <div class="max-w-3xl mx-auto px-6 py-16 md:py-20 space-y-20">
 
     <ScrollReveal>
-      <section class="rounded-3xl ar-gradient p-[1px]">
-        <div class="bg-white dark:bg-slate-950 rounded-3xl p-6 md:p-10 grid sm:grid-cols-3 gap-6 text-center">
-          <div>
-            <div class="text-xs uppercase tracking-widest text-ar-pink font-semibold">รูปแบบ</div>
-            <div class="mt-2 text-lg md:text-xl font-bold">การศึกษากึ่งทดลอง</div>
-          </div>
-          <div>
-            <div class="text-xs uppercase tracking-widest text-ar-pink font-semibold">ช่วงเวลา</div>
-            <div class="mt-2 text-lg md:text-xl font-bold">เม.ย. – ส.ค. 2560</div>
-          </div>
-          <div>
-            <div class="text-xs uppercase tracking-widest text-ar-pink font-semibold">กลุ่มตัวอย่าง</div>
-            <div class="mt-2 text-lg md:text-xl font-bold">44 ราย</div>
-          </div>
+      <Section>
+        <p>
+          การศึกษาเรื่อง <strong>"ผลการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ด้วยสื่อมือถือ"</strong> เป็นการศึกษาแบบ<strong>กึ่งทดลอง</strong> โดยศึกษาการใช้สื่อการให้ข้อมูลผู้รับบริการ โรงพยาบาลนภาลัย ตำบลกระดังงา จังหวัดสมุทรสงคราม จำนวน <strong>20–30 ราย</strong> โดยใช้สื่อแอพพลิเคชันในมือถือ
+        </p>
+        <p>รายละเอียดของวิธีดำเนินการศึกษามีดังนี้</p>
+      </Section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <Section num="3.1" title="ขั้นเตรียมการ">
+        <div class="paper rounded-xl p-5 md:p-6">
+          <h3 class="font-bold text-lg"><span class="section-num">3.1.1</span> ค้นหาปัญหา</h3>
+          <p class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">
+            พบว่าเดิมการให้คำแนะนำ การสอนผู้ดูแลให้กลับไปปฏิบัติตนที่บ้านเราใช้เอกสารซึ่งเป็นกระดาษเป็นหลัก การเก็บเอกสารกลับบ้านมีปัญหาชำรุด จำไม่ได้ อาจต้องนำมาอ่านดูซ้ำซึ่งบางรายสูญหายไปแล้ว หรืออ่านแล้วไม่เข้าใจ
+          </p>
         </div>
-      </section>
-    </ScrollReveal>
-
-    <ScrollReveal>
-      <section>
-        <h2 class="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
-          <span class="w-10 h-1 rounded-full ar-gradient"></span>
-          ขั้นตอนดำเนินการ
-        </h2>
-        <Timeline items={steps} />
-      </section>
-    </ScrollReveal>
-
-    <ScrollReveal>
-      <section class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-6 md:p-10">
-        <div class="flex items-start gap-4">
-          <div class="flex-shrink-0 w-12 h-12 rounded-2xl ar-gradient grid place-items-center text-white text-xl">🛡️</div>
-          <div>
-            <h3 class="text-xl md:text-2xl font-bold">การพิทักษ์สิทธิ์</h3>
-            <p class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">
-              เนื่องจากการศึกษานี้มีความเสี่ยงต่ออาสาสมัครน้อย ผู้ศึกษาได้เขียนบันทึกขออนุญาตผู้อำนวยการโรงพยาบาลเจ้าของสถานที่และได้รับอนุญาตให้ศึกษาได้ <strong>เมื่อวันที่ 21 เมษายน 2560</strong> ก่อนทำการศึกษา
-              ผู้ที่กรอกแบบประเมินถือว่ายินยอมในการศึกษาครั้งนี้
-            </p>
-          </div>
+        <div class="paper rounded-xl p-5 md:p-6 mt-4">
+          <h3 class="font-bold text-lg"><span class="section-num">3.1.2</span> ศึกษานวัตกรรมการสอนอื่นๆ</h3>
+          <p class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">
+            เพื่อการให้ข้อมูล มาใช้ในการให้ข้อมูลผู้รับบริการในโรงพยาบาลนภาลัย โดยใช้หลัก <strong>สะดวก เข้าถึงข้อมูลง่าย ทันกับยุคสมัยปัจจุบัน ลดต้นทุนในการผลิตสื่อ</strong>การให้ข้อมูลหรือสอน ซึ่งผู้ศึกษาได้ใช้สื่อมือถือและคัดเลือกแอพพลิเคชันในมือถือมา 2 แบบ ได้แก่
+          </p>
+          <ul class="mt-3 ml-6 list-disc text-slate-700 dark:text-slate-300 space-y-1">
+            <li>แอพพลิเคชัน <strong>Aurasma</strong></li>
+            <li><strong>QR code LINE</strong></li>
+          </ul>
         </div>
-      </section>
+      </Section>
     </ScrollReveal>
 
     <ScrollReveal>
-      <section class="text-center">
-        <a href={`${base}/`} class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-slate-300 dark:border-slate-700 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-          ← กลับหน้าหลัก
-        </a>
-      </section>
+      <Section num="3.2" title="ขั้นดำเนินการ">
+        <div class="paper rounded-xl p-5 md:p-6">
+          <h3 class="font-bold text-lg"><span class="section-num">3.2.1</span> ปรับเนื้อหาให้ทันสมัย</h3>
+          <p class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">
+            นำเอกสารหรือข้อมูลคำแนะนำการปฏิบัติตนที่มีใช้ในโรงพยาบาลนภาลัยมาปรับให้ทันสมัย ถูกต้องตามหลักวิชาการปัจจุบัน โดยในระยะแรกเริ่มทำในกลุ่มโรคที่ผู้ศึกษาได้ทำการศึกษาและผลิตสื่อแผ่นพับ คู่มือการปฏิบัติตนต่างๆ ได้แก่
+          </p>
+          <ul class="mt-3 ml-6 list-disc text-slate-700 dark:text-slate-300 space-y-1">
+            <li>การดูแลผู้ป่วยที่ช่วยเหลือตนเองได้น้อยเพื่อป้องกันโรคแทรกซ้อนต่างๆ เช่น แผลกดทับ</li>
+            <li>การดูแลแผลเรื้อรังและอุปกรณ์ต่อพ่วง</li>
+            <li>การดูแลผู้ป่วยมะเร็ง เป็นต้น</li>
+          </ul>
+          <p class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">
+            ค้นหาคัดเลือกภาพนิ่งหรือภาพเคลื่อนไหว Clip VDO ในฐานข้อมูลอิเล็กทรอนิกส์ นำไปให้ผู้เชี่ยวชาญแต่ละสาขาวิชาตรวจความตรง ความถูกต้องและความเที่ยง แล้วนำข้อมูลมาปรับเปลี่ยนเป็นภาพหรือสื่อมีเดียต่างๆ เตรียมผลิตเป็นสื่อการให้ข้อมูลผู้รับบริการทางการพยาบาลโดยใช้สื่อเทคโนโลยีเรียนรู้ผ่านสื่อบนมือถือ
+          </p>
+          <p class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">
+            ผู้ศึกษาคัดเลือกเนื้อหาจากผลงานของตนเองที่ทำการศึกษาวิจัยจากงานประจำที่ปฏิบัติอยู่ในปี พ.ศ. 2556 ถึง พ.ศ. 2559 อันได้แก่
+          </p>
+          <ul class="mt-3 ml-6 list-disc text-slate-700 dark:text-slate-300 space-y-1">
+            <li>เอกสาร <em>"คู่มือการดูแลผู้ป่วยที่มีแผลเรื้อรังและอุปกรณ์ต่อพ่วง"</em></li>
+            <li>เอกสาร <em>"คู่มือการดูแลผู้ป่วยมะเร็งระยะแพร่กระจาย"</em></li>
+            <li><em>"การจัดการความปวดในผู้ป่วยมะเร็ง"</em></li>
+            <li>เอกสารจากฐานข้อมูลอิเล็กทรอนิกส์มหาวิทยาลัย เช่น จุฬาลงกรณ์มหาวิทยาลัย</li>
+          </ul>
+        </div>
+
+        <div class="paper rounded-xl p-5 md:p-6">
+          <h3 class="font-bold text-lg"><span class="section-num">3.2.2</span> สร้างสื่อด้วย Aurasma และ QR code LINE</h3>
+          <p class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">
+            สร้างสื่อการให้ข้อมูลหรือการสอนโดยใช้แอพพลิเคชัน <strong>Aurasma</strong> และ <strong>QR code LINE</strong>
+          </p>
+        </div>
+
+        <div class="paper rounded-xl p-5 md:p-6">
+          <h3 class="font-bold text-lg"><span class="section-num">3.2.3</span> ทดลองใช้จริง</h3>
+          <p class="mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">
+            ทดลองใช้กับผู้รับบริการทางสุขภาพในโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ระหว่างเดือน<strong>เมษายน พ.ศ. 2560 ถึง สิงหาคม พ.ศ. 2560</strong> จำนวน <strong>44 ราย</strong> โดยใช้เครื่องมือดังนี้
+          </p>
+
+          <ol class="mt-4 space-y-3">
+            <li class="flex gap-4">
+              <span class="section-num flex-shrink-0">1.</span>
+              <span><strong>เอกสารให้ความรู้คำแนะนำการปฏิบัติตน โรคแผลเรื้อรัง</strong> อันได้แก่ แผลกดทับ แผลเบาหวาน และแผลผ่าตัดทวารหนักทางหน้าท้อง เป็นต้น</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="section-num flex-shrink-0">2.</span>
+              <span><strong>เอกสารคู่มือการดูแลผู้ป่วยที่มีแผลเรื้อรังและใส่อุปกรณ์ต่อพ่วง</strong> เช่น สายให้อาหารทางสายยาง สายสวนปัสสาวะ ท่อหายใจที่คอ เป็นต้น, คู่มือการดูแลผู้ป่วยมะเร็งระยะแพร่กระจาย</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="section-num flex-shrink-0">3.</span>
+              <span><strong>เอกสารแผ่นพับคำแนะนำการดูแลผู้ป่วยมะเร็งระยะแพร่กระจาย</strong> การจัดการความปวด ป้องกันการเกิดแผลกดทับแทรกซ้อน การดูแลแผลเรื้อรัง</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="section-num flex-shrink-0">4.</span>
+              <div>
+                <strong>คลิปวีดีโอการแนะนำการดูแลผู้ป่วยใน YouTube</strong> ได้แก่
+                <ul class="mt-1 ml-5 list-disc space-y-0.5 text-sm">
+                  <li>การให้อาหารสายยาง · การเตรียมอาหารสายยาง</li>
+                  <li>การแปรงฟันผู้ป่วย · การเช็ดตัวลดไข้</li>
+                  <li>การเคลื่อนย้ายผู้ป่วยอัมพาตครึ่งซีก · การฟื้นฟูผู้ป่วยหลอดเลือดสมอง</li>
+                  <li>การทำความสะอาดท่อหายใจที่คอ · การล้างท่อเจาะหายใจที่คอ</li>
+                  <li>การป้องกันและดูแลแผลกดทับ · การป้องกันดูแลแผลเบาหวาน</li>
+                </ul>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="section-num flex-shrink-0">5.</span>
+              <span><strong>โทรศัพท์มือถือ · iPad · iPhone</strong></span>
+            </li>
+            <li class="flex gap-4">
+              <span class="section-num flex-shrink-0">6.</span>
+              <span><strong>แบบประเมิน</strong> "ผลการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัยโดยสื่อมือถือ"</span>
+            </li>
+          </ol>
+        </div>
+      </Section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <Section num="3.3" title="สรุป ประเมินผล">
+        <p>
+          สรุปและประเมินผลการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัยด้วยสื่อมือถือ และความพึงพอใจ ด้วย<strong>แบบประเมิน online ผ่านการสแกน QR code</strong>
+        </p>
+      </Section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <Section num="3.4" title="การพิทักษ์สิทธิ์">
+        <div class="paper rounded-xl p-5 md:p-7 border-l-4 border-purple-600 dark:border-purple-400">
+          <p>
+            เนื่องจากการศึกษานี้มีความเสี่ยงต่ออาสาสมัครน้อย ผู้ศึกษาได้เขียนบันทึกขออนุญาตผู้อำนวยการโรงพยาบาลเจ้าของสถานที่และได้รับอนุญาตให้ศึกษาได้ก่อนทำการศึกษาเมื่อ<strong>วันที่ 21 เมษายน 2560</strong> ผู้ที่กรอกแบบประเมินถือว่ายินยอมในการศึกษาในครั้งนี้
+          </p>
+        </div>
+      </Section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <nav class="flex items-center justify-between pt-8 border-t border-slate-200 dark:border-slate-800">
+        <a href={`${base}/chapter-2`} class="text-sm text-slate-500 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-300">← บทที่ 2 · วรรณกรรมและงานวิจัยที่เกี่ยวข้อง</a>
+        <a href={`${base}/`} class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">กลับหน้าหลัก</a>
+      </nav>
     </ScrollReveal>
   </div>
 </BaseLayout>

@@ -1,0 +1,188 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "AR E-Book" [ref=e4] [cursor=pointer]:
+        - /url: /ebook/
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "บทที่ 1" [ref=e7] [cursor=pointer]:
+            - /url: /ebook/chapter-1
+        - listitem [ref=e8]:
+          - link "บทที่ 2" [ref=e9] [cursor=pointer]:
+            - /url: /ebook/chapter-2
+        - listitem [ref=e10]:
+          - link "บทที่ 3" [ref=e11] [cursor=pointer]:
+            - /url: /ebook/chapter-3
+      - button "Toggle dark mode" [ref=e13]:
+        - img [ref=e14]
+  - main [ref=e16]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]: รายงานการศึกษา · Academic E-Book
+        - heading "ผลการให้ข้อมูลผู้รับบริการ โรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ด้วยสื่อมือถือ" [level=1] [ref=e25]:
+          - text: ผลการให้ข้อมูลผู้รับบริการ
+          - text: โรงพยาบาลนภาลัย
+          - text: จังหวัดสมุทรสงคราม
+          - text: ด้วยสื่อมือถือ
+        - paragraph [ref=e26]: การศึกษากึ่งทดลองโดยใช้เทคโนโลยีความจริงเสริม (Augmented Reality) ผ่านแอพพลิเคชัน Aurasma และ QR code LINE เพื่อยกระดับการสื่อสารและการให้ข้อมูลผู้รับบริการในโรงพยาบาล
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - term [ref=e29]: รูปแบบการศึกษา
+            - definition [ref=e30]: กึ่งทดลอง
+          - generic [ref=e31]:
+            - term [ref=e32]: ช่วงเวลา
+            - definition [ref=e33]: เม.ย. – ส.ค. 2560
+          - generic [ref=e34]:
+            - term [ref=e35]: กลุ่มตัวอย่าง
+            - definition [ref=e36]: 20–44 ราย
+        - generic [ref=e37]:
+          - link "เริ่มอ่านบทที่ 1 →" [ref=e38] [cursor=pointer]:
+            - /url: /ebook/chapter-1
+            - text: เริ่มอ่านบทที่ 1
+            - generic [ref=e39]: →
+          - link "สารบัญ" [ref=e40] [cursor=pointer]:
+            - /url: "#toc"
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - button "3D model for AR demonstration" [ref=e47]
+            - generic:
+              - generic:
+                - generic:
+                  - img
+          - region "Live announcements":
+            - status
+        - generic [ref=e51]: ภาพที่ 1 · แบบจำลอง 3 มิติเพื่อประกอบการนำเสนอเทคโนโลยี AR
+    - generic [ref=e53]:
+      - generic [ref=e54]: บทคัดย่อ · Abstract
+      - heading "ภาพรวมการศึกษา" [level=2] [ref=e55]
+      - generic [ref=e56]:
+        - paragraph [ref=e57]:
+          - text: การศึกษานี้เป็นการศึกษา
+          - strong [ref=e58]: กึ่งทดลอง
+          - text: ในผู้รับบริการโรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม จำนวน 20–44 ราย โดยทดลองใช้สื่อการให้ข้อมูลผ่านแอพพลิเคชันในมือถือ ได้แก่
+          - strong [ref=e59]: Aurasma
+          - text: และ
+          - strong [ref=e60]: QR code LINE
+          - text: เพื่อพัฒนารูปแบบการให้ข้อมูลผู้รับบริการจากเดิมที่ใช้เอกสารกระดาษ ให้เข้าถึงสะดวก ลดต้นทุน และทันยุคสมัย
+        - paragraph [ref=e61]:
+          - text: ดำเนินการระหว่างเดือน
+          - strong [ref=e62]: เมษายน ถึง สิงหาคม พ.ศ. 2560
+          - text: ครอบคลุมกลุ่มโรคแผลเรื้อรัง ผู้ป่วยที่มีอุปกรณ์ต่อพ่วง และผู้ป่วยมะเร็งระยะแพร่กระจาย ประเมินผลผ่านแบบประเมินออนไลน์โดยการสแกน QR code
+    - generic [ref=e63]:
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - generic [ref=e66]: สารบัญ · Table of Contents
+          - heading "เนื้อหาทั้งหมด" [level=2] [ref=e67]
+        - generic [ref=e68]: 3 บท
+      - list [ref=e69]:
+        - listitem [ref=e70]:
+          - link "01 บทที่ 1 บทนำ · ความเป็นมาและความสำคัญของปัญหา · วัตถุประสงค์ · ประโยชน์ที่คาดว่าจะได้รับ · ขอบเขตการศึกษา · นิยามศัพท์ · กลุ่มเป้าหมาย →" [ref=e71] [cursor=pointer]:
+            - /url: /ebook/chapter-1
+            - generic [ref=e72]:
+              - generic [ref=e73]: "01"
+              - generic [ref=e74]:
+                - generic [ref=e75]: บทที่ 1
+                - heading "บทนำ" [level=3] [ref=e76]
+            - list [ref=e77]:
+              - listitem [ref=e78]:
+                - generic [ref=e79]: ·
+                - generic [ref=e80]: ความเป็นมาและความสำคัญของปัญหา
+              - listitem [ref=e81]:
+                - generic [ref=e82]: ·
+                - generic [ref=e83]: วัตถุประสงค์
+              - listitem [ref=e84]:
+                - generic [ref=e85]: ·
+                - generic [ref=e86]: ประโยชน์ที่คาดว่าจะได้รับ
+              - listitem [ref=e87]:
+                - generic [ref=e88]: ·
+                - generic [ref=e89]: ขอบเขตการศึกษา
+              - listitem [ref=e90]:
+                - generic [ref=e91]: ·
+                - generic [ref=e92]: นิยามศัพท์
+              - listitem [ref=e93]:
+                - generic [ref=e94]: ·
+                - generic [ref=e95]: กลุ่มเป้าหมาย
+            - generic [ref=e96]: →
+        - listitem [ref=e97]:
+          - link "02 บทที่ 2 วรรณกรรมและงานวิจัยที่เกี่ยวข้อง · กระบวนการสื่อสาร · การสื่อสารทางการพยาบาล · เทคโนโลยีอุปกรณ์เคลื่อนที่ · QR Code และการประยุกต์ใช้ · แอพพลิเคชัน Aurasma · ตัวอย่างการประยุกต์ใช้ →" [ref=e98] [cursor=pointer]:
+            - /url: /ebook/chapter-2
+            - generic [ref=e99]:
+              - generic [ref=e100]: "02"
+              - generic [ref=e101]:
+                - generic [ref=e102]: บทที่ 2
+                - heading "วรรณกรรมและงานวิจัยที่เกี่ยวข้อง" [level=3] [ref=e103]
+            - list [ref=e104]:
+              - listitem [ref=e105]:
+                - generic [ref=e106]: ·
+                - generic [ref=e107]: กระบวนการสื่อสาร
+              - listitem [ref=e108]:
+                - generic [ref=e109]: ·
+                - generic [ref=e110]: การสื่อสารทางการพยาบาล
+              - listitem [ref=e111]:
+                - generic [ref=e112]: ·
+                - generic [ref=e113]: เทคโนโลยีอุปกรณ์เคลื่อนที่
+              - listitem [ref=e114]:
+                - generic [ref=e115]: ·
+                - generic [ref=e116]: QR Code และการประยุกต์ใช้
+              - listitem [ref=e117]:
+                - generic [ref=e118]: ·
+                - generic [ref=e119]: แอพพลิเคชัน Aurasma
+              - listitem [ref=e120]:
+                - generic [ref=e121]: ·
+                - generic [ref=e122]: ตัวอย่างการประยุกต์ใช้
+            - generic [ref=e123]: →
+        - listitem [ref=e124]:
+          - link "03 บทที่ 3 วิธีดำเนินการศึกษา · ขั้นเตรียมการ · ขั้นดำเนินการ · เครื่องมือที่ใช้ · การพิทักษ์สิทธิ์ →" [ref=e125] [cursor=pointer]:
+            - /url: /ebook/chapter-3
+            - generic [ref=e126]:
+              - generic [ref=e127]: "03"
+              - generic [ref=e128]:
+                - generic [ref=e129]: บทที่ 3
+                - heading "วิธีดำเนินการศึกษา" [level=3] [ref=e130]
+            - list [ref=e131]:
+              - listitem [ref=e132]:
+                - generic [ref=e133]: ·
+                - generic [ref=e134]: ขั้นเตรียมการ
+              - listitem [ref=e135]:
+                - generic [ref=e136]: ·
+                - generic [ref=e137]: ขั้นดำเนินการ
+              - listitem [ref=e138]:
+                - generic [ref=e139]: ·
+                - generic [ref=e140]: เครื่องมือที่ใช้
+              - listitem [ref=e141]:
+                - generic [ref=e142]: ·
+                - generic [ref=e143]: การพิทักษ์สิทธิ์
+            - generic [ref=e144]: →
+  - contentinfo [ref=e145]:
+    - generic [ref=e146]:
+      - generic [ref=e147]:
+        - generic [ref=e148]: รายงานการศึกษา
+        - generic [ref=e149]: ผลการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ด้วยสื่อมือถือ
+        - paragraph [ref=e150]:
+          - text: โรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม
+          - text: "ระยะเวลาดำเนินการ: เมษายน – สิงหาคม พ.ศ. 2560"
+      - generic [ref=e151]:
+        - generic [ref=e152]: สารบัญ
+        - list [ref=e153]:
+          - listitem [ref=e154]:
+            - link "บทที่ 1 · บทนำ" [ref=e155] [cursor=pointer]:
+              - /url: /ebook/chapter-1
+          - listitem [ref=e156]:
+            - link "บทที่ 2 · วรรณกรรมและงานวิจัยที่เกี่ยวข้อง" [ref=e157] [cursor=pointer]:
+              - /url: /ebook/chapter-2
+          - listitem [ref=e158]:
+            - link "บทที่ 3 · วิธีดำเนินการวิจัย" [ref=e159] [cursor=pointer]:
+              - /url: /ebook/chapter-3
+      - generic [ref=e160]:
+        - generic [ref=e161]: แชร์เอกสาร
+        - generic [ref=e162]:
+          - button "คัดลอกลิงก์" [ref=e163]
+          - link "Facebook" [ref=e164] [cursor=pointer]:
+            - /url: https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4321%2Febook%2F
+          - link "LINE" [ref=e165] [cursor=pointer]:
+            - /url: https://social-plugins.line.me/lineit/share?url=http%3A%2F%2Flocalhost%3A4321%2Febook%2F
+    - generic [ref=e167]:
+      - generic [ref=e168]: © 2026 · เผยแพร่เพื่อการศึกษาและนำเสนองานวิชาการ
+      - generic [ref=e169]: Interactive Academic E-Book · Augmented Reality
+  - button "กลับด้านบน": ↑

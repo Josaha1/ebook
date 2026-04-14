@@ -2,171 +2,267 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ChapterIntro from '../components/ChapterIntro.astro';
 import ScrollReveal from '../components/ScrollReveal.astro';
-import ContentCard from '../components/ContentCard.astro';
+import Section from '../components/Section.astro';
+import Figure from '../components/Figure.astro';
 import ARViewer from '../components/ARViewer.astro';
-import Prose from '../components/Prose.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<BaseLayout title="บทที่ 2 · เอกสารที่เกี่ยวข้อง · AR E-Book">
+<BaseLayout title="บทที่ 2 · วรรณกรรมและงานวิจัยที่เกี่ยวข้อง">
   <ChapterIntro
     number="02"
     title="วรรณกรรมและงานวิจัยที่เกี่ยวข้อง"
-    subtitle="ทำความเข้าใจกระบวนการสื่อสาร เทคโนโลยี AR, Aurasma และ QR code ก่อนลงมือใช้จริง"
+    subtitle="การทบทวนวรรณกรรมและงานวิจัยเพื่อใช้ในการศึกษา ครอบคลุมกระบวนการสื่อสาร เทคโนโลยีอุปกรณ์เคลื่อนที่ QR Code และแอพพลิเคชัน Aurasma"
+    meta={[
+      { label: 'หน้าต้นฉบับ', value: '6 หน้า' },
+      { label: 'จำนวนคำ', value: '1,472 คำ' },
+      { label: 'จำนวนภาพประกอบ', value: '7 ภาพ' },
+    ]}
   />
 
-  <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 space-y-20">
+  <div class="max-w-3xl mx-auto px-6 py-16 md:py-20 space-y-20">
 
     <ScrollReveal>
-      <section class="rounded-3xl ar-gradient p-[1px]">
-        <div class="bg-white dark:bg-slate-950 rounded-3xl p-6 md:p-10">
-          <p class="text-base md:text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-            การศึกษานี้เป็นการศึกษา<strong>กึ่งทดลอง</strong> ผู้ศึกษาได้ทำการศึกษาในผู้รับบริการโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม โดยทบทวนวรรณกรรมและงานวิจัยที่เกี่ยวข้องเพื่อใช้ในการศึกษา
-          </p>
-        </div>
-      </section>
+      <Section>
+        <p>
+          การศึกษานี้เป็นการศึกษา<strong>กึ่งทดลอง</strong> ผู้ศึกษาได้ทำการศึกษาในผู้รับบริการโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม โดยทบทวนวรรณกรรมและงานวิจัยที่เกี่ยวข้องเพื่อใช้ในการศึกษา มีขอบเขตเนื้อหาดังนี้
+        </p>
+      </Section>
     </ScrollReveal>
 
     <ScrollReveal>
-      <section>
-        <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-10 h-1 rounded-full ar-gradient"></span>
-          กระบวนการสื่อสาร
-        </h2>
-        <Prose>
-          <p><strong>Communication Process</strong> เริ่มต้นจากผู้ส่งข่าวสารมีข่าวสารที่จะให้กับผู้รับ ซึ่งอาจเป็นข้อมูลที่เป็นความรู้ ความคิด หรือความรู้สึก โดยผู้ส่งเลือกวิธีที่จะส่ง เช่น การพูด การเขียน หรือการใช้ภาษาท่าทาง เมื่อผู้รับได้รับข่าวสารจะเกิดการส่งข้อมูลตอบกลับ เป็นกระบวนการที่ไม่อยู่นิ่งและมีความต่อเนื่องกัน</p>
-          <p>การสื่อสารมีความสำคัญอย่างยิ่งต่อวิชาชีพพยาบาล กิจกรรมบทบาทอิสระของพยาบาลคือ การให้ข้อมูลเพื่อเอื้อให้เกิดการตัดสินใจที่ถูกต้อง เป็นที่ปรึกษาในการตัดสินใจเกี่ยวกับการดูแล การสอนผู้ป่วยและครอบครัว รูปแบบการสื่อสารจำเป็นต้องพัฒนาให้ทันสมัยตามวิวัฒนาการของเทคโนโลยี</p>
-        </Prose>
-      </section>
+      <Section num="2.1" title="กระบวนการสื่อสาร (Communication Process)">
+        <p>
+          กระบวนการสื่อสาร (Communication Process) เริ่มต้นจากผู้ส่งข่าวสารมีข่าวที่จะให้กับผู้รับข่าวสาร ข่าวสารที่จะส่งอาจจะเป็นข้อมูลที่เป็นความรู้ ความคิด ความรู้สึก โดยผู้ส่งข่าวสารเลือกวิธีที่จะส่งข่าวสาร เช่น การพูด การเขียน หรือการใช้ภาษาท่าทาง เมื่อผู้รับข่าวสารได้รับข่าวสารจะเกิดการส่งข้อมูลตอบกลับไปยังผู้ส่งข่าวสาร เพื่อให้ผู้ส่งข่าวสารแน่ใจว่าได้รับข่าวแล้ว หรือมีการส่งข่าวสารโต้ตอบกันต่อไป เนื่องจากการสื่อสารเป็นกระบวนการที่ไม่อยู่นิ่งและมีความต่อเนื่องกัน
+        </p>
+      </Section>
     </ScrollReveal>
 
     <ScrollReveal>
-      <section class="grid md:grid-cols-2 gap-5">
-        <ContentCard title="โทรศัพท์เคลื่อนที่" icon="📱" accent="from-ar-purple to-ar-pink">
-          เทคโนโลยี Mobile Device พัฒนาอย่างรวดเร็ว สังเกตได้จากความสามารถที่มีมากขึ้นทั้งส่วนรับข้อมูล ส่วนต่อประสานกับผู้ใช้ ความบันเทิง และการเชื่อมต่อ
-        </ContentCard>
-        <ContentCard title="ระบบปฏิบัติการ" icon="⚙️" accent="from-ar-pink to-ar-orange">
-          iOS และ Android ต่างพัฒนาเพื่อรองรับการทำงานของเทคโนโลยีใหม่ๆ เปิดทางให้แอปพลิเคชันด้านการศึกษาและสุขภาพเข้าถึงผู้คนได้มากขึ้น
-        </ContentCard>
-      </section>
+      <Section num="2.2" title="การสื่อสารทางการพยาบาล">
+        <p>
+          การสื่อสาร คือ <strong>กระบวนการแลกเปลี่ยนและร่วมกันรับรู้เรื่องราวข่าวสารต่างๆ</strong> โดยมีความเข้าใจร่วมกันต่อสัญลักษณ์ที่แสดงเรื่องราวข่าวสารนั้นๆ การสื่อสารมีความสำคัญในฐานะที่เป็นความจำเป็นพื้นฐานอย่างหนึ่งในชีวิตมนุษย์ มีผลต่อความเป็นสังคม การดำเนินชีวิตประจำวัน อุตสาหกรรม ธุรกิจ การปกครอง และการเมืองระหว่างประเทศ
+        </p>
+        <p>
+          พิจารณาในส่วนที่เกี่ยวกับสาธารณสุข การสื่อสารมีความสำคัญต่อการพัฒนาคุณภาพชีวิต และต่อวิชาชีพพยาบาลเป็นอย่างยิ่ง ซึ่งกิจกรรมทางการพยาบาลในบทบาทอิสระด้านการสื่อสารและให้คำปรึกษาของพยาบาล คือ การให้ข้อมูลเพื่อเอื้อให้เกิดการตัดสินใจที่ถูกต้องเหมาะสม การเป็นที่ปรึกษาในการตัดสินใจเกี่ยวกับการดูแล การให้ข้อมูลความรู้ คำแนะนำการสอนผู้ป่วยและครอบครัว/ผู้ดูแล และการสื่อสารเพื่อให้เกิดการวางแผนการดูแลล่วงหน้า ซึ่งเทคนิครูปแบบการสื่อสาร หรือการสอน หรือการให้คำแนะนำ พัฒนาให้ทันสมัยขึ้นเรื่อยๆ ตามวิวัฒนาการของเทคโนโลยี
+        </p>
+        <p>
+          ในปัจจุบัน เทคโนโลยีของ<strong>อุปกรณ์เคลื่อนที่ (Mobile device)</strong> อย่างเช่น โทรศัพท์เคลื่อนที่ และคอมพิวเตอร์มือถือ มีการพัฒนาไปอย่างรวดเร็ว สังเกตได้จากความสามารถที่มีมากขึ้นทางด้านส่วนรับข้อมูล ทางด้านส่วนต่อประสานกับผู้ใช้ ทางด้านความบันเทิง และทางด้านการเชื่อมต่อ เป็นต้น จึงส่งผลให้ระบบปฏิบัติการที่ใช้งานกับอุปกรณ์เคลื่อนที่ต่างๆ ได้มีการพัฒนามากขึ้น เพื่อมารองรับการทำงานของเทคโนโลยีใหม่ที่ถูกพัฒนาขึ้นมา ในส่วนของระบบปฏิบัติการบนมือถือก็ได้มีการพัฒนาไว้หลายรุ่นหลายระบบด้วยเช่นกัน
+        </p>
+      </Section>
     </ScrollReveal>
 
     <ScrollReveal>
-      <section>
-        <div class="mb-8">
-          <p class="text-sm uppercase tracking-widest text-ar-pink font-semibold">เทคโนโลยี #1</p>
-          <h2 class="mt-2 text-3xl md:text-4xl font-bold">QR Code ใน LINE</h2>
-          <p class="mt-3 text-slate-600 dark:text-slate-400 max-w-2xl">บาร์โค้ด 2 มิติที่เก็บข้อมูลได้มากกว่าบาร์โค้ดแบบแท่ง สแกนได้ทันทีด้วยกล้องมือถือ</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-5 mb-8">
-          <ContentCard title="Quick Response" icon="⚡" accent="from-ar-purple to-ar-pink">
-            ย่อมาจาก <strong>Quick Response Code</strong> — ออกแบบให้อ่านได้อย่างรวดเร็ว
-          </ContentCard>
-          <ContentCard title="2 มิติ" icon="▦" accent="from-ar-pink to-ar-orange">
-            บาร์โค้ด 2D ประกอบด้วยมอดูลสีดำเรียงตัวในสัณฐานสี่เหลี่ยม บนพื้นหลังขาว
-          </ContentCard>
-          <ContentCard title="ต้นกำเนิด" icon="🏭" accent="from-ar-purple to-ar-orange">
-            พัฒนาโดย <strong>Denso-Wave</strong> บริษัทในเครือ Toyota ประเทศญี่ปุ่น ในปี 1994
-          </ContentCard>
-        </div>
-
-        <Prose>
-          <p>QR code นำมาใช้เก็บข้อมูล URL, ข้อความ, เบอร์โทรศัพท์ และข้อมูลตัวอักษรอื่นๆ ความนิยมเพิ่มขึ้นเรื่อยๆ เพราะใช้งานง่าย ไม่ต้องใช้เครื่องอ่านเฉพาะทาง แค่สมาร์ทโฟนที่มีกล้องก็อ่านค่าที่ซ่อนอยู่ได้ทันที — <strong>ไม่ต้องพิมพ์ URL ที่ยาวและอาจพิมพ์ผิด</strong></p>
-        </Prose>
-      </section>
+      <Section num="2.3" title="การสอนบนสมาร์ทโฟนระบบปฏิบัติการแอนดรอยด์">
+        <p>
+          การสอนบนสมาร์ทโฟนระบบปฏิบัติการแอนดรอยด์ที่กำลังพัฒนาขึ้นอย่างรวดเร็ว ได้แก่ การสอนโดยผ่าน<strong>แอพพลิเคชัน LINE</strong> และ <strong>แอพพลิเคชัน Aurasma</strong>
+        </p>
+      </Section>
     </ScrollReveal>
 
     <ScrollReveal>
-      <section>
-        <h3 class="text-xl md:text-2xl font-bold mb-5 flex items-center gap-3">
-          <span class="w-8 h-1 rounded-full ar-gradient"></span>
-          ตัวอย่างการประยุกต์ใช้ QR code
-        </h3>
-        <div class="grid md:grid-cols-2 gap-5">
-          <ContentCard title="LIMS — ห้องปฏิบัติการวิทยาศาสตร์" accent="from-ar-purple to-ar-pink">
-            Laboratory Information Management System ของมหาวิทยาลัยสงขลานครินทร์ (ชีวิน ชนะวรรโณ, 2557) ระบบอัตโนมัติครอบคลุมตั้งแต่ขั้นรับ-ส่งตัวอย่างจากผู้ใช้บริการ การทดสอบและวิเคราะห์
-          </ContentCard>
-          <ContentCard title="ตรวจสอบย้อนกลับผักสด" accent="from-ar-pink to-ar-orange">
-            ระบบตรวจสอบย้อนกลับในการส่งออกผักสด (จิรพร ซื่อจริง, 2555) ตรวจแหล่งที่มาได้ตั้งแต่ฟาร์ม โรงคัดบรรจุ ถึงการขนส่ง สร้างความมั่นใจให้ผู้บริโภค
-          </ContentCard>
-          <ContentCard title="นิทรรศการม.แม่โจ้" accent="from-ar-orange to-ar-purple">
-            คณะสารสนเทศและการสื่อสาร ม.แม่โจ้ ใช้ QR code ในบอร์ดนิทรรศการเพื่อเชื่อมไปยังเว็บไซต์ ทำให้ผู้ชมเห็นภาพ วิดีโอ และข้อมูลเพิ่มเติมได้
-          </ContentCard>
-          <ContentCard title="ด้านการพยาบาล" accent="from-ar-purple to-ar-pink">
-            การประยุกต์ใช้ QR code ในโรงพยาบาลนภาลัย เชื่อมโยงไปยังสื่อวิดีโอและเนื้อหาแนะนำการดูแลตนเองของผู้ป่วย
-          </ContentCard>
-        </div>
-      </section>
+      <Section num="2.4" title="แอพพลิเคชัน LINE">
+        <p>
+          แอพพลิเคชัน LINE เป็นแอพพลิเคชันที่มีอยู่ใน Smart Phone มือถือในเกือบทุกคนในยุคสมัยนี้ ซึ่งเราสามารถประยุกต์การทำงานใน แอพพลิเคชัน LINE ด้วย QR Code
+        </p>
+      </Section>
     </ScrollReveal>
 
     <ScrollReveal>
-      <ARViewer
-        src="models/robot.glb"
-        alt="Robot 3D demo"
-        caption="ตัวอย่างโมเดล 3D · ทดลองหมุน ซูม และส่อง AR ได้"
-        orbit="-20deg 70deg 6m"
-      />
+      <Section num="2.5" title="QR Code">
+        <p>
+          <strong>QR Code</strong> ย่อมาจาก Quick Response Code คือ บาร์โค้ด 2 มิติ (2 Dimension Barcode) ชนิดหนึ่งที่ประกอบด้วยมอดูลสีดำเรียงตัวกัน มีสัณฐานสี่เหลี่ยม มีพื้นหลังสีขาว ดังตัวอย่าง<strong>ภาพที่ 1</strong> ที่สามารถอ่านได้ด้วยเครื่องสแกนคิวอาร์ในโทรศัพท์มือถือที่มีกล้อง หรือสมาร์ทโฟน เพื่อถอดข้อมูลต่างๆ เช่น ข้อความ เบอร์โทรศัพท์ URL เพื่อเชื่อมโยงไปยังเว็บไซต์
+        </p>
+        <p>
+          โดย QR code นี้พัฒนาโดย<strong>บริษัทเดนโซ-เวฟ ซึ่งเป็นบริษัทในเครือของโตโยต้า ประเทศญี่ปุ่น</strong> คิดค้นขึ้นในปี ค.ศ. 1994 (พ.ศ. 2537) (วิกิพีเดีย สารานุกรมเสรี, 2557)
+        </p>
+      </Section>
+      <Figure src="/images/ch2/image1.png" alt="ตัวอย่าง QR Code" number="1" caption="ตัวอย่าง QR Code และโครงสร้าง" />
     </ScrollReveal>
 
     <ScrollReveal>
-      <section>
-        <div class="mb-8">
-          <p class="text-sm uppercase tracking-widest text-ar-pink font-semibold">เทคโนโลยี #2</p>
-          <h2 class="mt-2 text-3xl md:text-4xl font-bold">Aurasma — ผู้นำด้าน AR</h2>
-          <p class="mt-3 text-slate-600 dark:text-slate-400 max-w-2xl">
-            แอพพลิเคชันสำหรับสร้างสื่อในโลกแห่งความจริงเสมือน (Augmented Reality) — ใช้งานได้ทั้ง iPhone, iPad และ Android
-          </p>
-        </div>
+      <Section>
+        <p>
+          QR Code มีประโยชน์มาก สามารถนำมาใช้ได้หลากหลาย เช่น แสดง URL ของเว็บไซต์, ข้อความ, เบอร์โทรศัพท์ และข้อมูลที่เป็นตัวอักษร ที่นิยมกันส่วนใหญ่คือนำมาใช้เก็บ URL ของเว็บไซต์ เพื่อความสะดวกในการเข้าถึงข้อมูลผ่านมือถือ ด้วยการสแกนรูป QR Code ก็สามารถเข้าสู่เว็บไซต์ได้อย่างรวดเร็วโดยไม่ต้องพิมพ์ URL
+        </p>
+        <p>
+          คิวอาร์โค้ด (QR Code : Quick Response) เรียกว่าบาร์โค้ด 2 มิติ คือ รหัสชนิดหนึ่งซึ่งสามารถเก็บข้อมูลสินค้า เช่น ชื่อ ราคาสินค้า เบอร์โทรศัพท์ติดต่อ และชื่อเว็บไซต์ เป็นการพัฒนามาจากบาร์โค้ด โดยบริษัทเดนโซ-เวฟ ซึ่งเป็นบริษัทในเครือของโตโยต้า ประเทศญี่ปุ่น คิดค้นขึ้นในปี ค.ศ. 1994 และได้จดทะเบียนลิขสิทธิ์ชื่อ "QR Code" แล้วทั้งในญี่ปุ่น และทั่วโลก ผู้คิดค้นที่พัฒนาคิวอาร์โค้ดมุ่งเน้นให้สามารถถูกอ่านได้อย่างรวดเร็ว โดยการอ่านคิวอาร์โค้ดนิยมใช้กับโทรศัพท์มือถือรุ่นที่มีกล้องถ่ายภาพ และสามารถติดตั้งซอฟต์แวร์เพิ่มเติมได้
+        </p>
+      </Section>
+    </ScrollReveal>
 
-        <Prose>
-          <p>Aurasma เป็นตัวกลางเชื่อมโลกของความจริงและความจริงเสมือนเข้าด้วยกัน แสดงผลในรูปแบบ<strong>สื่อปฏิสัมพันธ์ที่มองเห็น ควบคุม และสัมผัสได้ผ่านหน้าจอ</strong> ทั้งภาพนิ่ง ภาพเคลื่อนไหว เสียง และการเชื่อมโยงไปยังเว็บไซต์</p>
-        </Prose>
+    <ScrollReveal>
+      <Section num="2.5.1" title="Bar code">
+        <p>
+          <strong>บาร์โค้ด</strong> คือ เครื่องหมายแทนข้อมูลที่เครื่องจักรสามารถอ่านได้ โดยเริ่มแรกมีลักษณะรูปแบบเป็นแท่ง หรือเส้นขนานหลายๆ เส้นใน 1 มิติที่มีความหนาต่างกันเรียงต่อกัน ถูกใช้งานอย่างแพร่หลายในซูเปอร์มาร์เก็ต ซึ่งสินค้าในซูเปอร์มาร์เก็ตจะถูกติดบาร์โค้ดไว้และจะถูกอ่านค่าด้วยเครื่องอ่านบาร์โค้ด ณ จุดชำระเงิน เพื่อคิดเงินสินค้านั้นๆ
+        </p>
+      </Section>
+      <Figure src="/images/ch2/image2.png" alt="ตัวอย่าง Barcode" number="2" caption="ตัวอย่างบาร์โค้ดแบบดั้งเดิม (1 มิติ)" />
+    </ScrollReveal>
 
-        <div class="grid md:grid-cols-3 gap-5 mt-8">
-          <div class="rounded-3xl p-6 border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40">
-            <div class="text-4xl font-black ar-gradient-text">2011</div>
-            <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">กำเนิด Aurasma ในต่างประเทศ เผยแพร่ที่ aurasma.com</p>
+    <ScrollReveal>
+      <Section num="2.5.2" title="QR code">
+        <p>
+          เนื่องจากข้อจำกัดของบาร์โค้ดแบบแท่ง ซึ่งเก็บค่าตัวเลขหรือตัวอักษรได้ค่อนข้างจำกัด จึงมีการพัฒนา<strong>บาร์โค้ด 2 มิติ</strong> ขึ้นมาเพื่อรองรับกับปริมาณข้อมูลที่เพิ่มมากขึ้น QR code เป็นหนึ่งในบาร์โค้ด 2 มิติที่นิยมใช้งานกันในปัจจุบัน โดยนำมาใช้เก็บข้อมูล URL ที่อยู่เว็บไซต์, ข้อความ, เบอร์โทรศัพท์ และข้อมูลตัวอักษรต่างๆ
+        </p>
+        <p>
+          ความนิยมของ QR code เพิ่มมากขึ้นเรื่อยๆ เนื่องจากความง่ายและสะดวกต่อการใช้งาน โดยไม่จำเป็นต้องใช้เครื่องอ่านบาร์โค้ดมาอ่านความหมายที่ซ่อนอยู่ภายใน QR code แต่เพียงแค่หยิบสมาร์ทโฟนที่มีกล้องติดอยู่มาส่อง QR code ก็สามารถอ่านค่าที่ซ่อนอยู่ภายในได้แล้ว
+        </p>
+      </Section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <Section num="2.5.3" title="QR code จำเป็นอย่างไร">
+        <p>
+          ทุกวันนี้สมาร์ทโฟนสามารถเข้าถึงเว็บไซต์และบริการต่างๆ ผ่านทางแอพพลิเคชันมากมาย ถ้าหากว่าเราเดินไปเห็นป้ายโฆษณาสินค้าที่เราสนใจ และต้องการดูรายละเอียดเพิ่มเติม แต่ต้องเสียเวลาพิมพ์ชื่อเว็บไซต์ซึ่งบางครั้งอาจจะมีความยาวจนทำให้พิมพ์ตกหล่นไป ทำให้พลาดโอกาสทั้งผู้โฆษณาและผู้ที่สนใจสินค้านั้น
+        </p>
+        <p>
+          <strong>วิธีแก้ปัญหาที่ง่ายและสมาร์ทคือการใช้ QR code จัดเก็บที่อยู่เว็บไซต์</strong> โดยผู้ที่สนใจก็ส่อง QR code ด้วยกล้องบนสมาร์ทโฟนก็สามารถเข้าถึงเว็บไซต์ดังกล่าวได้ทันทีโดยไม่ต้องเสียเวลาพิมพ์
+        </p>
+      </Section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <Section num="2.5.4" title="วิธีใช้งานคิวอาร์โค้ด">
+        <p>
+          ต้องใช้งานผ่านโทรศัพท์มือถือที่มีสัญลักษณ์คิวอาร์โค้ดอยู่ภายในตัวเครื่อง เพียงนำกล้องที่อยู่บนมือถือแสกนบนคิวอาร์โค้ด รอสักครู่ เครื่องจะอ่านคิวอาร์โค้ดสีดำออกมาเป็นตัวหนังสือที่มีข้อมูลมากมาย เช่น รายละเอียดสินค้า โปรโมชัน สถานที่ตั้งของบริษัท ร้านค้า เว็บไซต์ เบอร์โทรศัพท์
+        </p>
+        <p>
+          หากอยู่บนนามบัตร เจ้าของนามบัตรก็จะใส่ทั้งชื่อ อีเมล ฯลฯ รวมทั้งสามารถใช้คิวอาร์โค้ดสื่อบอกความในใจได้ด้วย เพียงพิมพ์คิวอาร์โค้ดลงบนการ์ด ผู้ที่ได้รับการ์ดนำโทรศัพท์มือถือที่มีกล้องมาสแกน เพียงเท่านี้ก็รู้ความในใจด้วยไอทีแล้ว
+        </p>
+      </Section>
+      <Figure src="/images/ch2/image3.png" alt="วิธีใช้งาน QR code" number="3" caption="ขั้นตอนการใช้งานคิวอาร์โค้ดผ่านกล้องสมาร์ทโฟน" />
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <Section num="2.6" title="การประยุกต์ใช้งาน QR code">
+        <h3 class="text-lg md:text-xl font-semibold mt-2 text-slate-800 dark:text-slate-200">ตัวอย่างด้านงานวิจัย</h3>
+        <p>
+          งานวิจัยที่มีการนำ QR code มาประยุกต์ใช้ ตัวอย่างเช่น <strong>ระบบการจัดการสารสนเทศห้องปฏิบัติการวิทยาศาสตร์ (Laboratory Information Management System: LIMS)</strong> มหาวิทยาลัยสงขลานครินทร์ (ชีวิน ชนะวรรโณ และคณะ, 2557) ซึ่งเป็นระบบที่มีกลไกการทำงานในห้องปฏิบัติการวิทยาศาสตร์แบบอัตโนมัติ ครอบคลุมการทำงานตั้งแต่ขั้นตอนการรับ-ส่งตัวอย่างจากผู้ใช้บริการ การทดสอบและวิเคราะห์
+        </p>
+      </Section>
+      <Figure src="/images/ch2/image4.png" alt="LIMS QR code" number="4" caption="ระบบ LIMS ม.สงขลานครินทร์" maxW="max-w-md" />
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <Section>
+        <p>
+          <strong>งานวิจัยด้านเกษตร</strong>สามารถนำเทคโนโลยี QR code มาประยุกต์ใช้ได้เช่นกัน ตัวอย่าง<strong>ระบบการตรวจสอบย้อนกลับในการส่งออกผักสด</strong>โดยเทคโนโลยี QR code ของจิรพร ซื่อจริง (2555) เป็นเครื่องมือในการสร้างความเชื่อมั่นให้กับลูกค้า และสามารถตรวจสอบสินค้า เพื่อค้นหาแหล่งที่มาของผลผลิต กระบวนการผลิต ตั้งแต่ฟาร์ม โรงคัดบรรจุ รวมถึงการขนส่ง ได้อย่างรวดเร็ว สามารถหาสาเหตุของปัญหา เช่น สารตกค้าง ศัตรูพืช ลดความเสี่ยงของการขยายตัวของปัญหา และสามารถหาแหล่งที่มาของผักสดได้ว่ามาจากแหล่งใด
+        </p>
+        <p>
+          ระบบการตรวจสอบย้อนกลับนี้จะช่วยสร้างความมั่นใจให้กับผู้บริโภคและผู้นำเข้าในต่างประเทศ ในผลิตภัณฑ์ต่างๆ ว่ามีคุณภาพที่ดีและปลอดภัยอย่างแท้จริง
+        </p>
+      </Section>
+      <Figure src="/images/ch2/image5.png" alt="QR code ตรวจสอบผักสด" number="5" caption="ระบบตรวจสอบย้อนกลับผักสดด้วย QR code" />
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <Section num="2.6.1" title="ตัวอย่างด้านการจัดนิทรรศการ">
+        <p>
+          คณะสารสนเทศและการสื่อสาร <strong>มหาวิทยาลัยแม่โจ้</strong>จัดนิทรรศการแสดงงานที่เกี่ยวข้องกับการทำนุบำรุงศิลปะและวัฒนธรรม เป็นส่วนหนึ่งของฐาน <em>Interactive Technology</em> ที่มีการนำเทคโนโลยี QR code มาร่วมในการออกแบบนิทรรศการ ซึ่งทำให้ผู้ชมสามารถเห็นภาพ วิดีโอ และข้อมูลเพิ่มเติมนอกเหนือจากการเยี่ยมชมภาพนิทรรศการภายในคณะฯ
+        </p>
+      </Section>
+      <Figure src="/images/ch2/image6.png" alt="นิทรรศการ ม.แม่โจ้" number="6" caption="นิทรรศการด้วย QR Code ม.แม่โจ้" />
+      <Section>
+        <p>
+          ในแต่ละบอร์ดจะมี QR code ที่เชื่อมโยงไปยังเว็บไซต์การทำนุบำรุงศิลปะและวัฒนธรรม <a href="http://www.infocommmju.com/culture" class="text-purple-700 dark:text-purple-300 underline underline-offset-4">http://www.infocommmju.com/culture</a> ดัง<strong>ภาพที่ 6</strong> โดยมีข้อมูลแตกต่างกันในแต่ละด้านดังนี้
+        </p>
+        <ol class="list-decimal ml-6 space-y-1">
+          <li>ศิลปวัฒนธรรมของคณะ</li>
+          <li>การทำนุบำรุงศาสนา</li>
+          <li>การสร้างความเข้าใจในวิถีชีวิตและภูมิปัญญาไทย</li>
+          <li>การหลอมรวมศิลปวัฒนธรรมกับการเรียนการสอน</li>
+          <li>กิจกรรมเกี่ยวข้องกับขนบธรรมเนียมประเพณี</li>
+        </ol>
+      </Section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <Section num="2.7" title="แอพพลิเคชัน Aurasma">
+        <p>
+          <strong>แอพพลิเคชัน Aurasma</strong> เป็นแอพพลิเคชันสำหรับการสร้างสื่อในโลกแห่งความจริงเสมือน (Augmented Reality : AR) เหมาะสำหรับการพัฒนาสื่อที่ใช้กับอุปกรณ์ประเภทไอโฟน ไอแพด รวมถึงอุปกรณ์คอมพิวเตอร์พกพาต่างๆ ที่ใช้ระบบปฏิบัติการ iOS และ Android
+        </p>
+        <p>
+          คุณสมบัติพิเศษของ Aurasma จะเป็นตัวกลางสำหรับการเชื่อมโยงโลกของความจริงและโลกของความจริงเสมือนเข้าด้วยกัน โดยแสดงผลออกมาในรูปแบบ<strong>สื่อปฏิสัมพันธ์ที่มองเห็น ควบคุม และสัมผัสได้ผ่านทางหน้าจอ</strong> ทั้งที่เป็นภาพนิ่ง ภาพเคลื่อนไหว เสียง และการเชื่อมโยงไปยังเว็บไซต์ตามที่กำหนดไว้
+        </p>
+      </Section>
+      <Figure src="/images/ch2/image7.png" alt="แอพพลิเคชัน Aurasma" number="7" caption="แอพพลิเคชัน Aurasma — เทคโนโลยี AR" />
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <Section num="2.7.1" title="การติดตั้งแอพพลิเคชัน Aurasma">
+        <p>
+          สามารถติดตั้งแอพพลิเคชันออรัสมา (AURASMA) ได้ฟรีทั้งในระบบปฏิบัติการ iOS และ Android ดังนี้
+        </p>
+        <ol class="list-decimal ml-6 space-y-1">
+          <li>ระบบปฏิบัติการ <strong>iOS</strong> ดาวน์โหลดแอพพลิเคชันได้ที่ <em>App Store</em></li>
+          <li>ระบบปฏิบัติการ <strong>Android</strong> ดาวน์โหลดแอพพลิเคชันได้ที่ <em>Play Store</em></li>
+        </ol>
+      </Section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <Section num="2.7.2" title="ความเป็นมาในต่างประเทศ">
+        <p>
+          แอพพลิเคชัน Aurasma กำเนิดขึ้นเมื่อปี <strong>ค.ศ. 2011</strong> และพัฒนาเติบโตอย่างรวดเร็ว จนกลายเป็นเทคโนโลยีต้นแบบและเป็นผู้นำด้าน Augmented Reality เผยแพร่ออกสู่สาธารณชนภายใต้เว็บไซต์ชื่อ <em>www.aurasma.com</em>
+        </p>
+      </Section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <Section num="2.7.3" title="ความเป็นมาของ Aurasma ในประเทศไทย">
+        <p>
+          <strong>ดร.ไพฑูรย์ ศรีฟ้า</strong> อาจารย์ภาควิชาเทคโนโลยีการศึกษา คณะศึกษาศาสตร์ มหาวิทยาลัยเกษตรศาสตร์ ได้นำเทคโนโลยี Aurasma ประยุกต์ใช้ในการเรียนการสอนรายวิชา <em>เทคโนโลยีการศึกษาเบื้องต้น</em> กับนิสิตระดับปริญญาตรี ปีการศึกษา 2555
+        </p>
+        <p>
+          ผลจากการประยุกต์ใช้เทคโนโลยี Aurasma เพื่อการผลิตสื่อการเรียนการสอน ปรากฏว่า <strong>นิสิตมีความสนใจต่อเทคโนโลยี Aurasma อยู่ในระดับมากที่สุด</strong> และสามารถประยุกต์สร้างเป็นสื่อการสอนเพื่อเตรียมความพร้อมในการออกไปฝึกประสบการณ์วิชาชีพได้เป็นอย่างดี
+        </p>
+      </Section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <Section num="2.7.4" title="คุณสมบัติของ Aurasma">
+        <p>
+          Aurasma เป็นเทคโนโลยีที่ผสานโลกแห่งความจริงกับโลกของความจริงเสมือนที่สร้างขึ้น ทำให้มนุษย์โลกสามารถเข้าถึงข้อมูลที่ถูกเข้ารหัสด้วย Aurasma (มองด้วยตาเปล่าไม่เห็น) ให้ปรากฏเห็นภาพผ่านหน้าจออุปกรณ์ประเภท Smart Devices เช่น โทรศัพท์มือถือ แท็บเล็ต (ที่มีกล้องหลัง) ได้โดย<strong>ไม่ต้องใช้มาร์คเกอร์ (Marker) ไม่ต้องเขียนโปรแกรมควบคุมใดๆ ทั้งสิ้น ใช้งานง่าย</strong>
+        </p>
+        <p>
+          สามารถประยุกต์ใช้ Aurasma สร้างเป็นสื่อได้หลากหลาย เช่น หนังสือพิมพ์ วารสาร ตำรา กล่องบรรจุภัณฑ์ สินค้า เสื้อผ้า ป้ายโฆษณา และอื่นๆ เป็นต้น
+        </p>
+        <p>
+          Aurasma เป็นแอพพลิเคชันที่ประยุกต์สร้างสื่อได้ทั้งระบบออนไลน์และออฟไลน์ ผลผลิตที่สร้างด้วย Aurasma จะมีได้ทั้ง<strong>ภาพนิ่ง ภาพเคลื่อนไหว ภาพ 3 มิติ และเสียง</strong> แล้วแต่ผู้สร้างสรรค์งานจะเลือกใช้ หากสร้างเป็นสื่อแบบออนไลน์ยังสามารถกำหนดจุดเชื่อมโยงไปยังเว็บไซต์ได้อีกด้วย
+        </p>
+      </Section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <div class="paper rounded-2xl p-5 md:p-7">
+        <div class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">สาธิต · Interactive Demo</div>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+          ตัวอย่างการแสดงผลวัตถุ 3 มิติคล้ายกับที่เทคโนโลยี Aurasma ใช้ — หมุน/ซูมได้ และบนมือถือสามารถกดปุ่ม AR เพื่อวางในพื้นที่จริง
+        </p>
+        <ARViewer src="models/robot.glb" alt="3D robot demo" caption="แบบจำลอง 3 มิติประกอบการนำเสนอ" orbit="-20deg 70deg 6m" />
+      </div>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <Section num="2.8" title="ตัวอย่างการประยุกต์ใช้แอพพลิเคชัน Aurasma">
+        <div class="grid md:grid-cols-2 gap-5 not-prose">
+          <div class="paper rounded-xl p-5">
+            <div class="text-xs uppercase tracking-widest text-purple-700 dark:text-purple-300 font-semibold">ด้านการศึกษา</div>
+            <p class="mt-2 text-slate-700 dark:text-slate-300 text-sm">การประยุกต์เพื่อการเรียนการสอนในระดับอุดมศึกษา ครอบคลุมทั้งสื่อตำรา เอกสารประกอบการสอน และกิจกรรมภายในห้องเรียน</p>
           </div>
-          <div class="rounded-3xl p-6 border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40">
-            <div class="text-4xl font-black ar-gradient-text">2555</div>
-            <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">ดร.ไพฑูรย์ ศรีฟ้า ม.เกษตรศาสตร์ นำมาใช้สอนนิสิตปริญญาตรี — ผลสำรวจ "สนใจมากที่สุด"</p>
-          </div>
-          <div class="rounded-3xl p-6 border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40">
-            <div class="text-4xl font-black ar-gradient-text">ฟรี</div>
-            <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">ดาวน์โหลดได้ที่ App Store และ Play Store ทั้ง iOS และ Android</p>
+          <div class="paper rounded-xl p-5">
+            <div class="text-xs uppercase tracking-widest text-purple-700 dark:text-purple-300 font-semibold">ด้านการท่องเที่ยว</div>
+            <p class="mt-2 text-slate-700 dark:text-slate-300 text-sm">การประยุกต์เพื่อเพิ่มประสบการณ์ให้กับนักท่องเที่ยว เช่น ป้ายบอกทางแบบ AR แผ่นพับ และคู่มือนำชมที่มีสื่อเคลื่อนไหว</p>
           </div>
         </div>
-      </section>
+      </Section>
     </ScrollReveal>
 
     <ScrollReveal>
-      <section>
-        <h3 class="text-xl md:text-2xl font-bold mb-5 flex items-center gap-3">
-          <span class="w-8 h-1 rounded-full ar-gradient"></span>
-          คุณสมบัติของ Aurasma
-        </h3>
-        <Prose>
-          <p>ผู้ใช้สามารถเข้าถึงข้อมูลที่ถูกเข้ารหัสด้วย Aurasma (มองด้วยตาเปล่าไม่เห็น) ให้ปรากฏภาพผ่านหน้าจอ Smart Device เช่น โทรศัพท์มือถือ แท็บเล็ต ที่มีกล้องหลัง — <strong>ไม่ต้องใช้ Marker ไม่ต้องเขียนโปรแกรมควบคุมใดๆ</strong> ใช้งานง่าย ประยุกต์สร้างสื่อได้หลากหลาย เช่น หนังสือพิมพ์ วารสาร ตำรา กล่องบรรจุภัณฑ์ สินค้า เสื้อผ้า และป้ายโฆษณา</p>
-          <p>ผลผลิตมีได้ทั้งภาพนิ่ง ภาพเคลื่อนไหว <strong>ภาพ 3 มิติ</strong> และเสียง — หากสร้างเป็นสื่อแบบออนไลน์ยังสามารถกำหนดจุดเชื่อมโยงไปยังเว็บไซต์ได้อีกด้วย</p>
-        </Prose>
-      </section>
-    </ScrollReveal>
-
-    <ScrollReveal>
-      <ARViewer
-        src="models/horse.glb"
-        alt="Horse 3D demo"
-        caption="โมเดล 3 มิติอีกตัวอย่างหนึ่ง · ทดสอบการแสดงผลบนอุปกรณ์ของคุณ"
-        orbit="45deg 80deg 2.5m"
-      />
-    </ScrollReveal>
-
-    <ScrollReveal>
-      <section class="text-center">
-        <a href={`${base}/chapter-3`} class="inline-flex items-center gap-2 px-8 py-4 ar-gradient text-white rounded-full font-semibold shadow-xl shadow-pink-500/20 hover:scale-105 transition">
-          ต่อบทที่ 3 · วิธีดำเนินการศึกษา →
-        </a>
-      </section>
+      <nav class="flex items-center justify-between pt-8 border-t border-slate-200 dark:border-slate-800">
+        <a href={`${base}/chapter-1`} class="text-sm text-slate-500 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-300">← บทที่ 1 · บทนำ</a>
+        <a href={`${base}/chapter-3`} class="inline-flex items-center gap-2 px-6 py-3 ar-gradient text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition">บทที่ 3 · วิธีดำเนินการศึกษา →</a>
+      </nav>
     </ScrollReveal>
   </div>
 </BaseLayout>
