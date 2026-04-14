@@ -1,0 +1,119 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "AR E-Book" [ref=e4] [cursor=pointer]:
+        - /url: /ebook/
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "บทที่ 1" [ref=e7] [cursor=pointer]:
+            - /url: /ebook/chapter-1
+        - listitem [ref=e8]:
+          - link "บทที่ 2" [ref=e9] [cursor=pointer]:
+            - /url: /ebook/chapter-2
+        - listitem [ref=e10]:
+          - link "บทที่ 3" [ref=e11] [cursor=pointer]:
+            - /url: /ebook/chapter-3
+      - button "Toggle dark mode" [ref=e13]:
+        - img [ref=e14]
+  - main [ref=e16]:
+    - generic [ref=e17]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - paragraph [ref=e23]: Interactive E-Book
+          - heading "เปิดโลก Augmented Reality" [level=1] [ref=e25]:
+            - text: เปิดโลก
+            - text: Augmented
+            - text: Reality
+          - paragraph [ref=e26]: เทคโนโลยีความจริงเสริมเพื่อการให้ข้อมูลผู้รับบริการ — ส่องมือถือแล้วเห็น 3D ลอยจริง ในหน้าหนังสือ
+          - generic [ref=e27]:
+            - link "เริ่มอ่าน →" [ref=e28] [cursor=pointer]:
+              - /url: /ebook/chapter-1
+              - text: เริ่มอ่าน
+              - generic [ref=e29]: →
+            - link "สารบัญ" [ref=e30] [cursor=pointer]:
+              - /url: "#toc"
+        - generic [ref=e33]:
+          - generic [ref=e34]:
+            - button "3D Astronaut" [ref=e36]
+            - generic:
+              - generic:
+                - generic:
+                  - img
+          - region "Live announcements":
+            - status
+      - generic [ref=e40]:
+        - generic [ref=e41]: เลื่อนลงเพื่ออ่านต่อ
+        - generic [ref=e42]: ↓
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - paragraph [ref=e45]: สารบัญ
+        - heading "3 บท สู่โลก AR" [level=2] [ref=e46]
+        - paragraph [ref=e47]: เริ่มจากที่มาของปัญหา ทำความเข้าใจเทคโนโลยี และรู้จักวิธีดำเนินการศึกษา
+      - generic [ref=e48]:
+        - link "01 บทที่ บทนำ ความเป็นมา วัตถุประสงค์ และขอบเขตของการศึกษา AR ในโรงพยาบาล อ่านต่อ →" [ref=e49] [cursor=pointer]:
+          - /url: /ebook/chapter-1
+          - generic [ref=e51]:
+            - generic [ref=e52]:
+              - generic [ref=e53]: "01"
+              - generic [ref=e54]: บทที่
+            - heading "บทนำ" [level=3] [ref=e55]
+            - paragraph [ref=e56]: ความเป็นมา วัตถุประสงค์ และขอบเขตของการศึกษา AR ในโรงพยาบาล
+            - generic [ref=e57]:
+              - text: อ่านต่อ
+              - generic [ref=e58]: →
+        - link "02 บทที่ เอกสารที่เกี่ยวข้อง เทคโนโลยี AR, Aurasma, QR code Line และการประยุกต์ใช้งาน อ่านต่อ →" [ref=e59] [cursor=pointer]:
+          - /url: /ebook/chapter-2
+          - generic [ref=e61]:
+            - generic [ref=e62]:
+              - generic [ref=e63]: "02"
+              - generic [ref=e64]: บทที่
+            - heading "เอกสารที่เกี่ยวข้อง" [level=3] [ref=e65]
+            - paragraph [ref=e66]: เทคโนโลยี AR, Aurasma, QR code Line และการประยุกต์ใช้งาน
+            - generic [ref=e67]:
+              - text: อ่านต่อ
+              - generic [ref=e68]: →
+        - link "03 บทที่ วิธีดำเนินการศึกษา กลุ่มเป้าหมาย เครื่องมือ ขั้นตอน และการวิเคราะห์ผล อ่านต่อ →" [ref=e69] [cursor=pointer]:
+          - /url: /ebook/chapter-3
+          - generic [ref=e71]:
+            - generic [ref=e72]:
+              - generic [ref=e73]: "03"
+              - generic [ref=e74]: บทที่
+            - heading "วิธีดำเนินการศึกษา" [level=3] [ref=e75]
+            - paragraph [ref=e76]: กลุ่มเป้าหมาย เครื่องมือ ขั้นตอน และการวิเคราะห์ผล
+            - generic [ref=e77]:
+              - text: อ่านต่อ
+              - generic [ref=e78]: →
+    - generic [ref=e82]:
+      - heading "ลองเล่น AR จริงบนมือถือของคุณ" [level=3] [ref=e83]
+      - paragraph [ref=e84]: ในบทที่ 2 มี 3D model ให้ส่องกล้องดูในพื้นที่จริงได้ — รองรับ iOS และ Android
+      - link "ไปบทที่ 2 →" [ref=e85] [cursor=pointer]:
+        - /url: /ebook/chapter-2
+  - contentinfo [ref=e86]:
+    - generic [ref=e87]:
+      - generic [ref=e88]:
+        - generic [ref=e89]: AR E-Book
+        - paragraph [ref=e90]:
+          - text: เทคโนโลยีความจริงเสริม (AR) เพื่อการให้ข้อมูลผู้รับบริการ
+          - text: โรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม
+      - generic [ref=e91]:
+        - generic [ref=e92]: เนื้อหา
+        - list [ref=e93]:
+          - listitem [ref=e94]:
+            - link "บทที่ 1 บทนำ" [ref=e95] [cursor=pointer]:
+              - /url: /ebook/chapter-1
+          - listitem [ref=e96]:
+            - link "บทที่ 2 เอกสารที่เกี่ยวข้อง" [ref=e97] [cursor=pointer]:
+              - /url: /ebook/chapter-2
+          - listitem [ref=e98]:
+            - link "บทที่ 3 วิธีดำเนินการศึกษา" [ref=e99] [cursor=pointer]:
+              - /url: /ebook/chapter-3
+      - generic [ref=e100]:
+        - generic [ref=e101]: แชร์
+        - generic [ref=e102]:
+          - button "📋 คัดลอกลิงก์" [ref=e103]
+          - link "Facebook" [ref=e104] [cursor=pointer]:
+            - /url: https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4321%2Febook%2F
+          - link "Line" [ref=e105] [cursor=pointer]:
+            - /url: https://social-plugins.line.me/lineit/share?url=http%3A%2F%2Flocalhost%3A4321%2Febook%2F
+    - generic [ref=e106]: © 2026 AR E-Book · เผยแพร่เพื่อการศึกษา
+  - button "กลับด้านบน": ↑

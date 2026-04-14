@@ -1,0 +1,39 @@
+---
+const { src, alt, caption, label = 'ดูแบบ AR', orbit = '0deg 75deg 4m' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const fullSrc = src.startsWith('http') ? src : `${base}${src.startsWith('/') ? '' : '/'}${src}`;
+---
+<figure class="my-10 relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-gradient-to-br from-slate-100 via-white to-slate-100 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 shadow-xl shadow-pink-500/5">
+  <div class="absolute top-3 left-4 z-10 flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur text-xs font-semibold border border-slate-200 dark:border-slate-700">
+    <span class="w-2 h-2 rounded-full ar-gradient animate-pulse"></span>
+    3D · Interactive
+  </div>
+  <model-viewer
+    src={fullSrc}
+    alt={alt}
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    auto-rotate
+    auto-rotate-delay="1500"
+    rotation-per-second="20deg"
+    shadow-intensity="1"
+    exposure="1.0"
+    camera-orbit={orbit}
+    interaction-prompt="auto"
+    style="width:100%; height: clamp(360px, 55vw, 520px); background: transparent;"
+  >
+    <button slot="ar-button" class="absolute bottom-4 right-4 inline-flex items-center gap-2 px-5 py-2.5 ar-gradient text-white rounded-full text-sm font-semibold shadow-xl shadow-pink-500/40 hover:scale-105 transition">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v1m6.364 1.636l-.707.707M20 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+      {label}
+    </button>
+  </model-viewer>
+  {caption && (
+    <figcaption class="px-4 py-3 text-center text-xs text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800">
+      {caption} · หมุน/ซูมได้ด้วยการแตะและลาก · กดปุ่ม AR บนมือถือเพื่อส่องในพื้นที่จริง
+    </figcaption>
+  )}
+</figure>
+<script>
+  import '@google/model-viewer';
+</script>

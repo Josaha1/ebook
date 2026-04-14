@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChapterIntro from '../components/ChapterIntro.astro';
+import ScrollReveal from '../components/ScrollReveal.astro';
+import StatCounter from '../components/StatCounter.astro';
+import Prose from '../components/Prose.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const objectives = [
+  'ผู้เข้าบริการได้รับข้อมูลทางสุขภาพที่สะดวกและรวดเร็ว',
+  'เปลี่ยนการให้คำแนะนำจากเอกสารเป็น "สื่อมีชีวิต"',
+  'ลดต้นทุนกระดาษในการให้ข้อมูลทางสุขภาพผู้ป่วย',
+  'ลดจำนวนคนในการให้ข้อมูลผู้รับบริการ',
+  'ลดข้อขัดแย้งจากการสื่อสารคนสู่คน',
+];
+
+const definitions = [
+  { term: 'ผู้รับบริการในโรงพยาบาลนภาลัย', def: 'ผู้ป่วยและญาติผู้ป่วยและผู้เข้ารับบริการในโรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม' },
+  { term: 'การให้ข้อมูลผู้รับบริการ', def: 'กิจกรรมการสอน การให้ความรู้ และการให้คำแนะนำแก่ผู้เข้ารับบริการในโรงพยาบาล' },
+  { term: 'สื่อมือถือ', def: 'โปรแกรมการสอนผ่านแอพพลิเคชัน Aurasma และการสแกน QR code ใน Line' },
+  { term: 'ความพึงพอใจ', def: 'ระดับความพึงพอใจในนวัตกรรมการให้ข้อมูล แบ่งเป็น 4 ระดับ: มากที่สุด · มาก · ปานกลาง · น้อย' },
+];
+---
+<BaseLayout title="บทที่ 1 · บทนำ · AR E-Book">
+  <ChapterIntro
+    number="01"
+    title="บทนำ"
+    subtitle="จากการสื่อสารแบบเดิมสู่เทคโนโลยีความจริงเสริม (AR) เพื่อยกระดับการให้ข้อมูลผู้รับบริการ"
+  />
+
+  <div class="max-w-4xl mx-auto px-6 py-16 md:py-20 space-y-20">
+
+    <ScrollReveal>
+      <section>
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3">
+          <span class="w-10 h-1 rounded-full ar-gradient"></span>
+          ความเป็นมาและความสำคัญของปัญหา
+        </h2>
+        <Prose>
+          <p>บทบาทอิสระบทบาทหนึ่งของวิชาชีพพยาบาลคือ <strong>บทบาทการสอน การให้ความรู้ และคำแนะนำผู้ป่วย</strong> ซึ่งแต่เดิมใช้คนหรือตัวพยาบาลพูดสอนหรือสื่อสารผู้ป่วยด้วยวาจาและท่าทางเป็นรายเดี่ยวหรือรายกลุ่ม การใช้คนมีข้อจำกัดหลายอย่าง ตั้งแต่บุคลิก ท่าทาง การถ่ายทอด ไปจนถึงสัมพันธภาพ</p>
+          <p>ต่อมาพยาบาลเริ่มนำสื่อและเทคโนโลยีมาใช้ เช่น ภาพนิ่ง กระดาษ เสียง วีดีทัศน์ แต่ในทางปฏิบัติการนำความรู้กลับบ้านยังเป็นรูปแบบเอกสารเป็นส่วนใหญ่ ส่วนภาพและเสียงในรูปวีดีทัศน์หรือคลิปวีดีโอยังเป็นสิ่งที่ยุ่งยาก เอกสารที่นำกลับบ้านอาจไม่ได้หยิบมาอ่านหรือฉีกขาดสูญหายไป</p>
+        </Prose>
+      </section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <section class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 md:p-10 shadow-sm">
+        <h3 class="text-sm uppercase tracking-widest text-ar-pink font-semibold mb-2">สถิติที่น่าสนใจ</h3>
+        <h2 class="text-2xl md:text-3xl font-bold mb-10">ข้อร้องเรียนด้านการสื่อสารในโรงพยาบาล</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <StatCounter value={17} label="ข้อร้องเรียนผ่านหนังสือพิมพ์ ปี 2555" suffix=" เรื่อง" />
+          <StatCounter value={50} label="เกิดจากการสื่อสารที่ไม่เหมาะสม" suffix="%" />
+          <StatCounter value={7} label="ข้อร้องเรียน รพ.นภาลัย ปี 2557" suffix=" ราย" />
+          <StatCounter value={4} label="ข้อร้องเรียน ปี 2558 และ 2559" suffix=" ราย" />
+        </div>
+        <p class="mt-8 text-sm text-slate-500 dark:text-slate-400 text-center">ข้อมูลจากกระทรวงสาธารณสุขและสภาการพยาบาลแห่งประเทศไทย</p>
+      </section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <section>
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3">
+          <span class="w-10 h-1 rounded-full ar-gradient"></span>
+          ทำไมต้องเป็น AR?
+        </h2>
+        <Prose>
+          <p>ปัจจุบัน การสื่อสารในระบบ <strong>iOS</strong> และ <strong>Android</strong> มีบทบาทสำคัญและเติบโตอย่างรวดเร็ว แทบทุกบ้านมีมือถือ Tablet และ Smart Phone การหันกลับมาอ่านเอกสารคำแนะนำจากกระดาษอย่างเดียวไม่จูงใจ สิ้นเปลือง และไม่เหมาะกับสภาพการพัฒนาเทคโนโลยีในปัจจุบัน</p>
+          <p>การให้ข้อมูลผู้รับบริการด้วย <strong>Augmented Reality (AR)</strong> คือเทคโนโลยีใหม่ที่พัฒนารูปแบบ Human-Machine Interface โดยอาศัยเทคโนโลยีคอมพิวเตอร์และระบบความจริงเสริม นำภาพกราฟิก 3D, 2D หรือ Video มาซ้อนทับกับฉากจริง ทำให้ผู้รับบริการเข้าถึงข้อมูลได้รวดเร็วและทันสมัย</p>
+        </Prose>
+      </section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <section>
+        <div class="flex items-center gap-3 mb-8">
+          <span class="w-10 h-1 rounded-full ar-gradient"></span>
+          <h2 class="text-2xl md:text-3xl font-bold">วัตถุประสงค์และประโยชน์</h2>
+        </div>
+        <div class="rounded-3xl overflow-hidden ar-gradient p-[1px]">
+          <div class="bg-white dark:bg-slate-950 rounded-3xl p-6 md:p-8">
+            <p class="text-lg mb-6">
+              <span class="text-ar-pink font-semibold">เป้าหมาย:</span>
+              พัฒนาการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ด้วยสื่อมือถือ
+            </p>
+            <div class="text-sm font-semibold text-slate-500 uppercase tracking-widest mb-4">ประโยชน์ที่คาดว่าจะได้รับ</div>
+            <ul class="space-y-3">
+              {objectives.map((o, i) => (
+                <li class="flex gap-4 items-start">
+                  <span class="flex-shrink-0 w-8 h-8 rounded-full ar-gradient text-white text-sm font-bold grid place-items-center mt-0.5">{i + 1}</span>
+                  <span class="pt-1">{o}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <section class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-3xl p-6 md:p-8 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+          <div class="text-xs uppercase tracking-widest text-ar-pink font-semibold mb-2">ระยะเวลา</div>
+          <div class="text-2xl md:text-3xl font-bold">เม.ย. – ส.ค. 2560</div>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">ช่วงเวลาดำเนินการศึกษาและเก็บข้อมูล</p>
+        </div>
+        <div class="rounded-3xl p-6 md:p-8 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+          <div class="text-xs uppercase tracking-widest text-ar-pink font-semibold mb-2">กลุ่มเป้าหมาย</div>
+          <div class="text-2xl md:text-3xl font-bold">20 – 30 ราย</div>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">ผู้รับบริการในโรงพยาบาลนภาลัย ต.กระดังงา อ.บางคนที</p>
+        </div>
+      </section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <section>
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3">
+          <span class="w-10 h-1 rounded-full ar-gradient"></span>
+          นิยามศัพท์
+        </h2>
+        <dl class="space-y-4">
+          {definitions.map(({ term, def }) => (
+            <div class="rounded-2xl p-5 border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40">
+              <dt class="font-bold text-ar-pink">{term}</dt>
+              <dd class="mt-1 text-slate-700 dark:text-slate-300 text-sm md:text-base">{def}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <section class="text-center">
+        <a href={`${base}/chapter-2`} class="inline-flex items-center gap-2 px-8 py-4 ar-gradient text-white rounded-full font-semibold shadow-xl shadow-pink-500/20 hover:scale-105 transition">
+          ต่อบทที่ 2 · เอกสารที่เกี่ยวข้อง →
+        </a>
+      </section>
+    </ScrollReveal>
+  </div>
+</BaseLayout>

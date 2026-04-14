@@ -11,8 +11,8 @@ Astro · Tailwind CSS · GSAP ScrollTrigger · Lenis · `<model-viewer>`
 
 ```bash
 npm install
-npm run dev        # http://localhost:4321
-npm run build      # output to ./dist
+npm run dev
+npm run build
 npm run preview
 ```
 

@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChapterIntro from '../components/ChapterIntro.astro';
+import ScrollReveal from '../components/ScrollReveal.astro';
+import Timeline from '../components/Timeline.astro';
+import Prose from '../components/Prose.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const steps = [
+  {
+    step: '1.1',
+    label: 'ขั้นเตรียมการ',
+    title: 'ค้นหาปัญหา',
+    description: 'เดิมการให้คำแนะนำและสอนผู้ดูแลให้กลับไปปฏิบัติตนที่บ้านใช้เอกสารกระดาษเป็นหลัก ทำให้เกิดปัญหาเอกสารชำรุด จำไม่ได้ ต้องนำมาอ่านซ้ำ หรือบางรายสูญหายไปแล้ว หรืออ่านแล้วไม่เข้าใจ',
+  },
+  {
+    step: '1.2',
+    label: 'ขั้นเตรียมการ',
+    title: 'ศึกษานวัตกรรมการสอนอื่น',
+    description: 'ใช้หลัก สะดวก เข้าถึงง่าย ทันยุคสมัย ลดต้นทุน ผู้ศึกษาคัดเลือกแอพพลิเคชันในมือถือมา 2 แบบ',
+    points: ['แอพพลิเคชัน Aurasma', 'QR code ใน LINE'],
+  },
+  {
+    step: '2.1',
+    label: 'ขั้นดำเนินการ',
+    title: 'ปรับเนื้อหาให้ทันสมัย',
+    description: 'นำเอกสารคำแนะนำการปฏิบัติตนมาปรับให้ทันสมัยและถูกต้องตามหลักวิชาการ ผ่านการตรวจความตรง ความถูกต้องและความเที่ยงจากผู้เชี่ยวชาญ โดยมุ่งเน้นกลุ่มโรค',
+    points: ['ผู้ป่วยช่วยเหลือตนเองได้น้อย (ป้องกันแผลกดทับ)', 'แผลเรื้อรังและอุปกรณ์ต่อพ่วง', 'ผู้ป่วยมะเร็งระยะแพร่กระจาย'],
+  },
+  {
+    step: '2.2',
+    label: 'ขั้นดำเนินการ',
+    title: 'สร้างสื่อด้วย Aurasma + QR code',
+    description: 'แปลงเนื้อหาเป็นสื่อมีเดียผ่านแอพพลิเคชัน Aurasma และ QR code ใน LINE เพื่อให้ผู้ใช้สามารถเข้าถึงเนื้อหาผ่านมือถือได้ทันที',
+  },
+  {
+    step: '2.3',
+    label: 'ขั้นดำเนินการ',
+    title: 'ทดลองใช้จริง',
+    description: 'ทดลองใช้กับผู้รับบริการในโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ระหว่างเดือนเมษายน – สิงหาคม 2560 จำนวน 44 ราย',
+    points: [
+      'เอกสารคำแนะนำโรคแผลเรื้อรัง (กดทับ, เบาหวาน, แผลผ่าตัด)',
+      'คู่มือดูแลผู้ป่วยที่มีอุปกรณ์ต่อพ่วง (สายให้อาหาร, สายสวน, ท่อหายใจ)',
+      'แผ่นพับดูแลผู้ป่วยมะเร็งและการจัดการความปวด',
+      'คลิปวีดีโอใน YouTube',
+      'แบบประเมินผลผ่าน QR code',
+    ],
+  },
+  {
+    step: '3',
+    label: 'สรุป',
+    title: 'สรุปและประเมินผล',
+    description: 'สรุปผลการให้ข้อมูลผู้รับบริการด้วยสื่อมือถือ ประเมินความพึงพอใจผ่านแบบประเมิน online โดยการสแกน QR code',
+  },
+];
+---
+<BaseLayout title="บทที่ 3 · วิธีดำเนินการศึกษา · AR E-Book">
+  <ChapterIntro
+    number="03"
+    title="วิธีดำเนินการศึกษา"
+    subtitle="การศึกษากึ่งทดลองกับผู้รับบริการ 20–30 ราย ในโรงพยาบาลนภาลัย โดยใช้สื่อมือถือผ่าน Aurasma และ QR code LINE"
+  />
+
+  <div class="max-w-4xl mx-auto px-6 py-16 md:py-20 space-y-16">
+
+    <ScrollReveal>
+      <section class="rounded-3xl ar-gradient p-[1px]">
+        <div class="bg-white dark:bg-slate-950 rounded-3xl p-6 md:p-10 grid sm:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="text-xs uppercase tracking-widest text-ar-pink font-semibold">รูปแบบ</div>
+            <div class="mt-2 text-lg md:text-xl font-bold">การศึกษากึ่งทดลอง</div>
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-widest text-ar-pink font-semibold">ช่วงเวลา</div>
+            <div class="mt-2 text-lg md:text-xl font-bold">เม.ย. – ส.ค. 2560</div>
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-widest text-ar-pink font-semibold">กลุ่มตัวอย่าง</div>
+            <div class="mt-2 text-lg md:text-xl font-bold">44 ราย</div>
+          </div>
+        </div>
+      </section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <section>
+        <h2 class="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
+          <span class="w-10 h-1 rounded-full ar-gradient"></span>
+          ขั้นตอนดำเนินการ
+        </h2>
+        <Timeline items={steps} />
+      </section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <section class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-6 md:p-10">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-2xl ar-gradient grid place-items-center text-white text-xl">🛡️</div>
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold">การพิทักษ์สิทธิ์</h3>
+            <p class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">
+              เนื่องจากการศึกษานี้มีความเสี่ยงต่ออาสาสมัครน้อย ผู้ศึกษาได้เขียนบันทึกขออนุญาตผู้อำนวยการโรงพยาบาลเจ้าของสถานที่และได้รับอนุญาตให้ศึกษาได้ <strong>เมื่อวันที่ 21 เมษายน 2560</strong> ก่อนทำการศึกษา
+              ผู้ที่กรอกแบบประเมินถือว่ายินยอมในการศึกษาครั้งนี้
+            </p>
+          </div>
+        </div>
+      </section>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <section class="text-center">
+        <a href={`${base}/`} class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-slate-300 dark:border-slate-700 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          ← กลับหน้าหลัก
+        </a>
+      </section>
+    </ScrollReveal>
+  </div>
+</BaseLayout>

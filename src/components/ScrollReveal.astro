@@ -1,0 +1,31 @@
+---
+const { as: Tag = 'div', class: className = '', delay = 0 } = Astro.props;
+---
+<Tag class:list={['sr-el', className]} data-delay={delay}><slot /></Tag>
+
+<style is:global>
+  .sr-el { opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); will-change: opacity, transform; }
+  .sr-el.is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .sr-el { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+  html.no-js .sr-el { opacity: 1; transform: none; }
+</style>
+
+<script>
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.sr-el').forEach((el) => el.classList.add('is-visible'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          const el = e.target as HTMLElement;
+          const delay = Number(el.dataset.delay || 0);
+          setTimeout(() => el.classList.add('is-visible'), delay);
+          io.unobserve(el);
+        }
+      }
+    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+    document.querySelectorAll('.sr-el').forEach((el) => io.observe(el));
+  }
+</script>

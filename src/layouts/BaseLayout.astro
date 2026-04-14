@@ -1,0 +1,29 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+const { title = 'AR E-Book', description = 'Interactive e-book เรื่อง Augmented Reality สำหรับโรงพยาบาลนภาลัย' } = Astro.props;
+---
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#7C3AED" />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body class="min-h-screen">
+  <Nav />
+  <main class="pt-14"><slot /></main>
+  <Footer />
+  <script>
+    import Lenis from 'lenis';
+    const lenis = new Lenis({ duration: 1.1, smoothWheel: true, lerp: 0.1 });
+    function raf(time: number) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Prompt:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'IBM Plex Sans Thai', 'Prompt', system-ui, sans-serif;
+  --font-display: 'Prompt', 'IBM Plex Sans Thai', system-ui, sans-serif;
+  --color-ar-purple: #7C3AED;
+  --color-ar-pink: #EC4899;
+  --color-ar-orange: #F97316;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    background: #ffffff;
+    color: #0f172a;
+    overflow-x: hidden;
+  }
+  html.dark body { background: #0a0a14; color: #e2e8f0; }
+}
+
+@layer utilities {
+  .ar-gradient {
+    background: linear-gradient(135deg, #7C3AED 0%, #EC4899 50%, #F97316 100%);
+  }
+  .ar-gradient-text {
+    background: linear-gradient(135deg, #7C3AED, #EC4899, #F97316);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .ar-gradient-radial {
+    background: radial-gradient(circle at 30% 20%, rgba(124, 58, 237, 0.35), transparent 40%),
+                radial-gradient(circle at 70% 60%, rgba(236, 72, 153, 0.3), transparent 40%),
+                radial-gradient(circle at 50% 90%, rgba(249, 115, 22, 0.25), transparent 40%);
+  }
+  .glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .dark .glass {
+    background: rgba(10, 10, 20, 0.6);
+  }
+}
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }

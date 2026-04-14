@@ -1,0 +1,138 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "AR E-Book" [ref=e4] [cursor=pointer]:
+        - /url: /ebook/
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "บทที่ 1" [ref=e7] [cursor=pointer]:
+            - /url: /ebook/chapter-1
+        - listitem [ref=e8]:
+          - link "บทที่ 2" [ref=e9] [cursor=pointer]:
+            - /url: /ebook/chapter-2
+        - listitem [ref=e10]:
+          - link "บทที่ 3" [ref=e11] [cursor=pointer]:
+            - /url: /ebook/chapter-3
+      - button "Toggle dark mode" [ref=e13]:
+        - img [ref=e14]
+  - main [ref=e16]:
+    - generic [ref=e20]:
+      - paragraph [ref=e21]: บทที่
+      - generic [ref=e22]: "01"
+      - heading "บทนำ" [level=1] [ref=e23]
+      - paragraph [ref=e24]: จากการสื่อสารแบบเดิมสู่เทคโนโลยีความจริงเสริม (AR) เพื่อยกระดับการให้ข้อมูลผู้รับบริการ
+    - generic [ref=e25]:
+      - generic [ref=e27]:
+        - heading "ความเป็นมาและความสำคัญของปัญหา" [level=2] [ref=e28]: ความเป็นมาและความสำคัญของปัญหา
+        - generic [ref=e30]:
+          - paragraph [ref=e31]:
+            - text: บทบาทอิสระบทบาทหนึ่งของวิชาชีพพยาบาลคือ
+            - strong [ref=e32]: บทบาทการสอน การให้ความรู้ และคำแนะนำผู้ป่วย
+            - text: ซึ่งแต่เดิมใช้คนหรือตัวพยาบาลพูดสอนหรือสื่อสารผู้ป่วยด้วยวาจาและท่าทางเป็นรายเดี่ยวหรือรายกลุ่ม การใช้คนมีข้อจำกัดหลายอย่าง ตั้งแต่บุคลิก ท่าทาง การถ่ายทอด ไปจนถึงสัมพันธภาพ
+          - paragraph [ref=e33]: ต่อมาพยาบาลเริ่มนำสื่อและเทคโนโลยีมาใช้ เช่น ภาพนิ่ง กระดาษ เสียง วีดีทัศน์ แต่ในทางปฏิบัติการนำความรู้กลับบ้านยังเป็นรูปแบบเอกสารเป็นส่วนใหญ่ ส่วนภาพและเสียงในรูปวีดีทัศน์หรือคลิปวีดีโอยังเป็นสิ่งที่ยุ่งยาก เอกสารที่นำกลับบ้านอาจไม่ได้หยิบมาอ่านหรือฉีกขาดสูญหายไป
+      - generic [ref=e35]:
+        - heading "สถิติที่น่าสนใจ" [level=3] [ref=e36]
+        - heading "ข้อร้องเรียนด้านการสื่อสารในโรงพยาบาล" [level=2] [ref=e37]
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - generic [ref=e40]: 0 เรื่อง
+            - generic [ref=e41]: ข้อร้องเรียนผ่านหนังสือพิมพ์ ปี 2555
+          - generic [ref=e42]:
+            - generic [ref=e43]: 0%
+            - generic [ref=e44]: เกิดจากการสื่อสารที่ไม่เหมาะสม
+          - generic [ref=e45]:
+            - generic [ref=e46]: 0 ราย
+            - generic [ref=e47]: ข้อร้องเรียน รพ.นภาลัย ปี 2557
+          - generic [ref=e48]:
+            - generic [ref=e49]: 0 ราย
+            - generic [ref=e50]: ข้อร้องเรียน ปี 2558 และ 2559
+        - paragraph [ref=e51]: ข้อมูลจากกระทรวงสาธารณสุขและสภาการพยาบาลแห่งประเทศไทย
+      - generic [ref=e53]:
+        - heading "ทำไมต้องเป็น AR?" [level=2] [ref=e54]: ทำไมต้องเป็น AR?
+        - generic [ref=e56]:
+          - paragraph [ref=e57]:
+            - text: ปัจจุบัน การสื่อสารในระบบ
+            - strong [ref=e58]: iOS
+            - text: และ
+            - strong [ref=e59]: Android
+            - text: มีบทบาทสำคัญและเติบโตอย่างรวดเร็ว แทบทุกบ้านมีมือถือ Tablet และ Smart Phone การหันกลับมาอ่านเอกสารคำแนะนำจากกระดาษอย่างเดียวไม่จูงใจ สิ้นเปลือง และไม่เหมาะกับสภาพการพัฒนาเทคโนโลยีในปัจจุบัน
+          - paragraph [ref=e60]:
+            - text: การให้ข้อมูลผู้รับบริการด้วย
+            - strong [ref=e61]: Augmented Reality (AR)
+            - text: คือเทคโนโลยีใหม่ที่พัฒนารูปแบบ Human-Machine Interface โดยอาศัยเทคโนโลยีคอมพิวเตอร์และระบบความจริงเสริม นำภาพกราฟิก 3D, 2D หรือ Video มาซ้อนทับกับฉากจริง ทำให้ผู้รับบริการเข้าถึงข้อมูลได้รวดเร็วและทันสมัย
+      - generic [ref=e63]:
+        - heading "วัตถุประสงค์และประโยชน์" [level=2] [ref=e66]
+        - generic [ref=e68]:
+          - paragraph [ref=e69]: "เป้าหมาย: พัฒนาการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ด้วยสื่อมือถือ"
+          - generic [ref=e70]: ประโยชน์ที่คาดว่าจะได้รับ
+          - list [ref=e71]:
+            - listitem [ref=e72]:
+              - generic [ref=e73]: "1"
+              - generic [ref=e74]: ผู้เข้าบริการได้รับข้อมูลทางสุขภาพที่สะดวกและรวดเร็ว
+            - listitem [ref=e75]:
+              - generic [ref=e76]: "2"
+              - generic [ref=e77]: เปลี่ยนการให้คำแนะนำจากเอกสารเป็น "สื่อมีชีวิต"
+            - listitem [ref=e78]:
+              - generic [ref=e79]: "3"
+              - generic [ref=e80]: ลดต้นทุนกระดาษในการให้ข้อมูลทางสุขภาพผู้ป่วย
+            - listitem [ref=e81]:
+              - generic [ref=e82]: "4"
+              - generic [ref=e83]: ลดจำนวนคนในการให้ข้อมูลผู้รับบริการ
+            - listitem [ref=e84]:
+              - generic [ref=e85]: "5"
+              - generic [ref=e86]: ลดข้อขัดแย้งจากการสื่อสารคนสู่คน
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - generic [ref=e90]: ระยะเวลา
+          - generic [ref=e91]: เม.ย. – ส.ค. 2560
+          - paragraph [ref=e92]: ช่วงเวลาดำเนินการศึกษาและเก็บข้อมูล
+        - generic [ref=e93]:
+          - generic [ref=e94]: กลุ่มเป้าหมาย
+          - generic [ref=e95]: 20 – 30 ราย
+          - paragraph [ref=e96]: ผู้รับบริการในโรงพยาบาลนภาลัย ต.กระดังงา อ.บางคนที
+      - generic [ref=e98]:
+        - heading "นิยามศัพท์" [level=2] [ref=e99]: นิยามศัพท์
+        - generic [ref=e101]:
+          - generic [ref=e102]:
+            - term [ref=e103]: ผู้รับบริการในโรงพยาบาลนภาลัย
+            - definition [ref=e104]: ผู้ป่วยและญาติผู้ป่วยและผู้เข้ารับบริการในโรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม
+          - generic [ref=e105]:
+            - term [ref=e106]: การให้ข้อมูลผู้รับบริการ
+            - definition [ref=e107]: กิจกรรมการสอน การให้ความรู้ และการให้คำแนะนำแก่ผู้เข้ารับบริการในโรงพยาบาล
+          - generic [ref=e108]:
+            - term [ref=e109]: สื่อมือถือ
+            - definition [ref=e110]: โปรแกรมการสอนผ่านแอพพลิเคชัน Aurasma และการสแกน QR code ใน Line
+          - generic [ref=e111]:
+            - term [ref=e112]: ความพึงพอใจ
+            - definition [ref=e113]: "ระดับความพึงพอใจในนวัตกรรมการให้ข้อมูล แบ่งเป็น 4 ระดับ: มากที่สุด · มาก · ปานกลาง · น้อย"
+      - link "ต่อบทที่ 2 · เอกสารที่เกี่ยวข้อง →" [ref=e116] [cursor=pointer]:
+        - /url: /ebook/chapter-2
+  - contentinfo [ref=e117]:
+    - generic [ref=e118]:
+      - generic [ref=e119]:
+        - generic [ref=e120]: AR E-Book
+        - paragraph [ref=e121]:
+          - text: เทคโนโลยีความจริงเสริม (AR) เพื่อการให้ข้อมูลผู้รับบริการ
+          - text: โรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม
+      - generic [ref=e122]:
+        - generic [ref=e123]: เนื้อหา
+        - list [ref=e124]:
+          - listitem [ref=e125]:
+            - link "บทที่ 1 บทนำ" [ref=e126] [cursor=pointer]:
+              - /url: /ebook/chapter-1
+          - listitem [ref=e127]:
+            - link "บทที่ 2 เอกสารที่เกี่ยวข้อง" [ref=e128] [cursor=pointer]:
+              - /url: /ebook/chapter-2
+          - listitem [ref=e129]:
+            - link "บทที่ 3 วิธีดำเนินการศึกษา" [ref=e130] [cursor=pointer]:
+              - /url: /ebook/chapter-3
+      - generic [ref=e131]:
+        - generic [ref=e132]: แชร์
+        - generic [ref=e133]:
+          - button "📋 คัดลอกลิงก์" [ref=e134]
+          - link "Facebook" [ref=e135] [cursor=pointer]:
+            - /url: https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4321%2Febook%2Fchapter-1%2F
+          - link "Line" [ref=e136] [cursor=pointer]:
+            - /url: https://social-plugins.line.me/lineit/share?url=http%3A%2F%2Flocalhost%3A4321%2Febook%2Fchapter-1%2F
+    - generic [ref=e137]: © 2026 AR E-Book · เผยแพร่เพื่อการศึกษา
+  - button "กลับด้านบน": ↑

@@ -1,0 +1,18 @@
+---
+const { href, number, title, subtitle, accent = 'from-ar-purple to-ar-pink' } = Astro.props;
+---
+<a href={href} class="group relative block p-6 md:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-transparent hover:shadow-2xl hover:shadow-pink-500/10 hover:-translate-y-1 transition-all overflow-hidden">
+  <div class={`absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br ${accent} transition-opacity`}></div>
+  <div class="relative">
+    <div class="flex items-baseline gap-3">
+      <span class="text-5xl md:text-6xl font-black ar-gradient-text leading-none">{number}</span>
+      <span class="text-xs uppercase tracking-widest text-slate-500">บทที่</span>
+    </div>
+    <h3 class="mt-4 text-xl md:text-2xl font-bold">{title}</h3>
+    <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">{subtitle}</p>
+    <div class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-ar-pink opacity-70 group-hover:opacity-100 transition">
+      อ่านต่อ
+      <span class="transition-transform group-hover:translate-x-1">→</span>
+    </div>
+  </div>
+</a>

@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(file *.doc)",
+      "Bash(stat -c \"%n %s bytes\" *.doc)",
+      "Bash(wc -c *.doc)",
+      "Bash(pandoc --version)",
+      "Bash(antiword -m cp874.txt \"บทที่ 1_AR.doc\")",
+      "Bash(powershell.exe:*)",
+      "Bash(tasklist)",
+      "Bash(npm --version)",
+      "Bash(npm create:*)",
+      "Bash(mv ./--typescript/astro.config.mjs ./--typescript/package.json ./--typescript/package-lock.json ./--typescript/tsconfig.json ./--typescript/README.md ./--typescript/.vscode ./--typescript/public ./--typescript/src ./--typescript/node_modules .)",
+      "Bash(rm -rf ./--typescript)",
+      "Bash(npm install:*)",
+      "Bash(printf '\\\\xEF\\\\xBB\\\\xBF')",
+      "Bash(cat scripts/extract-doc.ps1)",
+      "Bash(mv scripts/extract-doc.ps1.bom scripts/extract-doc.ps1)",
+      "Bash(xxd content/ch1.txt)",
+      "Bash(rm -rf content)",
+      "Bash(xxd)",
+      "Bash(npx astro:*)",
+      "Bash(mkdir -p public/models public/images)",
+      "Bash(curl -Lo public/models/hero.glb https://modelviewer.dev/shared-assets/models/Astronaut.glb)",
+      "Bash(npm run:*)",
+      "Bash(mkdir -p public/images/ch1 public/images/ch2)",
+      "Bash(cp content/images/ch1/*.png public/images/ch1/)",
+      "Bash(curl -Lo public/models/robot.glb https://modelviewer.dev/shared-assets/models/RobotExpressive.glb)",
+      "Bash(curl -Lo public/models/horse.glb https://modelviewer.dev/shared-assets/models/Horse.glb)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_console_messages",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "mcp__plugin_playwright_playwright__browser_wait_for"
+    ]
+  }
+}

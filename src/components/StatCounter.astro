@@ -1,0 +1,33 @@
+---
+const { value, label, suffix = '', prefix = '' } = Astro.props;
+---
+<div class="text-center">
+  <div class="text-5xl md:text-7xl font-black ar-gradient-text leading-none">
+    <span>{prefix}</span><span data-counter data-to={value}>0</span><span>{suffix}</span>
+  </div>
+  <div class="mt-3 text-xs md:text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400 max-w-[200px] mx-auto">{label}</div>
+</div>
+
+<script>
+  const fmt = new Intl.NumberFormat('th-TH');
+  const els = document.querySelectorAll<HTMLElement>('[data-counter]');
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        const el = e.target as HTMLElement;
+        const to = Number(el.dataset.to || 0);
+        const dur = 1800;
+        const start = performance.now();
+        const tick = (now: number) => {
+          const t = Math.min(1, (now - start) / dur);
+          const eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = fmt.format(Math.round(to * eased));
+          if (t < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        io.unobserve(el);
+      }
+    }
+  }, { threshold: 0.4 });
+  els.forEach((el) => io.observe(el));
+</script>

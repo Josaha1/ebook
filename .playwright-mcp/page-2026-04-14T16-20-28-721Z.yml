@@ -1,0 +1,171 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "AR E-Book" [ref=e4] [cursor=pointer]:
+        - /url: /ebook/
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "บทที่ 1" [ref=e7] [cursor=pointer]:
+            - /url: /ebook/chapter-1
+        - listitem [ref=e8]:
+          - link "บทที่ 2" [ref=e9] [cursor=pointer]:
+            - /url: /ebook/chapter-2
+        - listitem [ref=e10]:
+          - link "บทที่ 3" [ref=e11] [cursor=pointer]:
+            - /url: /ebook/chapter-3
+      - button "Toggle dark mode" [ref=e13]:
+        - img [ref=e14]
+  - main [ref=e16]:
+    - generic [ref=e20]:
+      - paragraph [ref=e21]: บทที่
+      - generic [ref=e22]: "02"
+      - heading "วรรณกรรมและงานวิจัยที่เกี่ยวข้อง" [level=1] [ref=e23]
+      - paragraph [ref=e24]: ทำความเข้าใจกระบวนการสื่อสาร เทคโนโลยี AR, Aurasma และ QR code ก่อนลงมือใช้จริง
+    - generic [ref=e25]:
+      - paragraph [ref=e29]:
+        - text: การศึกษานี้เป็นการศึกษา
+        - strong [ref=e30]: กึ่งทดลอง
+        - text: ผู้ศึกษาได้ทำการศึกษาในผู้รับบริการโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม โดยทบทวนวรรณกรรมและงานวิจัยที่เกี่ยวข้องเพื่อใช้ในการศึกษา
+      - generic [ref=e32]:
+        - heading "กระบวนการสื่อสาร" [level=2] [ref=e33]: กระบวนการสื่อสาร
+        - generic [ref=e35]:
+          - paragraph [ref=e36]:
+            - strong [ref=e37]: Communication Process
+            - text: เริ่มต้นจากผู้ส่งข่าวสารมีข่าวสารที่จะให้กับผู้รับ ซึ่งอาจเป็นข้อมูลที่เป็นความรู้ ความคิด หรือความรู้สึก โดยผู้ส่งเลือกวิธีที่จะส่ง เช่น การพูด การเขียน หรือการใช้ภาษาท่าทาง เมื่อผู้รับได้รับข่าวสารจะเกิดการส่งข้อมูลตอบกลับ เป็นกระบวนการที่ไม่อยู่นิ่งและมีความต่อเนื่องกัน
+          - paragraph [ref=e38]: การสื่อสารมีความสำคัญอย่างยิ่งต่อวิชาชีพพยาบาล กิจกรรมบทบาทอิสระของพยาบาลคือ การให้ข้อมูลเพื่อเอื้อให้เกิดการตัดสินใจที่ถูกต้อง เป็นที่ปรึกษาในการตัดสินใจเกี่ยวกับการดูแล การสอนผู้ป่วยและครอบครัว รูปแบบการสื่อสารจำเป็นต้องพัฒนาให้ทันสมัยตามวิวัฒนาการของเทคโนโลยี
+      - generic [ref=e40]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: 📱
+          - heading "โทรศัพท์เคลื่อนที่" [level=3] [ref=e45]
+          - generic [ref=e46]: เทคโนโลยี Mobile Device พัฒนาอย่างรวดเร็ว สังเกตได้จากความสามารถที่มีมากขึ้นทั้งส่วนรับข้อมูล ส่วนต่อประสานกับผู้ใช้ ความบันเทิง และการเชื่อมต่อ
+        - generic [ref=e49]:
+          - generic [ref=e50]: ⚙️
+          - heading "ระบบปฏิบัติการ" [level=3] [ref=e51]
+          - generic [ref=e52]: iOS และ Android ต่างพัฒนาเพื่อรองรับการทำงานของเทคโนโลยีใหม่ๆ เปิดทางให้แอปพลิเคชันด้านการศึกษาและสุขภาพเข้าถึงผู้คนได้มากขึ้น
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - paragraph [ref=e56]: "เทคโนโลยี #1"
+          - heading "QR Code ใน LINE" [level=2] [ref=e57]
+          - paragraph [ref=e58]: บาร์โค้ด 2 มิติที่เก็บข้อมูลได้มากกว่าบาร์โค้ดแบบแท่ง สแกนได้ทันทีด้วยกล้องมือถือ
+        - generic [ref=e59]:
+          - generic [ref=e62]:
+            - generic [ref=e63]: ⚡
+            - heading "Quick Response" [level=3] [ref=e64]
+            - generic [ref=e65]:
+              - text: ย่อมาจาก
+              - strong [ref=e66]: Quick Response Code
+              - text: — ออกแบบให้อ่านได้อย่างรวดเร็ว
+          - generic [ref=e69]:
+            - generic [ref=e70]: ▦
+            - heading "2 มิติ" [level=3] [ref=e71]
+            - generic [ref=e72]: บาร์โค้ด 2D ประกอบด้วยมอดูลสีดำเรียงตัวในสัณฐานสี่เหลี่ยม บนพื้นหลังขาว
+          - generic [ref=e75]:
+            - generic [ref=e76]: 🏭
+            - heading "ต้นกำเนิด" [level=3] [ref=e77]
+            - generic [ref=e78]:
+              - text: พัฒนาโดย
+              - strong [ref=e79]: Denso-Wave
+              - text: บริษัทในเครือ Toyota ประเทศญี่ปุ่น ในปี 1994
+        - paragraph [ref=e81]:
+          - text: QR code นำมาใช้เก็บข้อมูล URL, ข้อความ, เบอร์โทรศัพท์ และข้อมูลตัวอักษรอื่นๆ ความนิยมเพิ่มขึ้นเรื่อยๆ เพราะใช้งานง่าย ไม่ต้องใช้เครื่องอ่านเฉพาะทาง แค่สมาร์ทโฟนที่มีกล้องก็อ่านค่าที่ซ่อนอยู่ได้ทันที —
+          - strong [ref=e82]: ไม่ต้องพิมพ์ URL ที่ยาวและอาจพิมพ์ผิด
+      - generic [ref=e84]:
+        - heading "ตัวอย่างการประยุกต์ใช้ QR code" [level=3] [ref=e85]: ตัวอย่างการประยุกต์ใช้ QR code
+        - generic [ref=e87]:
+          - generic [ref=e90]:
+            - heading "LIMS — ห้องปฏิบัติการวิทยาศาสตร์" [level=3] [ref=e91]
+            - generic [ref=e92]: Laboratory Information Management System ของมหาวิทยาลัยสงขลานครินทร์ (ชีวิน ชนะวรรโณ, 2557) ระบบอัตโนมัติครอบคลุมตั้งแต่ขั้นรับ-ส่งตัวอย่างจากผู้ใช้บริการ การทดสอบและวิเคราะห์
+          - generic [ref=e95]:
+            - heading "ตรวจสอบย้อนกลับผักสด" [level=3] [ref=e96]
+            - generic [ref=e97]: ระบบตรวจสอบย้อนกลับในการส่งออกผักสด (จิรพร ซื่อจริง, 2555) ตรวจแหล่งที่มาได้ตั้งแต่ฟาร์ม โรงคัดบรรจุ ถึงการขนส่ง สร้างความมั่นใจให้ผู้บริโภค
+          - generic [ref=e100]:
+            - heading "นิทรรศการม.แม่โจ้" [level=3] [ref=e101]
+            - generic [ref=e102]: คณะสารสนเทศและการสื่อสาร ม.แม่โจ้ ใช้ QR code ในบอร์ดนิทรรศการเพื่อเชื่อมไปยังเว็บไซต์ ทำให้ผู้ชมเห็นภาพ วิดีโอ และข้อมูลเพิ่มเติมได้
+          - generic [ref=e105]:
+            - heading "ด้านการพยาบาล" [level=3] [ref=e106]
+            - generic [ref=e107]: การประยุกต์ใช้ QR code ในโรงพยาบาลนภาลัย เชื่อมโยงไปยังสื่อวิดีโอและเนื้อหาแนะนำการดูแลตนเองของผู้ป่วย
+      - figure "ตัวอย่างโมเดล 3D · ทดลองหมุน ซูม และส่อง AR ได้ · หมุน/ซูมได้ด้วยการแตะและลาก · กดปุ่ม AR บนมือถือเพื่อส่องในพื้นที่จริง" [ref=e109]:
+        - generic [ref=e110]: 3D · Interactive
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - button "Robot 3D demo" [ref=e115]
+            - generic:
+              - generic:
+                - generic:
+                  - img
+          - region "Live announcements":
+            - status
+        - generic [ref=e119]: ตัวอย่างโมเดล 3D · ทดลองหมุน ซูม และส่อง AR ได้ · หมุน/ซูมได้ด้วยการแตะและลาก · กดปุ่ม AR บนมือถือเพื่อส่องในพื้นที่จริง
+      - generic [ref=e121]:
+        - generic [ref=e122]:
+          - paragraph [ref=e123]: "เทคโนโลยี #2"
+          - heading "Aurasma — ผู้นำด้าน AR" [level=2] [ref=e124]
+          - paragraph [ref=e125]: แอพพลิเคชันสำหรับสร้างสื่อในโลกแห่งความจริงเสมือน (Augmented Reality) — ใช้งานได้ทั้ง iPhone, iPad และ Android
+        - paragraph [ref=e127]:
+          - text: Aurasma เป็นตัวกลางเชื่อมโลกของความจริงและความจริงเสมือนเข้าด้วยกัน แสดงผลในรูปแบบ
+          - strong [ref=e128]: สื่อปฏิสัมพันธ์ที่มองเห็น ควบคุม และสัมผัสได้ผ่านหน้าจอ
+          - text: ทั้งภาพนิ่ง ภาพเคลื่อนไหว เสียง และการเชื่อมโยงไปยังเว็บไซต์
+        - generic [ref=e129]:
+          - generic [ref=e130]:
+            - generic [ref=e131]: "2011"
+            - paragraph [ref=e132]: กำเนิด Aurasma ในต่างประเทศ เผยแพร่ที่ aurasma.com
+          - generic [ref=e133]:
+            - generic [ref=e134]: "2555"
+            - paragraph [ref=e135]: ดร.ไพฑูรย์ ศรีฟ้า ม.เกษตรศาสตร์ นำมาใช้สอนนิสิตปริญญาตรี — ผลสำรวจ "สนใจมากที่สุด"
+          - generic [ref=e136]:
+            - generic [ref=e137]: ฟรี
+            - paragraph [ref=e138]: ดาวน์โหลดได้ที่ App Store และ Play Store ทั้ง iOS และ Android
+      - generic [ref=e140]:
+        - heading "คุณสมบัติของ Aurasma" [level=3] [ref=e141]: คุณสมบัติของ Aurasma
+        - generic [ref=e143]:
+          - paragraph [ref=e144]:
+            - text: ผู้ใช้สามารถเข้าถึงข้อมูลที่ถูกเข้ารหัสด้วย Aurasma (มองด้วยตาเปล่าไม่เห็น) ให้ปรากฏภาพผ่านหน้าจอ Smart Device เช่น โทรศัพท์มือถือ แท็บเล็ต ที่มีกล้องหลัง —
+            - strong [ref=e145]: ไม่ต้องใช้ Marker ไม่ต้องเขียนโปรแกรมควบคุมใดๆ
+            - text: ใช้งานง่าย ประยุกต์สร้างสื่อได้หลากหลาย เช่น หนังสือพิมพ์ วารสาร ตำรา กล่องบรรจุภัณฑ์ สินค้า เสื้อผ้า และป้ายโฆษณา
+          - paragraph [ref=e146]:
+            - text: ผลผลิตมีได้ทั้งภาพนิ่ง ภาพเคลื่อนไหว
+            - strong [ref=e147]: ภาพ 3 มิติ
+            - text: และเสียง — หากสร้างเป็นสื่อแบบออนไลน์ยังสามารถกำหนดจุดเชื่อมโยงไปยังเว็บไซต์ได้อีกด้วย
+      - figure "โมเดล 3 มิติอีกตัวอย่างหนึ่ง · ทดสอบการแสดงผลบนอุปกรณ์ของคุณ · หมุน/ซูมได้ด้วยการแตะและลาก · กดปุ่ม AR บนมือถือเพื่อส่องในพื้นที่จริง" [ref=e149]:
+        - generic [ref=e150]: 3D · Interactive
+        - generic [ref=e152]:
+          - generic [ref=e153]:
+            - button "Horse 3D demo" [ref=e155]
+            - generic:
+              - generic:
+                - generic:
+                  - img
+          - region "Live announcements":
+            - status
+        - generic [ref=e159]: โมเดล 3 มิติอีกตัวอย่างหนึ่ง · ทดสอบการแสดงผลบนอุปกรณ์ของคุณ · หมุน/ซูมได้ด้วยการแตะและลาก · กดปุ่ม AR บนมือถือเพื่อส่องในพื้นที่จริง
+      - link "ต่อบทที่ 3 · วิธีดำเนินการศึกษา →" [ref=e162] [cursor=pointer]:
+        - /url: /ebook/chapter-3
+  - contentinfo [ref=e163]:
+    - generic [ref=e164]:
+      - generic [ref=e165]:
+        - generic [ref=e166]: AR E-Book
+        - paragraph [ref=e167]:
+          - text: เทคโนโลยีความจริงเสริม (AR) เพื่อการให้ข้อมูลผู้รับบริการ
+          - text: โรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม
+      - generic [ref=e168]:
+        - generic [ref=e169]: เนื้อหา
+        - list [ref=e170]:
+          - listitem [ref=e171]:
+            - link "บทที่ 1 บทนำ" [ref=e172] [cursor=pointer]:
+              - /url: /ebook/chapter-1
+          - listitem [ref=e173]:
+            - link "บทที่ 2 เอกสารที่เกี่ยวข้อง" [ref=e174] [cursor=pointer]:
+              - /url: /ebook/chapter-2
+          - listitem [ref=e175]:
+            - link "บทที่ 3 วิธีดำเนินการศึกษา" [ref=e176] [cursor=pointer]:
+              - /url: /ebook/chapter-3
+      - generic [ref=e177]:
+        - generic [ref=e178]: แชร์
+        - generic [ref=e179]:
+          - button "📋 คัดลอกลิงก์" [ref=e180]
+          - link "Facebook" [ref=e181] [cursor=pointer]:
+            - /url: https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4321%2Febook%2Fchapter-2%2F
+          - link "Line" [ref=e182] [cursor=pointer]:
+            - /url: https://social-plugins.line.me/lineit/share?url=http%3A%2F%2Flocalhost%3A4321%2Febook%2Fchapter-2%2F
+    - generic [ref=e183]: © 2026 AR E-Book · เผยแพร่เพื่อการศึกษา
+  - button "กลับด้านบน": ↑

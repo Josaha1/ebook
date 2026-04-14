@@ -1,0 +1,145 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "AR E-Book" [ref=e4] [cursor=pointer]:
+        - /url: /ebook/
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "บทที่ 1" [ref=e7] [cursor=pointer]:
+            - /url: /ebook/chapter-1
+        - listitem [ref=e8]:
+          - link "บทที่ 2" [ref=e9] [cursor=pointer]:
+            - /url: /ebook/chapter-2
+        - listitem [ref=e10]:
+          - link "บทที่ 3" [ref=e11] [cursor=pointer]:
+            - /url: /ebook/chapter-3
+      - button "Toggle dark mode" [ref=e13]:
+        - img [ref=e14]
+  - main [ref=e16]:
+    - generic [ref=e20]:
+      - paragraph [ref=e21]: บทที่
+      - generic [ref=e22]: "03"
+      - heading "วิธีดำเนินการศึกษา" [level=1] [ref=e23]
+      - paragraph [ref=e24]: การศึกษากึ่งทดลองกับผู้รับบริการ 20–30 ราย ในโรงพยาบาลนภาลัย โดยใช้สื่อมือถือผ่าน Aurasma และ QR code LINE
+    - generic [ref=e25]:
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - generic [ref=e30]: รูปแบบ
+          - generic [ref=e31]: การศึกษากึ่งทดลอง
+        - generic [ref=e32]:
+          - generic [ref=e33]: ช่วงเวลา
+          - generic [ref=e34]: เม.ย. – ส.ค. 2560
+        - generic [ref=e35]:
+          - generic [ref=e36]: กลุ่มตัวอย่าง
+          - generic [ref=e37]: 44 ราย
+      - generic [ref=e39]:
+        - heading "ขั้นตอนดำเนินการ" [level=2] [ref=e40]: ขั้นตอนดำเนินการ
+        - list [ref=e42]:
+          - listitem [ref=e43]:
+            - generic [ref=e44]: "1.1"
+            - generic [ref=e45]:
+              - paragraph [ref=e46]: ขั้นเตรียมการ
+              - heading "ค้นหาปัญหา" [level=3] [ref=e47]
+              - paragraph [ref=e48]: เดิมการให้คำแนะนำและสอนผู้ดูแลให้กลับไปปฏิบัติตนที่บ้านใช้เอกสารกระดาษเป็นหลัก ทำให้เกิดปัญหาเอกสารชำรุด จำไม่ได้ ต้องนำมาอ่านซ้ำ หรือบางรายสูญหายไปแล้ว หรืออ่านแล้วไม่เข้าใจ
+          - listitem [ref=e49]:
+            - generic [ref=e50]: "1.2"
+            - generic [ref=e51]:
+              - paragraph [ref=e52]: ขั้นเตรียมการ
+              - heading "ศึกษานวัตกรรมการสอนอื่น" [level=3] [ref=e53]
+              - paragraph [ref=e54]: ใช้หลัก สะดวก เข้าถึงง่าย ทันยุคสมัย ลดต้นทุน ผู้ศึกษาคัดเลือกแอพพลิเคชันในมือถือมา 2 แบบ
+              - list [ref=e55]:
+                - listitem [ref=e56]:
+                  - generic [ref=e57]: •
+                  - generic [ref=e58]: แอพพลิเคชัน Aurasma
+                - listitem [ref=e59]:
+                  - generic [ref=e60]: •
+                  - generic [ref=e61]: QR code ใน LINE
+          - listitem [ref=e62]:
+            - generic [ref=e63]: "2.1"
+            - generic [ref=e64]:
+              - paragraph [ref=e65]: ขั้นดำเนินการ
+              - heading "ปรับเนื้อหาให้ทันสมัย" [level=3] [ref=e66]
+              - paragraph [ref=e67]: นำเอกสารคำแนะนำการปฏิบัติตนมาปรับให้ทันสมัยและถูกต้องตามหลักวิชาการ ผ่านการตรวจความตรง ความถูกต้องและความเที่ยงจากผู้เชี่ยวชาญ โดยมุ่งเน้นกลุ่มโรค
+              - list [ref=e68]:
+                - listitem [ref=e69]:
+                  - generic [ref=e70]: •
+                  - generic [ref=e71]: ผู้ป่วยช่วยเหลือตนเองได้น้อย (ป้องกันแผลกดทับ)
+                - listitem [ref=e72]:
+                  - generic [ref=e73]: •
+                  - generic [ref=e74]: แผลเรื้อรังและอุปกรณ์ต่อพ่วง
+                - listitem [ref=e75]:
+                  - generic [ref=e76]: •
+                  - generic [ref=e77]: ผู้ป่วยมะเร็งระยะแพร่กระจาย
+          - listitem [ref=e78]:
+            - generic [ref=e79]: "2.2"
+            - generic [ref=e80]:
+              - paragraph [ref=e81]: ขั้นดำเนินการ
+              - heading "สร้างสื่อด้วย Aurasma + QR code" [level=3] [ref=e82]
+              - paragraph [ref=e83]: แปลงเนื้อหาเป็นสื่อมีเดียผ่านแอพพลิเคชัน Aurasma และ QR code ใน LINE เพื่อให้ผู้ใช้สามารถเข้าถึงเนื้อหาผ่านมือถือได้ทันที
+          - listitem [ref=e84]:
+            - generic [ref=e85]: "2.3"
+            - generic [ref=e86]:
+              - paragraph [ref=e87]: ขั้นดำเนินการ
+              - heading "ทดลองใช้จริง" [level=3] [ref=e88]
+              - paragraph [ref=e89]: ทดลองใช้กับผู้รับบริการในโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ระหว่างเดือนเมษายน – สิงหาคม 2560 จำนวน 44 ราย
+              - list [ref=e90]:
+                - listitem [ref=e91]:
+                  - generic [ref=e92]: •
+                  - generic [ref=e93]: เอกสารคำแนะนำโรคแผลเรื้อรัง (กดทับ, เบาหวาน, แผลผ่าตัด)
+                - listitem [ref=e94]:
+                  - generic [ref=e95]: •
+                  - generic [ref=e96]: คู่มือดูแลผู้ป่วยที่มีอุปกรณ์ต่อพ่วง (สายให้อาหาร, สายสวน, ท่อหายใจ)
+                - listitem [ref=e97]:
+                  - generic [ref=e98]: •
+                  - generic [ref=e99]: แผ่นพับดูแลผู้ป่วยมะเร็งและการจัดการความปวด
+                - listitem [ref=e100]:
+                  - generic [ref=e101]: •
+                  - generic [ref=e102]: คลิปวีดีโอใน YouTube
+                - listitem [ref=e103]:
+                  - generic [ref=e104]: •
+                  - generic [ref=e105]: แบบประเมินผลผ่าน QR code
+          - listitem [ref=e106]:
+            - generic [ref=e107]: "3"
+            - generic [ref=e108]:
+              - paragraph [ref=e109]: สรุป
+              - heading "สรุปและประเมินผล" [level=3] [ref=e110]
+              - paragraph [ref=e111]: สรุปผลการให้ข้อมูลผู้รับบริการด้วยสื่อมือถือ ประเมินความพึงพอใจผ่านแบบประเมิน online โดยการสแกน QR code
+      - generic [ref=e114]:
+        - generic [ref=e115]: 🛡️
+        - generic [ref=e116]:
+          - heading "การพิทักษ์สิทธิ์" [level=3] [ref=e117]
+          - paragraph [ref=e118]:
+            - text: เนื่องจากการศึกษานี้มีความเสี่ยงต่ออาสาสมัครน้อย ผู้ศึกษาได้เขียนบันทึกขออนุญาตผู้อำนวยการโรงพยาบาลเจ้าของสถานที่และได้รับอนุญาตให้ศึกษาได้
+            - strong [ref=e119]: เมื่อวันที่ 21 เมษายน 2560
+            - text: ก่อนทำการศึกษา ผู้ที่กรอกแบบประเมินถือว่ายินยอมในการศึกษาครั้งนี้
+      - link "← กลับหน้าหลัก" [ref=e122] [cursor=pointer]:
+        - /url: /ebook/
+  - contentinfo [ref=e123]:
+    - generic [ref=e124]:
+      - generic [ref=e125]:
+        - generic [ref=e126]: AR E-Book
+        - paragraph [ref=e127]:
+          - text: เทคโนโลยีความจริงเสริม (AR) เพื่อการให้ข้อมูลผู้รับบริการ
+          - text: โรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม
+      - generic [ref=e128]:
+        - generic [ref=e129]: เนื้อหา
+        - list [ref=e130]:
+          - listitem [ref=e131]:
+            - link "บทที่ 1 บทนำ" [ref=e132] [cursor=pointer]:
+              - /url: /ebook/chapter-1
+          - listitem [ref=e133]:
+            - link "บทที่ 2 เอกสารที่เกี่ยวข้อง" [ref=e134] [cursor=pointer]:
+              - /url: /ebook/chapter-2
+          - listitem [ref=e135]:
+            - link "บทที่ 3 วิธีดำเนินการศึกษา" [ref=e136] [cursor=pointer]:
+              - /url: /ebook/chapter-3
+      - generic [ref=e137]:
+        - generic [ref=e138]: แชร์
+        - generic [ref=e139]:
+          - button "📋 คัดลอกลิงก์" [ref=e140]
+          - link "Facebook" [ref=e141] [cursor=pointer]:
+            - /url: https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4321%2Febook%2Fchapter-3
+          - link "Line" [ref=e142] [cursor=pointer]:
+            - /url: https://social-plugins.line.me/lineit/share?url=http%3A%2F%2Flocalhost%3A4321%2Febook%2Fchapter-3
+    - generic [ref=e143]: © 2026 AR E-Book · เผยแพร่เพื่อการศึกษา
+  - button "กลับด้านบน" [ref=e144]: ↑
