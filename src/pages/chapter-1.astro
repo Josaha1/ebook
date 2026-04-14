@@ -4,14 +4,12 @@ import ChapterIntro from '../components/ChapterIntro.astro';
 import ChapterSidebar from '../components/ChapterSidebar.astro';
 import ScrollReveal from '../components/ScrollReveal.astro';
 import Section from '../components/Section.astro';
-import StatCounter from '../components/StatCounter.astro';
 import Pullquote from '../components/Pullquote.astro';
 import Phone3D from '../components/Phone3D.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const toc = [
   { id: 'section-1-1', label: '1.1 ความเป็นมาและความสำคัญ' },
-  { id: 'section-stats', label: 'สถิติข้อร้องเรียน' },
   { id: 'section-ar-solution', label: 'ทางออกด้วย AR' },
   { id: 'section-1-2', label: '1.2 วัตถุประสงค์' },
   { id: 'section-1-3', label: '1.3 ประโยชน์' },
@@ -48,24 +46,6 @@ const toc = [
               ต่อมายุคสื่อและอุปกรณ์ต่างๆ พยาบาลเริ่มนำสื่อและอุปกรณ์ทางเทคโนโลยีการสื่อสารมาใช้ เช่น การบันทึกภาพเป็นภาพนิ่งลงกระดาษ บันทึกเสียง สื่อวีดีทัศน์ และใช้อุปกรณ์ต่างๆ มาพัฒนาใช้ทางการพยาบาลเพื่อเพิ่มจุดสนใจมากขึ้น เพื่อลดการใช้คน ลดข้อจำกัดในการสื่อสารหรือสอนผู้ป่วยโดยใช้คน แต่ในทางปฏิบัติการนำความรู้ที่เป็นกลับบ้านยังเป็นรูปแบบเอกสารเป็นส่วนใหญ่ การใช้ภาพ เสียงในรูปวีดีทัศน์ คลิปวีดีโอ (Clip VDO) ยังเป็นสิ่งที่ยุ่งยาก การนำเอาสารกลับบ้านอาจไม่ได้หยิบมาอ่านหรือทบทวนอีกเลย หรือฉีกขาดสูญหายไป
             </p>
           </Section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <div id="section-stats" class="scroll-mt-20 card p-6 md:p-10 brand-gradient-subtle">
-            <div class="mb-8">
-              <span class="kicker">By the Numbers</span>
-              <h3 class="mt-4 font-semibold text-2xl md:text-3xl tracking-tight">สถิติข้อร้องเรียน<br/>ด้านการสื่อสาร</h3>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              <StatCounter value={17} label="ข้อร้องเรียน ปี 2555" suffix=" เรื่อง" />
-              <StatCounter value={50} label="จากการสื่อสาร" suffix="%" />
-              <StatCounter value={7} label="รพ.นภาลัย ปี 2557" suffix=" ราย" />
-              <StatCounter value={4} label="ปี 2558 · 2559" suffix=" ราย" />
-            </div>
-            <p class="mt-8 pt-6 border-t hairline text-xs md:text-sm text-zinc-500">
-              ที่มา: กระทรวงสาธารณสุข · สภาการพยาบาลแห่งประเทศไทย (พ.ศ. 2551–2557) · พรชัย ดีไพศาลสกุล
-            </p>
-          </div>
         </ScrollReveal>
 
         <ScrollReveal>
