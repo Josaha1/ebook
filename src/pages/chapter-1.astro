@@ -21,35 +21,33 @@ const toc = [
   { id: 'section-1-7', label: '1.7 กลุ่มเป้าหมาย' },
 ];
 ---
-<BaseLayout title="บทที่ I · บทนำ · AR Research">
+<BaseLayout title="บทที่ 1 · บทนำ · AR E-Book">
   <ChapterIntro
-    number="I"
-    kicker="Chapter One"
+    number={1}
     title="บทนำ"
     subtitle="ที่มาของการศึกษาการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ด้วยสื่อมือถือผ่านเทคโนโลยี Augmented Reality"
     meta={[
-      { label: 'Pages', value: '3 หน้า' },
-      { label: 'Words', value: '901 คำ' },
-      { label: 'Duration', value: 'เม.ย.–ส.ค. 2560' },
-      { label: 'Sample', value: '20–30 ราย' },
+      { label: 'หน้า', value: '3 หน้า' },
+      { label: 'คำ', value: '901 คำ' },
+      { label: 'ช่วงเวลา', value: 'เม.ย.–ส.ค. 2560' },
     ]}
   />
 
-  <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-24">
-    <div class="grid lg:grid-cols-[220px_1fr] gap-12 lg:gap-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+    <div class="grid lg:grid-cols-[220px_1fr] gap-10 lg:gap-16">
       <ChapterSidebar items={toc} current={1} />
 
-      <div class="min-w-0 space-y-24">
+      <div class="min-w-0 space-y-16 md:space-y-20">
         <ScrollReveal>
           <Section num="1.1" title="ความเป็นมาและความสำคัญของปัญหา" anchor="section-1-1">
-            <p class="drop-cap">
+            <p>
               บทบาทอิสระบทบาทหนึ่งของวิชาชีพพยาบาลคือ <strong>บทบาทการสอน การให้ความรู้ และคำแนะนำผู้ป่วย</strong> ซึ่งรูปแบบการสอนและการให้คำแนะนำแต่เดิมจะใช้คนหรือตัวพยาบาลพูดสอนหรือสื่อสารผู้ป่วยด้วยวาจาและท่าทางเป็นรายเดี่ยวหรือรายกลุ่ม แต่การให้ข้อมูล การให้คำแนะนำ หรือการสอนผู้ป่วยและญาติโดยใช้คนสู่คน นอกจากจะทำให้เสียเวลาการทำกิจกรรมทางการพยาบาลช่วยเหลือผู้ป่วยและญาติแล้ว การสอนปากเปล่าอาจไม่ครบถ้วนตามเอกสารหรือครอบคลุมครบถ้วน
             </p>
             <p>
               การใช้คนยังมีข้อจำกัด เริ่มตั้งแต่บุคลิก ท่าทาง การถ่ายทอดผู้พูดไม่จูงใจให้ผู้รับฟังสนใจ หรือไม่เข้าใจ อีกทั้งสัมพันธภาพในการสอนหรือการให้คำแนะนำทางสุขภาพของพยาบาลไม่เหมือนกับการสอนระหว่างครูกับศิษย์ ครูกับศิษย์มีจุดมุ่งหมายคล้ายๆกันคือครูต้องการให้ความรู้ในขณะที่ศิษย์ก็ต้องการความรู้เช่นกัน แต่สำหรับพยาบาลที่จำเป็นต้องให้ความรู้ คำแนะนำให้ผู้ป่วยได้รับการดูแลสุขภาพที่ดีตามสภาพที่เป็นไปได้ในชุมชน ซึ่งอาจมีญาติหรือผู้ดูแลบางรายที่พบพยาบาลแต่ไม่ต้องการข้อมูลคำแนะนำนั้น เนื่องจากรอผู้ดูแลตัวจริงซึ่งอาจติดภาระอยู่ที่บ้าน ที่ทำงาน หรือวางแผนให้เจ้าหน้าที่สุขภาพทีมอื่นมาดูแลต่อเนื่อง การเข้าถึงข้อมูลอาจไม่ตรงความมุ่งหมายที่พยาบาลทำกิจกรรมการสอน
             </p>
 
-            <Pullquote>เอกสารที่นำกลับบ้านอาจไม่ได้หยิบมาอ่าน<br/>หรือฉีกขาดสูญหายไป</Pullquote>
+            <Pullquote>เอกสารที่นำกลับบ้านอาจไม่ได้หยิบมาอ่าน หรือฉีกขาดสูญหายไป</Pullquote>
 
             <p>
               ต่อมายุคสื่อและอุปกรณ์ต่างๆ พยาบาลเริ่มนำสื่อและอุปกรณ์ทางเทคโนโลยีการสื่อสารมาใช้ เช่น การบันทึกภาพเป็นภาพนิ่งลงกระดาษ บันทึกเสียง สื่อวีดีทัศน์ และใช้อุปกรณ์ต่างๆ มาพัฒนาใช้ทางการพยาบาลเพื่อเพิ่มจุดสนใจมากขึ้น เพื่อลดการใช้คน ลดข้อจำกัดในการสื่อสารหรือสอนผู้ป่วยโดยใช้คน แต่ในทางปฏิบัติการนำความรู้ที่เป็นกลับบ้านยังเป็นรูปแบบเอกสารเป็นส่วนใหญ่ การใช้ภาพ เสียงในรูปวีดีทัศน์ คลิปวีดีโอ (Clip VDO) ยังเป็นสิ่งที่ยุ่งยาก การนำเอาสารกลับบ้านอาจไม่ได้หยิบมาอ่านหรือทบทวนอีกเลย หรือฉีกขาดสูญหายไป
@@ -58,19 +56,18 @@ const toc = [
         </ScrollReveal>
 
         <ScrollReveal>
-          <div id="section-stats" class="scroll-mt-24 ink-bg -mx-6 md:-mx-10 lg:mx-0 lg:rounded px-6 md:px-10 py-14 md:py-20">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-              <div class="eyebrow justify-center" style="color: #B8954A;">By the Numbers</div>
-              <h3 class="mt-4 font-display italic text-3xl md:text-4xl leading-[1.2]">สถิติข้อร้องเรียน<br/><em class="text-gold">ด้านการสื่อสาร</em></h3>
+          <div id="section-stats" class="scroll-mt-20 card p-6 md:p-10 brand-gradient-subtle">
+            <div class="mb-8">
+              <span class="kicker">By the Numbers</span>
+              <h3 class="mt-4 font-semibold text-2xl md:text-3xl tracking-tight">สถิติข้อร้องเรียน<br/>ด้านการสื่อสาร</h3>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               <StatCounter value={17} label="ข้อร้องเรียน ปี 2555" suffix=" เรื่อง" />
               <StatCounter value={50} label="จากการสื่อสาร" suffix="%" />
               <StatCounter value={7} label="รพ.นภาลัย ปี 2557" suffix=" ราย" />
               <StatCounter value={4} label="ปี 2558 · 2559" suffix=" ราย" />
             </div>
-            <div class="gold-line w-24 mx-auto my-10"></div>
-            <p class="text-center text-sm font-serif italic text-cream/60 max-w-xl mx-auto">
+            <p class="mt-8 pt-6 border-t hairline text-xs md:text-sm text-zinc-500">
               ที่มา: กระทรวงสาธารณสุข · สภาการพยาบาลแห่งประเทศไทย (พ.ศ. 2551–2557) · พรชัย ดีไพศาลสกุล
             </p>
           </div>
@@ -91,17 +88,17 @@ const toc = [
               ปัจจุบัน การสื่อสารในระบบ <strong>iOS</strong> และ <strong>Android</strong> มีบทบาทสำคัญในการสื่อสารและเติบโตขึ้นอย่างรวดเร็ว ทำให้ทุกคนไม่สนใจการเรียนรู้ด้วยวิธีเดิมๆ หรือแบบเก่าอีก แทบทุกคนทุกบ้านจะมีอุปกรณ์ที่จำเป็นใช้นั่นคือ มือถือ Tablet และ Smart Phone การหันกลับมาอ่านเอกสารคำแนะนำจากกระดาษและภาพอย่างเดียวไม่จูงใจให้สนใจ สิ้นเปลือง ไม่เหมาะกับสภาพการพัฒนาเทคโนโลยีปัจจุบัน
             </p>
 
-            <div class="my-16 -mx-4 md:-mx-10 grid md:grid-cols-[1fr_auto_1fr] gap-10 md:gap-14 items-center py-10 paper-bg-alt px-6 md:px-10">
-              <div class="text-right">
-                <div class="eyebrow" style="color: #B8954A; justify-content: flex-end;">ยุคเก่า</div>
-                <h4 class="mt-3 font-display italic text-2xl md:text-3xl leading-tight">เอกสารกระดาษ</h4>
-                <p class="mt-3 font-serif text-sm text-sepia">เข้าถึงยาก · ชำรุดง่าย · สูญหาย</p>
+            <div class="not-prose my-10 grid sm:grid-cols-[1fr_auto_1fr] gap-5 sm:gap-8 items-center card p-6 md:p-8">
+              <div class="text-center sm:text-right">
+                <div class="kicker mb-2">ยุคเก่า</div>
+                <h4 class="font-semibold text-xl md:text-2xl">เอกสารกระดาษ</h4>
+                <p class="mt-2 text-sm text-zinc-500">เข้าถึงยาก · ชำรุดง่าย</p>
               </div>
-              <div class="text-gold text-4xl font-display italic text-center">→</div>
-              <div class="text-left">
-                <div class="eyebrow" style="color: #B8954A;">ยุคใหม่</div>
-                <h4 class="mt-3 font-display italic text-2xl md:text-3xl leading-tight">สื่อมือถือ AR</h4>
-                <p class="mt-3 font-serif text-sm text-sepia">สะดวก · ทันสมัย · สื่อมีชีวิต</p>
+              <div class="text-indigo-600 text-3xl text-center font-light">→</div>
+              <div class="text-center sm:text-left">
+                <div class="kicker mb-2">ยุคใหม่</div>
+                <h4 class="font-semibold text-xl md:text-2xl brand-gradient-text">สื่อมือถือ AR</h4>
+                <p class="mt-2 text-sm text-zinc-500">สะดวก · ทันสมัย · มีชีวิต</p>
               </div>
             </div>
 
@@ -113,13 +110,13 @@ const toc = [
 
         <ScrollReveal>
           <Section num="1.2" title="วัตถุประสงค์" anchor="section-1-2">
-            <Pullquote>พัฒนาการให้ข้อมูลผู้รับบริการ<br/>โรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม<br/>ด้วยสื่อมือถือ</Pullquote>
+            <Pullquote>พัฒนาการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ด้วยสื่อมือถือ</Pullquote>
           </Section>
         </ScrollReveal>
 
         <ScrollReveal>
           <Section num="1.3" title="ประโยชน์ที่คาดว่าจะได้รับ" anchor="section-1-3">
-            <ol class="not-prose space-y-6 border-t hairline">
+            <ol class="not-prose space-y-3">
               {[
                 'ผู้เข้าบริการในโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ได้รับข้อมูลทางสุขภาพสะดวกรวดเร็ว',
                 'เปลี่ยนการให้คำแนะนำทางด้านสุขภาพจากเอกสารเป็นสื่อมีชีวิต',
@@ -127,9 +124,9 @@ const toc = [
                 'ลดคนในการให้ข้อมูลผู้รับบริการ',
                 'ลดข้อขัดแย้งจากการสื่อสารโดยคนสู่คน',
               ].map((t, i) => (
-                <li class="pt-6 border-b hairline pb-6 grid grid-cols-[60px_1fr] gap-4 items-baseline">
-                  <span class="display-num italic text-3xl md:text-4xl text-gold leading-none tnum">0{i + 1}</span>
-                  <span class="font-serif text-lg md:text-xl leading-[1.6]">{t}</span>
+                <li class="card p-5 md:p-6 flex gap-4 items-start">
+                  <span class="flex-shrink-0 w-9 h-9 rounded-full brand-gradient text-white font-mono font-medium text-sm grid place-items-center tnum">{String(i + 1).padStart(2, '0')}</span>
+                  <span class="pt-1.5 md:pt-2 text-[15px] md:text-base leading-relaxed">{t}</span>
                 </li>
               ))}
             </ol>
@@ -137,14 +134,18 @@ const toc = [
         </ScrollReveal>
 
         <ScrollReveal>
-          <div class="grid md:grid-cols-2 gap-10">
-            <Section num="1.4" title="ระยะเวลาดำเนินการ" anchor="section-1-4">
-              <div class="font-display italic text-4xl md:text-5xl text-gold leading-none tnum">เม.ย.–ส.ค.</div>
-              <div class="mt-2 font-serif italic text-sepia">พ.ศ. 2560 · 5 เดือน</div>
+          <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
+            <Section num="1.4" title="ระยะเวลา" anchor="section-1-4">
+              <div class="card p-6 md:p-8">
+                <div class="text-3xl md:text-4xl font-semibold brand-gradient-text tnum leading-none">เม.ย.–ส.ค.</div>
+                <div class="mt-3 text-sm text-zinc-500">พ.ศ. 2560 · 5 เดือน</div>
+              </div>
             </Section>
             <Section num="1.7" title="กลุ่มเป้าหมาย" anchor="section-1-7">
-              <div class="font-display italic text-4xl md:text-5xl text-gold leading-none tnum">20–30 ราย</div>
-              <div class="mt-2 font-serif italic text-sepia">ผู้รับบริการใน รพ.นภาลัย</div>
+              <div class="card p-6 md:p-8">
+                <div class="text-3xl md:text-4xl font-semibold brand-gradient-text tnum leading-none">20–30 ราย</div>
+                <div class="mt-3 text-sm text-zinc-500">ผู้รับบริการใน รพ.นภาลัย</div>
+              </div>
             </Section>
           </div>
         </ScrollReveal>
@@ -162,23 +163,23 @@ const toc = [
 
         <ScrollReveal>
           <Section num="1.6" title="นิยามศัพท์" anchor="section-1-6">
-            <dl class="not-prose space-y-8 border-t hairline pt-8">
+            <dl class="not-prose space-y-4">
               {[
                 { term: 'ผู้รับบริการในโรงพยาบาลนภาลัย', def: 'หมายถึง ผู้ป่วยและญาติผู้ป่วยและผู้เข้ารับการบริการในโรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม' },
-                { term: 'การให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย', def: 'หมายถึง กิจกรรมการสอน การให้ความรู้ การให้คำแนะนำแก่ผู้เข้ารับบริการในโรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม' },
-                { term: 'ความพึงพอใจต่อการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย', def: 'หมายถึง ค่าระดับความพึงพอใจในนวัตกรรมการให้ข้อมูล ซึ่งแบ่งออกเป็น 4 ระดับ คือ มากที่สุด · มาก · ปานกลาง · น้อย' },
+                { term: 'การให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย', def: 'หมายถึง กิจกรรมการสอน การให้ความรู้ การให้คำแนะนำแก่ผู้เข้ารับบริการในโรงพยาบาลนภาลัย' },
+                { term: 'ความพึงพอใจต่อการให้ข้อมูลผู้รับบริการ', def: 'หมายถึง ค่าระดับความพึงพอใจในนวัตกรรมการให้ข้อมูล ซึ่งแบ่งออกเป็น 4 ระดับ คือ มากที่สุด · มาก · ปานกลาง · น้อย' },
               ].map(({ term, def }) => (
-                <div>
-                  <dt class="font-display italic text-xl md:text-2xl text-gold leading-tight">{term}</dt>
-                  <dd class="mt-3 font-serif text-base md:text-lg leading-[1.8]">{def}</dd>
+                <div class="card p-5 md:p-6">
+                  <dt class="font-semibold text-indigo-600 dark:text-indigo-400">{term}</dt>
+                  <dd class="mt-2 text-zinc-700 dark:text-zinc-300 leading-relaxed">{def}</dd>
                 </div>
               ))}
-              <div>
-                <dt class="font-display italic text-xl md:text-2xl text-gold leading-tight">สื่อมือถือ</dt>
-                <dd class="mt-3 font-serif text-base md:text-lg leading-[1.8]">หมายถึง โปรแกรมการสอนโดยใช้
-                  <ol class="mt-4 ml-6 list-decimal space-y-2">
-                    <li>แอพพลิเคชัน Aurasma ซึ่งติดตั้งในโทรศัพท์มือถือได้ทั้งระบบแอนดรอยด์ (Android) และระบบไอโอเอส (iOS)</li>
-                    <li>โดยผ่าน QR code LINE ซึ่ง QR code ในโปรแกรม LINE จะติดตั้งมาให้พร้อมใช้งานในโทรศัพท์มือถือทุกเครื่องทั้ง Smart Phone หรือ Tablet</li>
+              <div class="card p-5 md:p-6">
+                <dt class="font-semibold text-indigo-600 dark:text-indigo-400">สื่อมือถือ</dt>
+                <dd class="mt-2 text-zinc-700 dark:text-zinc-300 leading-relaxed">หมายถึง โปรแกรมการสอนโดยใช้
+                  <ol class="mt-3 ml-5 list-decimal space-y-1.5">
+                    <li>แอพพลิเคชัน Aurasma ซึ่งติดตั้งในโทรศัพท์มือถือได้ทั้งระบบ Android และ iOS</li>
+                    <li>ผ่าน QR code LINE ซึ่ง QR code ในโปรแกรม LINE จะติดตั้งมาให้พร้อมใช้งาน</li>
                   </ol>
                 </dd>
               </div>
@@ -187,10 +188,13 @@ const toc = [
         </ScrollReveal>
 
         <ScrollReveal>
-          <div class="pt-12 border-t hairline flex items-center justify-between">
-            <a href={`${base}/`} class="font-serif italic text-sepia hover:text-gold">← Return home</a>
-            <a href={`${base}/chapter-2`} class="font-display italic text-gold text-xl md:text-2xl hover:text-burgundy transition">Next · บทที่ II →</a>
-          </div>
+          <nav class="pt-8 border-t hairline flex items-center justify-between gap-4 flex-wrap">
+            <a href={`${base}/`} class="text-sm text-zinc-500 hover:text-indigo-600 dark:hover:text-indigo-400">← หน้าหลัก</a>
+            <a href={`${base}/chapter-2`} class="btn btn-primary">
+              บทที่ 2
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </nav>
         </ScrollReveal>
       </div>
     </div>

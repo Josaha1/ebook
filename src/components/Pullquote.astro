@@ -1,11 +1,13 @@
 ---
-const { cite, align = 'center' } = Astro.props;
+const { cite } = Astro.props;
 ---
-<div class={`my-16 text-${align}`}>
-  <div class="ornament mb-6 justify-center flex" style="color: #B8954A;">§</div>
-  <blockquote class="font-display italic text-2xl md:text-3xl lg:text-[2.25rem] leading-[1.35] max-w-3xl mx-auto text-ink dark:text-cream">
-    <span class="text-gold text-5xl font-normal">"</span><slot /><span class="text-gold text-5xl font-normal">"</span>
-  </blockquote>
-  {cite && <cite class="block mt-6 text-sm uppercase tracking-[0.3em] text-sepia not-italic font-sans">— {cite}</cite>}
-  <div class="ornament mt-6 justify-center flex" style="color: #B8954A;">§</div>
-</div>
+<figure class="my-12 md:my-16">
+  <div class="relative">
+    <div class="absolute -top-2 left-0 text-6xl md:text-7xl brand-gradient-text leading-none select-none opacity-80" aria-hidden="true">"</div>
+    <blockquote class="pl-12 md:pl-16 font-medium leading-[1.35] tracking-tight text-zinc-900 dark:text-zinc-50"
+      style="font-size: clamp(1.375rem, 3vw, 1.875rem);">
+      <slot />
+    </blockquote>
+  </div>
+  {cite && <figcaption class="mt-5 pl-12 md:pl-16 text-xs font-mono uppercase tracking-wider text-zinc-500">— {cite}</figcaption>}
+</figure>

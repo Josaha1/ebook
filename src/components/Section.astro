@@ -2,12 +2,15 @@
 const { num, title, anchor } = Astro.props;
 const id = anchor ?? (num ? `section-${String(num).replace(/\./g, '-')}` : undefined);
 ---
-<section id={id} class="scroll-mt-24">
+<section id={id} class="scroll-mt-20">
   {title && (
-    <div class="mb-10">
-      {num && <div class="eyebrow mb-4" style="color: #B8954A;">Section {num}</div>}
-      <h2 class="font-display italic text-3xl md:text-4xl lg:text-[2.5rem] font-normal leading-[1.18]">{title}</h2>
+    <div class="mb-6 md:mb-8">
+      {num && <div class="kicker mb-3">Section {num}</div>}
+      <h2 class="font-semibold leading-[1.2] tracking-tight"
+        style="font-size: clamp(1.5rem, 3.5vw, 2rem);">
+        {title}
+      </h2>
     </div>
   )}
-  <div class="prose-ct"><slot /></div>
+  <div class="prose-mod"><slot /></div>
 </section>

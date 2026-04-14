@@ -1,33 +1,33 @@
 ---
-const { number, title, subtitle, meta = [], kicker = 'Chapter' } = Astro.props;
+const { number, title, subtitle, meta = [] } = Astro.props;
 ---
-<header class="relative min-h-[70vh] chapter-opener flex items-center overflow-hidden">
-  <div class="absolute inset-0 opacity-[0.05]" aria-hidden="true"
-    style="background-image: radial-gradient(rgba(245,239,228,0.5) 1px, transparent 1px); background-size: 32px 32px;"></div>
+<header class="relative border-b hairline brand-gradient-subtle">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-36 pb-12 md:pb-16">
+    <span class="kicker">
+      <span class="font-mono">Ch.</span>
+      {typeof number === 'number' ? number : parseInt(number) || number}
+    </span>
 
-  <div class="relative max-w-5xl mx-auto px-6 md:px-10 w-full py-24 md:py-32">
-    <div class="eyebrow text-gold" style="color: #B8954A;">{kicker} · บทที่ {parseInt(number)}</div>
+    <h1 class="mt-6 font-semibold leading-[1.15] tracking-tight"
+      style="font-size: clamp(1.875rem, 4.5vw, 3rem);">
+      {title}
+    </h1>
 
-    <div class="mt-14 grid md:grid-cols-[auto_1fr] gap-10 md:gap-16 items-end">
-      <div class="display-num italic text-gold leading-[0.78] text-[8rem] md:text-[11rem] lg:text-[13rem] select-none">{number}</div>
-      <div class="pb-4 md:pb-8">
-        <h1 class="font-display italic text-4xl md:text-6xl lg:text-[4rem] font-normal leading-[1.08]">{title}</h1>
-        {subtitle && <p class="mt-6 font-serif text-base md:text-lg lg:text-xl leading-[1.75] text-cream/75 max-w-2xl">{subtitle}</p>}
-      </div>
-    </div>
+    {subtitle && (
+      <p class="mt-5 text-base md:text-lg leading-[1.75] text-zinc-600 dark:text-zinc-400 max-w-2xl">
+        {subtitle}
+      </p>
+    )}
 
     {meta.length > 0 && (
-      <>
-        <div class="mt-14 gold-line w-32"></div>
-        <dl class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-8">
-          {meta.map((m: any) => (
-            <div>
-              <dt class="text-[10px] uppercase tracking-[0.3em] text-gold font-sans font-semibold">{m.label}</dt>
-              <dd class="mt-2 font-display italic text-lg md:text-xl tnum">{m.value}</dd>
-            </div>
-          ))}
-        </dl>
-      </>
+      <dl class="mt-8 md:mt-10 flex flex-wrap gap-2">
+        {meta.map((m: any) => (
+          <div class="chip">
+            <span class="text-zinc-500">{m.label}</span>
+            <span class="font-semibold tnum">{m.value}</span>
+          </div>
+        ))}
+      </dl>
     )}
   </div>
 </header>

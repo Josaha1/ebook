@@ -1,15 +1,16 @@
 ---
-const { src, alt, caption, number, fullBleed = false, maxW = 'max-w-3xl' } = Astro.props;
+const { src, alt, caption, number, maxW = 'max-w-2xl' } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const full = src.startsWith('http') ? src : `${base}${src.startsWith('/') ? '' : '/'}${src}`;
 ---
-<figure class={`my-16 ${fullBleed ? '-mx-6 md:-mx-10' : `mx-auto ${maxW}`}`}>
-  <div class="relative overflow-hidden">
-    <img src={full} alt={alt} loading="lazy" class="w-full h-auto" />
+<figure class={`my-10 md:my-12 mx-auto ${maxW}`}>
+  <div class="card overflow-hidden rounded-xl">
+    <img src={full} alt={alt} loading="lazy" class="w-full h-auto block" />
   </div>
   {(number || caption) && (
-    <figcaption class="figure-caption mt-5 px-4">
-      {number && <><span class="smallcaps text-gold font-normal not-italic">ภาพที่ {number}</span>&nbsp;&nbsp;|&nbsp;&nbsp;</>}
+    <figcaption class="figure-caption">
+      {number && <span class="font-mono font-medium not-italic text-indigo-600 dark:text-indigo-400">ภาพที่ {number}</span>}
+      {number && caption && <span class="mx-1.5 text-zinc-400">·</span>}
       {caption}
     </figcaption>
   )}

@@ -1,43 +1,51 @@
 ---
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const links = [
-  { href: `${base}/chapter-1`, label: 'I' },
-  { href: `${base}/chapter-2`, label: 'II' },
-  { href: `${base}/chapter-3`, label: 'III' },
+  { href: `${base}/chapter-1`, label: 'บทที่ 1', en: 'Intro' },
+  { href: `${base}/chapter-2`, label: 'บทที่ 2', en: 'Review' },
+  { href: `${base}/chapter-3`, label: 'บทที่ 3', en: 'Methods' },
 ];
 ---
-<nav class="fixed top-0 inset-x-0 z-50 bg-paper/90 dark:bg-ink/90 backdrop-blur-md border-b hairline transition-colors" style="background: rgba(245, 239, 228, 0.88);">
-  <div class="max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between gap-4">
-    <a href={`${base}/`} class="font-display italic text-xl md:text-2xl tracking-tight whitespace-nowrap">
-      <span class="text-burgundy">A</span><span class="text-ink dark:text-cream">·</span><span class="text-gold">R</span>
-      <span class="ml-2 text-sm font-sans not-italic tracking-[0.2em] uppercase text-sepia">E-Book</span>
+<nav class="fixed top-0 inset-x-0 z-50 bg-[#FAFAF9]/85 dark:bg-[#0A0A0B]/85 backdrop-blur-xl border-b hairline transition-colors">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-3">
+    <a href={`${base}/`} class="flex items-center gap-2.5 font-semibold whitespace-nowrap">
+      <div class="relative w-7 h-7 rounded-lg brand-gradient grid place-items-center text-white text-xs font-bold">AR</div>
+      <span class="hidden sm:inline text-[15px] tracking-tight">E-Book</span>
     </a>
-    <ul class="hidden md:flex items-center gap-8 font-display italic text-lg tnum">
-      {links.map((l, i) => (
+    <ul class="hidden md:flex items-center gap-1 text-sm">
+      {links.map(l => (
         <li>
-          <a href={l.href} class="relative text-ink dark:text-cream hover:text-gold transition-colors group">
-            <span class="text-[10px] font-sans not-italic uppercase tracking-[0.25em] text-sepia absolute -top-3 left-0 opacity-0 group-hover:opacity-100 transition-opacity">Ch.</span>
+          <a href={l.href} class="px-3.5 py-2 rounded-full font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
             {l.label}
           </a>
         </li>
       ))}
     </ul>
     <div class="flex items-center gap-2">
-      <button id="theme-toggle" aria-label="Toggle theme" class="w-9 h-9 grid place-items-center rounded-full border hairline hover:border-gold transition">
-        <svg class="w-4 h-4 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
-        <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M6.05 17.95l-1.414 1.414m0-13.728l1.414 1.414M17.95 17.95l1.414 1.414M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+      <button id="theme-toggle" aria-label="Toggle theme" class="w-9 h-9 grid place-items-center rounded-full border hairline hover:bg-zinc-100 dark:hover:bg-zinc-800 transition">
+        <svg class="w-4 h-4 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+        <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M6.05 17.95l-1.414 1.414m0-13.728l1.414 1.414M17.95 17.95l1.414 1.414M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
       </button>
       <button id="mobile-menu-btn" aria-label="Menu" class="md:hidden w-9 h-9 grid place-items-center rounded-full border hairline">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="menu-open-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="menu-close-icon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6"/></svg>
       </button>
     </div>
   </div>
-  <div id="mobile-menu" class="md:hidden hidden border-t hairline">
-    <ul class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3 font-display italic text-lg">
-      {links.map((l, i) => <li><a href={l.href} class="block py-1.5"><span class="text-sepia text-xs font-sans not-italic tracking-widest uppercase mr-3">Ch.</span>{l.label} · บทที่ {i + 1}</a></li>)}
+
+  <div id="mobile-menu" class="md:hidden hidden border-t hairline bg-[#FAFAF9] dark:bg-[#0A0A0B]">
+    <ul class="max-w-6xl mx-auto px-4 sm:px-6 py-3">
+      {links.map((l, i) => (
+        <li>
+          <a href={l.href} class="flex items-center justify-between py-3 border-b hairline last:border-0">
+            <span class="font-medium">{l.label}</span>
+            <span class="text-xs font-mono text-zinc-500">{l.en}</span>
+          </a>
+        </li>
+      ))}
     </ul>
   </div>
-  <div id="scroll-progress" class="h-[1px] bg-gold origin-left scale-x-0 transition-transform duration-100"></div>
+  <div id="scroll-progress" class="h-[2px] brand-gradient origin-left scale-x-0 transition-transform duration-100"></div>
 </nav>
 <script is:inline>
   (function () {
@@ -60,5 +68,11 @@ const links = [
   });
   const menuBtn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
-  menuBtn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+  const openIcon = document.getElementById('menu-open-icon');
+  const closeIcon = document.getElementById('menu-close-icon');
+  menuBtn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    openIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
 </script>

@@ -2,31 +2,70 @@
 const { items, current = 1, total = 3 } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
+<!-- Desktop sidebar -->
 <aside class="hidden lg:block sticky top-24 self-start">
-  <div class="eyebrow mb-4" style="color: #B8954A;">Chapter {current} of {total}</div>
-  <div class="flex gap-1 mb-8">
-    {Array.from({ length: total }).map((_, i) => (
-      <div class={`h-[2px] flex-1 ${i < current ? 'bg-gold' : 'bg-sepia/25'}`}></div>
-    ))}
+  <div class="mb-5">
+    <div class="text-[11px] font-mono uppercase tracking-wider text-zinc-500 mb-2">บทที่ {current} · {total}</div>
+    <div class="flex gap-1">
+      {Array.from({ length: total }).map((_, i) => (
+        <div class={`h-[3px] flex-1 rounded-full ${i < current ? 'brand-gradient' : 'bg-zinc-200 dark:bg-zinc-800'}`}></div>
+      ))}
+    </div>
   </div>
 
-  <nav>
-    <div class="text-[10px] font-sans font-semibold text-sepia mb-3 uppercase tracking-[0.3em]">Contents</div>
-    <ul id="chapter-toc" class="border-t hairline">
+  <nav class="border-l-2 border-zinc-200 dark:border-zinc-800">
+    <div class="pl-4 text-[11px] font-mono uppercase tracking-wider text-zinc-500 mb-1">Contents</div>
+    <ul id="chapter-toc">
       {items.map((it: any) => (
-        <li><a href={`#${it.id}`} class="toc-link" data-toc-link={it.id}><span>{it.label}</span></a></li>
+        <li><a href={`#${it.id}`} class="toc-link" data-toc-link={it.id}>{it.label}</a></li>
       ))}
     </ul>
   </nav>
 
-  <div class="mt-8 pt-6 border-t hairline flex flex-col gap-2 text-sm font-serif italic">
-    {current > 1 && <a href={`${base}/chapter-${current - 1}`} class="text-sepia hover:text-gold">← Previous chapter</a>}
-    {current < total && <a href={`${base}/chapter-${current + 1}`} class="text-gold hover:text-burgundy">Next chapter →</a>}
-    {current === total && <a href={`${base}/`} class="text-sepia hover:text-gold">← Return home</a>}
+  <div class="mt-6 pt-5 border-t hairline flex flex-col gap-2 text-sm">
+    {current > 1 && <a href={`${base}/chapter-${current - 1}`} class="text-zinc-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition">← บทที่ {current - 1}</a>}
+    {current < total && <a href={`${base}/chapter-${current + 1}`} class="text-indigo-600 dark:text-indigo-400 font-medium hover:underline">บทที่ {current + 1} →</a>}
+    {current === total && <a href={`${base}/`} class="text-zinc-500 hover:text-indigo-600 dark:hover:text-indigo-400">← หน้าหลัก</a>}
   </div>
 </aside>
 
+<!-- Mobile floating TOC button + drawer -->
+<button id="toc-btn" class="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 rounded-full btn-primary shadow-xl" aria-label="สารบัญ">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h10"/></svg>
+</button>
+
+<div id="toc-drawer" class="lg:hidden fixed inset-0 z-50 hidden">
+  <div id="toc-backdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+  <div class="absolute bottom-0 left-0 right-0 bg-[#FAFAF9] dark:bg-[#0A0A0B] rounded-t-2xl border-t hairline max-h-[85vh] overflow-y-auto">
+    <div class="flex items-center justify-between p-4 border-b hairline sticky top-0 bg-[#FAFAF9]/95 dark:bg-[#0A0A0B]/95 backdrop-blur">
+      <div>
+        <div class="text-[11px] font-mono uppercase tracking-wider text-zinc-500">บทที่ {current} · สารบัญ</div>
+        <div class="mt-1.5 flex gap-1 w-28">
+          {Array.from({ length: total }).map((_, i) => (
+            <div class={`h-[3px] flex-1 rounded-full ${i < current ? 'brand-gradient' : 'bg-zinc-200 dark:bg-zinc-800'}`}></div>
+          ))}
+        </div>
+      </div>
+      <button id="toc-close" class="w-9 h-9 grid place-items-center rounded-full border hairline" aria-label="ปิด">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6"/></svg>
+      </button>
+    </div>
+    <nav class="p-2 pb-6">
+      <ul>
+        {items.map((it: any) => (
+          <li><a href={`#${it.id}`} class="toc-link" data-toc-link={it.id} data-toc-mobile>{it.label}</a></li>
+        ))}
+      </ul>
+      <div class="mt-4 pt-4 border-t hairline mx-2 flex items-center justify-between text-sm">
+        {current > 1 ? <a href={`${base}/chapter-${current - 1}`} class="text-zinc-500">← บทที่ {current - 1}</a> : <span></span>}
+        {current < total ? <a href={`${base}/chapter-${current + 1}`} class="text-indigo-600 dark:text-indigo-400 font-medium">บทที่ {current + 1} →</a> : <a href={`${base}/`} class="text-zinc-500">หน้าหลัก</a>}
+      </div>
+    </nav>
+  </div>
+</div>
+
 <script>
+  // TOC scroll spy
   const links = document.querySelectorAll<HTMLAnchorElement>('[data-toc-link]');
   if (links.length) {
     const targets = Array.from(links).map((a) => ({ id: a.dataset.tocLink!, link: a, el: document.getElementById(a.dataset.tocLink!) })).filter((t) => t.el);
@@ -34,11 +73,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       for (const e of entries) {
         if (e.isIntersecting) {
           links.forEach((a) => a.classList.remove('active'));
-          const match = targets.find((t) => t.el === e.target);
-          match?.link.classList.add('active');
+          targets.filter((t) => t.el === e.target).forEach((t) => t.link.classList.add('active'));
         }
       }
     }, { rootMargin: '-15% 0px -70% 0px' });
     targets.forEach((t) => io.observe(t.el!));
   }
+
+  // Mobile drawer
+  const drawer = document.getElementById('toc-drawer');
+  const btn = document.getElementById('toc-btn');
+  const close = document.getElementById('toc-close');
+  const backdrop = document.getElementById('toc-backdrop');
+  const openDrawer = () => drawer?.classList.remove('hidden');
+  const closeDrawer = () => drawer?.classList.add('hidden');
+  btn?.addEventListener('click', openDrawer);
+  close?.addEventListener('click', closeDrawer);
+  backdrop?.addEventListener('click', closeDrawer);
+  document.querySelectorAll('[data-toc-mobile]').forEach((a) => a.addEventListener('click', closeDrawer));
 </script>
