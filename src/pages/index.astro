@@ -3,20 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ARCube from '../components/ARCube.astro';
 import Phone3D from '../components/Phone3D.astro';
-import HeartbeatIcon from '../components/HeartbeatIcon.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const chapters = [
-  { n: '01', href: `${base}/chapter-1`, title: 'บทนำ', kicker: 'Introduction',
-    visual: 'doc',
+  { n: '01', href: `${base}/chapter-1`, title: 'บทนำ', en: 'Introduction',
     blurb: 'ความเป็นมาของปัญหาการสื่อสารทางการพยาบาล และที่มาของการนำ AR เข้ามาใช้ในการให้ข้อมูลผู้รับบริการ',
     items: ['ความเป็นมาและความสำคัญ', 'วัตถุประสงค์ · ประโยชน์', 'ขอบเขต · นิยามศัพท์', 'กลุ่มเป้าหมาย'] },
-  { n: '02', href: `${base}/chapter-2`, title: 'วรรณกรรมและงานวิจัยที่เกี่ยวข้อง', kicker: 'Literature Review',
-    visual: 'qr',
+  { n: '02', href: `${base}/chapter-2`, title: 'วรรณกรรมและงานวิจัยที่เกี่ยวข้อง', en: 'Literature Review',
     blurb: 'ทฤษฎีการสื่อสาร เทคโนโลยีอุปกรณ์เคลื่อนที่ QR Code และแอพพลิเคชัน Aurasma พร้อมตัวอย่างการประยุกต์ใช้งาน',
-    items: ['กระบวนการสื่อสาร', 'QR Code · Barcode', 'Aurasma · AR', 'ตัวอย่างการประยุกต์ใช้'] },
-  { n: '03', href: `${base}/chapter-3`, title: 'วิธีดำเนินการวิจัย', kicker: 'Methodology',
-    visual: 'ar',
+    items: ['กระบวนการสื่อสาร', 'QR Code · Barcode', 'Aurasma · AR', 'ตัวอย่างการประยุกต์'] },
+  { n: '03', href: `${base}/chapter-3`, title: 'วิธีดำเนินการวิจัย', en: 'Methodology',
     blurb: 'ขั้นตอนการศึกษากึ่งทดลอง เครื่องมือที่ใช้ การทดสอบกับผู้รับบริการจริง 44 ราย และการพิทักษ์สิทธิ์',
     items: ['ขั้นเตรียมการ', 'ขั้นดำเนินการ', 'เครื่องมือวิจัย', 'การพิทักษ์สิทธิ์'] },
 ];
@@ -25,83 +21,71 @@ const chapters = [
   <Hero />
 
   <!-- Abstract -->
-  <section id="abstract" class="relative max-w-6xl mx-auto px-6 py-24 scroll-mt-20">
-    <div class="grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16 items-center">
-      <div class="flex flex-col items-start gap-6">
-        <HeartbeatIcon size={72} />
-        <div>
-          <div class="text-[11px] uppercase tracking-[0.3em] text-purple-700 dark:text-purple-300 font-semibold">บทคัดย่อ · Abstract</div>
-          <h2 class="mt-3 text-3xl md:text-4xl font-bold leading-tight">ภาพรวม<br/>การศึกษา</h2>
-        </div>
-        <dl class="grid grid-cols-2 gap-3 w-full max-w-sm">
-          <div class="paper rounded-xl p-4">
-            <dt class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">สถานที่</dt>
-            <dd class="mt-1 text-sm font-bold">รพ.นภาลัย</dd>
-          </div>
-          <div class="paper rounded-xl p-4">
-            <dt class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">จังหวัด</dt>
-            <dd class="mt-1 text-sm font-bold">สมุทรสงคราม</dd>
-          </div>
-          <div class="paper rounded-xl p-4">
-            <dt class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">เทคโนโลยี</dt>
-            <dd class="mt-1 text-sm font-bold">AR · Aurasma</dd>
-          </div>
-          <div class="paper rounded-xl p-4">
-            <dt class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">เสริม</dt>
-            <dd class="mt-1 text-sm font-bold">QR code LINE</dd>
-          </div>
-        </dl>
+  <section id="abstract" class="relative max-w-5xl mx-auto px-6 py-24 md:py-28 scroll-mt-20">
+    <div class="grid lg:grid-cols-[200px_1fr] gap-10 lg:gap-16">
+      <div>
+        <div class="title-eyebrow">บทคัดย่อ · Abstract</div>
+        <h2 class="mt-5 font-serif text-3xl md:text-4xl font-bold leading-tight">ภาพรวม<br/>การศึกษา</h2>
+        <div class="mt-6 h-px bg-slate-300 dark:bg-slate-700 w-16"></div>
       </div>
-      <div class="paper rounded-3xl p-7 md:p-10 space-y-5 text-slate-700 dark:text-slate-300 leading-[1.95]">
-        <p>
+      <div class="prose-academic max-w-prose">
+        <p class="dropcap">
           การศึกษานี้เป็นการศึกษา<strong>กึ่งทดลอง</strong>ในผู้รับบริการโรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม จำนวน 20–44 ราย
-          โดยทดลองใช้สื่อการให้ข้อมูลผ่านแอพพลิเคชันในมือถือ ได้แก่ <strong>Aurasma</strong> ซึ่งเป็นเทคโนโลยี Augmented Reality และ <strong>QR code LINE</strong>
+          โดยทดลองใช้สื่อการให้ข้อมูลผ่านแอพพลิเคชันในมือถือ ได้แก่ <em>Aurasma</em> ซึ่งเป็นเทคโนโลยี Augmented Reality และ <em>QR code LINE</em>
           เพื่อพัฒนารูปแบบการให้ข้อมูลผู้รับบริการจากเดิมที่ใช้เอกสารกระดาษ ให้เข้าถึงสะดวก ลดต้นทุน และทันยุคสมัย
         </p>
         <p>
           ดำเนินการระหว่างเดือน<strong>เมษายน ถึง สิงหาคม พ.ศ. 2560</strong> ครอบคลุมกลุ่มโรค<em>แผลเรื้อรัง</em> ผู้ป่วยที่มี<em>อุปกรณ์ต่อพ่วง</em>
           และผู้ป่วยมะเร็งระยะแพร่กระจาย ประเมินผลผ่านแบบประเมินออนไลน์โดยการสแกน QR code
         </p>
+        <div class="mt-8 pt-6 border-t border-slate-300 dark:border-slate-700 flex flex-wrap gap-x-6 gap-y-2 text-sm font-sans text-slate-600 dark:text-slate-400">
+          <span><strong class="text-slate-900 dark:text-slate-100">คำสำคัญ:</strong></span>
+          <span>Augmented Reality</span><span>·</span>
+          <span>Aurasma</span><span>·</span>
+          <span>QR code</span><span>·</span>
+          <span>การพยาบาล</span><span>·</span>
+          <span>โรงพยาบาลนภาลัย</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Tech Stack 3D showcase -->
-  <section class="relative bg-slate-50 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800">
-    <div class="absolute inset-0 ar-grid-bg opacity-40" aria-hidden="true"></div>
-    <div class="relative max-w-6xl mx-auto px-6 py-24">
+  <!-- Tech Stack -->
+  <section class="relative border-y border-slate-200 dark:border-slate-800">
+    <div class="absolute inset-0 ar-grid-bg opacity-50" aria-hidden="true"></div>
+    <div class="relative max-w-5xl mx-auto px-6 py-24">
       <div class="max-w-2xl">
-        <div class="text-[11px] uppercase tracking-[0.3em] text-purple-700 dark:text-purple-300 font-semibold">เทคโนโลยีที่ใช้</div>
-        <h2 class="mt-3 text-3xl md:text-4xl font-bold">สองสื่อสำคัญ สู่การให้ข้อมูลยุคใหม่</h2>
-        <p class="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed">
+        <div class="title-eyebrow">เทคโนโลยีที่ใช้</div>
+        <h2 class="mt-5 font-serif text-3xl md:text-[2.5rem] font-bold leading-[1.2]">สองสื่อสำคัญ<br/>สู่การให้ข้อมูลยุคใหม่</h2>
+        <p class="mt-5 text-slate-600 dark:text-slate-400 leading-relaxed font-serif text-lg">
           การศึกษาเลือกใช้เทคโนโลยีสื่อมือถือ 2 รูปแบบ เพื่อให้ผู้รับบริการเข้าถึงข้อมูลสุขภาพได้ทั้งบน iOS และ Android
         </p>
       </div>
 
-      <div class="mt-14 grid md:grid-cols-2 gap-10 items-stretch">
-        <div class="paper rounded-3xl p-8 flex flex-col gap-6 relative overflow-hidden">
-          <div class="absolute -top-12 -right-12 w-40 h-40 ar-gradient opacity-10 rounded-full blur-2xl"></div>
-          <div class="flex justify-center">
-            <div class="scene-3d"><ARCube size={160} label="AR" /></div>
+      <div class="mt-14 grid md:grid-cols-2 gap-8 md:gap-10">
+        <div class="paper rounded-lg p-8 md:p-10 flex flex-col gap-8 relative overflow-hidden">
+          <div class="absolute -top-16 -right-16 w-40 h-40 ar-gradient opacity-[0.08] rounded-full blur-2xl"></div>
+          <div class="flex justify-center py-4">
+            <div class="scene-3d"><ARCube size={140} label="AR" /></div>
           </div>
           <div>
-            <div class="text-[11px] uppercase tracking-widest text-purple-700 dark:text-purple-300 font-semibold">เทคโนโลยี AR</div>
-            <h3 class="mt-2 text-2xl font-bold">แอพพลิเคชัน Aurasma</h3>
-            <p class="mt-3 text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            <div class="title-eyebrow">เทคโนโลยี AR</div>
+            <h3 class="mt-3 font-serif text-2xl font-bold">แอพพลิเคชัน Aurasma</h3>
+            <p class="mt-4 text-base text-slate-700 dark:text-slate-300 leading-[1.85]">
               ผสานโลกจริงกับสื่อดิจิทัล — ส่องกล้องมือถือแล้วเห็นภาพ 3 มิติ วิดีโอ หรือคำอธิบายลอยขึ้นมาในหน้ากระดาษได้โดยไม่ต้องใช้ Marker
             </p>
           </div>
         </div>
 
-        <div class="paper rounded-3xl p-8 flex flex-col gap-6 relative overflow-hidden">
-          <div class="absolute -top-12 -right-12 w-40 h-40 bg-cyan-400 opacity-10 rounded-full blur-2xl"></div>
+        <div class="paper rounded-lg p-8 md:p-10 flex flex-col gap-8 relative overflow-hidden">
+          <div class="absolute -top-16 -right-16 w-40 h-40 bg-cyan-500 opacity-[0.08] rounded-full blur-2xl"></div>
           <div class="flex justify-center">
             <Phone3D variant="qr" />
           </div>
           <div>
-            <div class="text-[11px] uppercase tracking-widest text-cyan-700 dark:text-cyan-300 font-semibold">เทคโนโลยี QR</div>
-            <h3 class="mt-2 text-2xl font-bold">QR code ใน LINE</h3>
-            <p class="mt-3 text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            <div class="title-eyebrow text-cyan-700 dark:text-cyan-300">เทคโนโลยี QR</div>
+            <h3 class="mt-3 font-serif text-2xl font-bold">QR code ใน LINE</h3>
+            <p class="mt-4 text-base text-slate-700 dark:text-slate-300 leading-[1.85]">
               สแกนผ่าน LINE ที่ทุกเครื่องมีอยู่แล้ว เชื่อมไปยังคลิปวีดีโอ คู่มือ หรือแบบประเมินออนไลน์ได้ทันทีโดยไม่ต้องพิมพ์ URL
             </p>
           </div>
@@ -111,63 +95,54 @@ const chapters = [
   </section>
 
   <!-- Table of Contents -->
-  <section id="toc" class="max-w-6xl mx-auto px-6 py-24">
-    <div class="flex items-end justify-between mb-12">
+  <section id="toc" class="max-w-5xl mx-auto px-6 py-24 md:py-28">
+    <div class="flex items-end justify-between mb-14 pb-8 border-b border-slate-300 dark:border-slate-700">
       <div>
-        <div class="text-[11px] uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400 font-semibold">สารบัญ · Contents</div>
-        <h2 class="mt-3 text-3xl md:text-4xl font-bold">เนื้อหาทั้งหมด</h2>
+        <div class="title-eyebrow">สารบัญ · Contents</div>
+        <h2 class="mt-5 font-serif text-3xl md:text-[2.5rem] font-bold leading-[1.15]">เนื้อหาทั้งหมด</h2>
       </div>
-      <div class="text-sm text-slate-500">3 บท</div>
+      <div class="text-sm font-sans text-slate-500 font-semibold tnum">3 บท</div>
     </div>
 
-    <div class="space-y-5">
+    <ol class="divide-y divide-slate-300 dark:divide-slate-700">
       {chapters.map((c, i) => (
-        <a href={c.href} class="group paper rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-10 items-start md:items-center hover:shadow-xl hover:-translate-y-0.5 transition-all relative overflow-hidden">
-          <div class="absolute -top-20 -right-20 w-52 h-52 ar-gradient opacity-0 group-hover:opacity-10 rounded-full blur-2xl transition-opacity"></div>
-
-          <div class="relative shrink-0 w-full md:w-[180px] flex items-center md:justify-center">
-            <div class="flex-1 md:flex-none md:text-center">
-              <div class="text-6xl md:text-7xl display-num ar-gradient-text leading-none">{c.n}</div>
-              <div class="mt-1 text-[10px] uppercase tracking-[0.25em] text-slate-500">{c.kicker}</div>
+        <li>
+          <a href={c.href} class="group py-8 md:py-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start md:items-center transition hover:bg-slate-50/60 dark:hover:bg-slate-900/30 -mx-4 px-4 rounded">
+            <div class="shrink-0 w-full md:w-[140px]">
+              <div class="display-num text-6xl md:text-7xl ar-gradient-text leading-none">{c.n}</div>
+              <div class="mt-2 text-[10px] uppercase tracking-[0.25em] text-slate-500 font-sans">{c.en}</div>
             </div>
-            <div class="md:hidden shrink-0 scale-50 -mr-6">
-              {c.visual === 'ar' && <ARCube size={100} />}
-              {c.visual === 'qr' && <div class="w-24 h-24 relative paper rounded-xl p-2"><div class="qr-scanline"></div><svg viewBox="0 0 60 60" class="w-full h-full"><rect x="3" y="3" width="15" height="15" fill="currentColor"/><rect x="42" y="3" width="15" height="15" fill="currentColor"/><rect x="3" y="42" width="15" height="15" fill="currentColor"/><g fill="currentColor"><rect x="24" y="6" width="3" height="3"/><rect x="30" y="12" width="3" height="3"/><rect x="24" y="22" width="3" height="3"/><rect x="32" y="28" width="3" height="3"/><rect x="40" y="24" width="3" height="3"/><rect x="26" y="34" width="3" height="3"/><rect x="36" y="42" width="3" height="3"/><rect x="46" y="36" width="3" height="3"/></g></svg></div>}
-              {c.visual === 'doc' && <div class="w-20 h-24 paper rounded-lg p-2 space-y-1"><div class="h-1 w-2/3 bg-slate-400 rounded"></div><div class="h-0.5 bg-slate-300 rounded"></div><div class="h-0.5 bg-slate-300 rounded"></div><div class="h-0.5 w-4/5 bg-slate-300 rounded"></div><div class="h-6 rounded bg-gradient-to-br from-purple-300 to-pink-300 mt-2"></div></div>}
-            </div>
-          </div>
 
-          <div class="flex-1 min-w-0">
-            <div class="flex items-baseline gap-2 text-[11px] uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">
-              บทที่ {parseInt(c.n)} · <span class="text-purple-700 dark:text-purple-300">{c.kicker}</span>
+            <div class="flex-1 min-w-0 max-w-3xl">
+              <h3 class="font-serif text-xl md:text-2xl font-bold leading-tight">{c.title}</h3>
+              <p class="mt-3 text-base text-slate-600 dark:text-slate-400 leading-[1.85] font-serif max-w-2xl">{c.blurb}</p>
+              <ul class="mt-4 flex flex-wrap gap-x-5 gap-y-1.5 text-sm font-sans text-slate-500 dark:text-slate-400">
+                {c.items.map((it) => (<li class="flex gap-1.5 items-center"><span class="w-1 h-1 rounded-full bg-purple-700 dark:bg-purple-400"></span>{it}</li>))}
+              </ul>
             </div>
-            <h3 class="mt-1 text-xl md:text-2xl font-bold leading-tight">{c.title}</h3>
-            <p class="mt-2 text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">{c.blurb}</p>
-            <ul class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
-              {c.items.map((it) => (<li class="flex gap-1.5 items-center"><span class="w-1 h-1 rounded-full bg-purple-600 dark:bg-purple-400"></span>{it}</li>))}
-            </ul>
-          </div>
 
-          <div class="relative hidden md:block text-purple-700 dark:text-purple-300 text-3xl transition-transform group-hover:translate-x-1">→</div>
-        </a>
+            <div class="hidden md:block text-purple-700 dark:text-purple-300 text-3xl transition-transform group-hover:translate-x-1 shrink-0">→</div>
+          </a>
+        </li>
       ))}
-    </div>
+    </ol>
   </section>
 
   <!-- CTA -->
-  <section class="max-w-6xl mx-auto px-6 pb-24">
-    <div class="relative overflow-hidden rounded-3xl ar-gradient p-10 md:p-14 text-white">
+  <section class="max-w-5xl mx-auto px-6 pb-24">
+    <div class="relative overflow-hidden rounded-lg ar-gradient p-10 md:p-14 text-white">
       <div class="absolute inset-0 ar-dot-bg opacity-20" style="color: white;"></div>
-      <div class="relative grid md:grid-cols-[1.5fr_1fr] gap-10 items-center">
+      <div class="relative grid md:grid-cols-[1.6fr_1fr] gap-10 items-center">
         <div>
-          <h3 class="text-3xl md:text-4xl font-bold leading-tight">ลองเล่นเทคโนโลยี AR จริง<br/>ในบทที่ 2</h3>
-          <p class="mt-3 text-white/90">มีแบบจำลอง 3 มิติให้ส่องดูผ่านมือถือ — รองรับทั้ง iOS และ Android</p>
-          <a href={`${base}/chapter-2`} class="inline-flex mt-6 items-center gap-2 px-6 py-3 bg-white text-slate-900 rounded-xl font-semibold hover:scale-[1.02] transition">
+          <div class="title-eyebrow" style="color: rgba(255,255,255,0.8);">Interactive Demo</div>
+          <h3 class="mt-4 font-serif text-3xl md:text-4xl font-bold leading-tight">ลองเล่นเทคโนโลยี AR จริง<br/>ในบทที่ 2</h3>
+          <p class="mt-4 text-white/90 font-serif text-lg">มีแบบจำลอง 3 มิติให้ส่องดูผ่านมือถือ — รองรับทั้ง iOS และ Android</p>
+          <a href={`${base}/chapter-2`} class="inline-flex mt-7 items-center gap-2 px-7 py-3.5 bg-white text-slate-900 rounded-lg font-serif font-semibold hover:scale-[1.02] transition">
             ไปบทที่ 2 →
           </a>
         </div>
         <div class="flex justify-center md:justify-end">
-          <ARCube size={150} label="AR" />
+          <ARCube size={140} label="AR" />
         </div>
       </div>
     </div>

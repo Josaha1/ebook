@@ -2,57 +2,63 @@
 import OrbitScene from './OrbitScene.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<section class="relative min-h-[calc(100vh-3.5rem)] flex items-center overflow-hidden border-b border-slate-200 dark:border-slate-800">
-  <div class="absolute inset-0 -z-10 ar-grid-bg opacity-50" aria-hidden="true"></div>
-  <div class="absolute -top-40 -right-40 w-[32rem] h-[32rem] rounded-full ar-gradient opacity-10 blur-3xl" aria-hidden="true"></div>
-  <div class="absolute -bottom-40 -left-40 w-[28rem] h-[28rem] rounded-full bg-cyan-400 opacity-10 blur-3xl" aria-hidden="true"></div>
+<section class="relative overflow-hidden border-b border-slate-200 dark:border-slate-800">
+  <div class="absolute inset-0 -z-10 ar-grid-bg opacity-60" aria-hidden="true"></div>
+  <div class="absolute top-0 right-0 w-[32rem] h-[32rem] rounded-full ar-gradient opacity-[0.08] blur-3xl" aria-hidden="true"></div>
+  <div class="absolute bottom-0 left-0 w-[26rem] h-[26rem] rounded-full bg-cyan-500 opacity-[0.06] blur-3xl" aria-hidden="true"></div>
 
-  <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center w-full py-20 md:py-24">
-    <div class="max-w-2xl">
-      <div class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400 font-semibold paper rounded-full px-4 py-1.5">
-        <span class="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse"></span>
-        Academic Interactive E-Book
-      </div>
-      <h1 class="mt-6 display-num text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] leading-[1.08]">
-        ผลการให้ข้อมูล<br/>
-        ผู้รับบริการด้วย<br/>
-        <span class="ar-gradient-text">สื่อมือถือ AR</span>
+  <div class="max-w-6xl mx-auto px-6 pt-20 md:pt-28 pb-16 md:pb-24">
+    <div class="max-w-3xl">
+      <div class="title-eyebrow"><span class="h-px w-10 bg-current opacity-40"></span>Academic E-Book · รายงานการศึกษา</div>
+      <h1 class="mt-8 font-serif text-[2rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.18] font-bold">
+        ผลการให้ข้อมูลผู้รับบริการ<br/>
+        โรงพยาบาลนภาลัย <span class="text-slate-500 dark:text-slate-400 font-normal">— </span><br class="sm:hidden"/>
+        จังหวัดสมุทรสงคราม<br/>
+        <span class="ar-gradient-text">ด้วยสื่อมือถือผ่านเทคโนโลยี AR</span>
       </h1>
-      <p class="mt-7 text-base md:text-lg text-slate-600 dark:text-slate-300 leading-[1.85] max-w-xl">
+
+      <div class="mt-8 h-px bg-slate-300 dark:bg-slate-700 max-w-sm"></div>
+
+      <p class="mt-8 text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-[1.85] max-w-2xl font-serif">
         การศึกษากึ่งทดลองในผู้รับบริการโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม
-        โดยประยุกต์เทคโนโลยี <strong class="text-slate-900 dark:text-white">Augmented Reality</strong> ผ่านแอพพลิเคชัน
-        <strong class="text-slate-900 dark:text-white">Aurasma</strong> และ <strong class="text-slate-900 dark:text-white">QR code LINE</strong>
+        โดยประยุกต์เทคโนโลยี <em class="text-purple-800 dark:text-purple-300">Augmented Reality</em> ผ่านแอพพลิเคชัน Aurasma และ QR code LINE
         เพื่อยกระดับการสื่อสารและให้ข้อมูลทางสุขภาพ
       </p>
+    </div>
 
-      <dl class="mt-9 grid grid-cols-3 gap-3 max-w-lg">
-        <div class="paper rounded-xl p-4">
-          <dt class="text-[10px] uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">รูปแบบ</dt>
-          <dd class="mt-1 text-sm font-bold">กึ่งทดลอง</dd>
+    <div class="mt-14 grid lg:grid-cols-[1fr_520px] gap-14 items-end">
+      <dl class="grid grid-cols-2 sm:grid-cols-4 gap-0 divide-x divide-slate-300 dark:divide-slate-700 border-y border-slate-300 dark:border-slate-700 py-5">
+        <div class="px-4 sm:px-6 first:pl-0">
+          <dt class="text-[11px] uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400 font-semibold">รูปแบบ</dt>
+          <dd class="mt-2 font-serif font-bold text-lg md:text-xl">กึ่งทดลอง</dd>
         </div>
-        <div class="paper rounded-xl p-4">
-          <dt class="text-[10px] uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">ช่วงเวลา</dt>
-          <dd class="mt-1 text-sm font-bold">เม.ย.–ส.ค. 60</dd>
+        <div class="px-4 sm:px-6">
+          <dt class="text-[11px] uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400 font-semibold">ช่วงเวลา</dt>
+          <dd class="mt-2 font-serif font-bold text-lg md:text-xl tnum">เม.ย.–ส.ค. 60</dd>
         </div>
-        <div class="paper rounded-xl p-4">
-          <dt class="text-[10px] uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">กลุ่มตัวอย่าง</dt>
-          <dd class="mt-1 text-sm font-bold">20–44 ราย</dd>
+        <div class="px-4 sm:px-6">
+          <dt class="text-[11px] uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400 font-semibold">กลุ่มตัวอย่าง</dt>
+          <dd class="mt-2 font-serif font-bold text-lg md:text-xl tnum">20–44 ราย</dd>
+        </div>
+        <div class="px-4 sm:px-6">
+          <dt class="text-[11px] uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400 font-semibold">เทคโนโลยี</dt>
+          <dd class="mt-2 font-serif font-bold text-lg md:text-xl">AR · QR</dd>
         </div>
       </dl>
 
-      <div class="mt-8 flex flex-wrap gap-3">
-        <a href={`${base}/chapter-1`} class="group inline-flex items-center gap-2 px-7 py-3.5 ar-gradient text-white rounded-xl font-semibold shadow-xl shadow-purple-600/25 hover:shadow-2xl hover:shadow-purple-600/40 transition-shadow">
-          เริ่มอ่านบทที่ 1
-          <span class="transition-transform group-hover:translate-x-0.5">→</span>
-        </a>
-        <a href="#abstract" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-          อ่านบทคัดย่อ
-        </a>
+      <div class="lg:justify-self-end w-full max-w-[520px]">
+        <OrbitScene />
       </div>
     </div>
 
-    <div class="relative">
-      <OrbitScene />
+    <div class="mt-14 flex flex-wrap gap-3 items-center">
+      <a href={`${base}/chapter-1`} class="group inline-flex items-center gap-3 px-8 py-4 ar-gradient text-white rounded-lg font-serif font-semibold text-lg shadow-xl shadow-purple-900/20 hover:shadow-2xl hover:shadow-purple-900/30 transition-shadow">
+        เริ่มอ่านบทที่ 1
+        <span class="transition-transform group-hover:translate-x-1">→</span>
+      </a>
+      <a href="#abstract" class="inline-flex items-center gap-2 px-6 py-4 rounded-lg font-serif font-semibold text-base border border-slate-400 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-900 transition">
+        อ่านบทคัดย่อ
+      </a>
     </div>
   </div>
 </section>
