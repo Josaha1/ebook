@@ -8,8 +8,8 @@ const { number, title, subtitle, meta = [] } = Astro.props;
       {typeof number === 'number' ? number : parseInt(number) || number}
     </span>
 
-    <h1 class="mt-6 font-semibold leading-[1.15] tracking-tight"
-      style="font-size: clamp(1.875rem, 4.5vw, 3rem);">
+    <h1 class="mt-6 font-semibold"
+      style="font-size: clamp(1.875rem, 4.5vw, 3rem); line-height: 1.35; letter-spacing: 0;">
       {title}
     </h1>
 

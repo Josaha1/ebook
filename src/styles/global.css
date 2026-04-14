@@ -44,8 +44,8 @@
   }
   html.dark body { background: #0A0A0B; color: #FAFAF9; }
 
-  h1, h2, h3, h4, h5 { font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; }
-  h1 { font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; }
+  h1, h2, h3, h4, h5 { font-weight: 600; letter-spacing: 0; line-height: 1.35; }
+  h1 { font-weight: 700; letter-spacing: 0; line-height: 1.25; }
 
   ::selection { background: rgba(79, 70, 229, 0.2); }
 

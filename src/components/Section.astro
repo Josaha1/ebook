@@ -6,8 +6,8 @@ const id = anchor ?? (num ? `section-${String(num).replace(/\./g, '-')}` : undef
   {title && (
     <div class="mb-6 md:mb-8">
       {num && <div class="kicker mb-3">Section {num}</div>}
-      <h2 class="font-semibold leading-[1.2] tracking-tight"
-        style="font-size: clamp(1.5rem, 3.5vw, 2rem);">
+      <h2 class="font-semibold"
+        style="font-size: clamp(1.5rem, 3.5vw, 2rem); line-height: 1.4; letter-spacing: 0;">
         {title}
       </h2>
     </div>
