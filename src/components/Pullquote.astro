@@ -1,7 +1,11 @@
 ---
-const { cite } = Astro.props;
+const { cite, align = 'center' } = Astro.props;
 ---
-<blockquote class="my-10 relative py-5 px-8 border-l-[3px] border-purple-700 dark:border-purple-400">
-  <div class="font-serif text-xl md:text-2xl leading-[1.6] text-slate-900 dark:text-slate-100 font-medium italic"><slot /></div>
-  {cite && <cite class="block mt-4 text-sm text-slate-500 dark:text-slate-400 not-italic font-sans">— {cite}</cite>}
-</blockquote>
+<div class={`my-16 text-${align}`}>
+  <div class="ornament mb-6 justify-center flex" style="color: #B8954A;">§</div>
+  <blockquote class="font-display italic text-2xl md:text-3xl lg:text-[2.25rem] leading-[1.35] max-w-3xl mx-auto text-ink dark:text-cream">
+    <span class="text-gold text-5xl font-normal">"</span><slot /><span class="text-gold text-5xl font-normal">"</span>
+  </blockquote>
+  {cite && <cite class="block mt-6 text-sm uppercase tracking-[0.3em] text-sepia not-italic font-sans">— {cite}</cite>}
+  <div class="ornament mt-6 justify-center flex" style="color: #B8954A;">§</div>
+</div>

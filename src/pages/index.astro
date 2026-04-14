@@ -6,87 +6,125 @@ import Phone3D from '../components/Phone3D.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const chapters = [
-  { n: '01', href: `${base}/chapter-1`, title: 'บทนำ', en: 'Introduction',
-    blurb: 'ความเป็นมาของปัญหาการสื่อสารทางการพยาบาล และที่มาของการนำ AR เข้ามาใช้ในการให้ข้อมูลผู้รับบริการ',
-    items: ['ความเป็นมาและความสำคัญ', 'วัตถุประสงค์ · ประโยชน์', 'ขอบเขต · นิยามศัพท์', 'กลุ่มเป้าหมาย'] },
-  { n: '02', href: `${base}/chapter-2`, title: 'วรรณกรรมและงานวิจัยที่เกี่ยวข้อง', en: 'Literature Review',
-    blurb: 'ทฤษฎีการสื่อสาร เทคโนโลยีอุปกรณ์เคลื่อนที่ QR Code และแอพพลิเคชัน Aurasma พร้อมตัวอย่างการประยุกต์ใช้งาน',
-    items: ['กระบวนการสื่อสาร', 'QR Code · Barcode', 'Aurasma · AR', 'ตัวอย่างการประยุกต์'] },
-  { n: '03', href: `${base}/chapter-3`, title: 'วิธีดำเนินการวิจัย', en: 'Methodology',
-    blurb: 'ขั้นตอนการศึกษากึ่งทดลอง เครื่องมือที่ใช้ การทดสอบกับผู้รับบริการจริง 44 ราย และการพิทักษ์สิทธิ์',
-    items: ['ขั้นเตรียมการ', 'ขั้นดำเนินการ', 'เครื่องมือวิจัย', 'การพิทักษ์สิทธิ์'] },
+  { n: 'I', href: `${base}/chapter-1`, title: 'บทนำ', en: 'Introduction', page: '3–5',
+    blurb: 'ความเป็นมาของปัญหาการสื่อสารทางการพยาบาล และที่มาของการนำ AR เข้ามาใช้' },
+  { n: 'II', href: `${base}/chapter-2`, title: 'วรรณกรรมและงานวิจัยที่เกี่ยวข้อง', en: 'Literature Review', page: '6–11',
+    blurb: 'ทฤษฎีการสื่อสาร เทคโนโลยีอุปกรณ์เคลื่อนที่ QR Code และแอพพลิเคชัน Aurasma' },
+  { n: 'III', href: `${base}/chapter-3`, title: 'วิธีดำเนินการวิจัย', en: 'Methodology', page: '12–13',
+    blurb: 'ขั้นตอนการศึกษากึ่งทดลอง เครื่องมือที่ใช้ การทดสอบจริง 44 ราย และการพิทักษ์สิทธิ์' },
 ];
 ---
 <BaseLayout title="ผลการให้ข้อมูลผู้รับบริการ รพ.นภาลัย ด้วยสื่อมือถือ AR">
   <Hero />
 
+  <!-- Masthead / Publication info -->
+  <section id="masthead" class="relative max-w-5xl mx-auto px-6 md:px-10 py-24 md:py-32 scroll-mt-20">
+    <div class="ornament justify-center flex mb-10" style="color: #B8954A;">§</div>
+    <div class="text-center">
+      <div class="eyebrow justify-center" style="color: #B8954A;">Masthead · สำนักพิมพ์</div>
+      <h2 class="mt-6 font-display italic text-3xl md:text-5xl leading-tight">
+        A journal of <em>augmented reality</em><br/>
+        in bedside care
+      </h2>
+      <div class="gold-line w-24 mx-auto my-10"></div>
+      <dl class="grid sm:grid-cols-4 gap-8 max-w-3xl mx-auto">
+        <div>
+          <dt class="eyebrow justify-center" style="color: #B8954A;">Volume</dt>
+          <dd class="mt-2 font-display italic text-xl">I</dd>
+        </div>
+        <div>
+          <dt class="eyebrow justify-center" style="color: #B8954A;">Year</dt>
+          <dd class="mt-2 font-display italic text-xl tnum">2560</dd>
+        </div>
+        <div>
+          <dt class="eyebrow justify-center" style="color: #B8954A;">Field</dt>
+          <dd class="mt-2 font-display italic text-xl">Nursing</dd>
+        </div>
+        <div>
+          <dt class="eyebrow justify-center" style="color: #B8954A;">Method</dt>
+          <dd class="mt-2 font-display italic text-xl">Quasi-experimental</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
   <!-- Abstract -->
-  <section id="abstract" class="relative max-w-5xl mx-auto px-6 py-24 md:py-28 scroll-mt-20">
-    <div class="grid lg:grid-cols-[200px_1fr] gap-10 lg:gap-16">
-      <div>
-        <div class="title-eyebrow">บทคัดย่อ · Abstract</div>
-        <h2 class="mt-5 font-serif text-3xl md:text-4xl font-bold leading-tight">ภาพรวม<br/>การศึกษา</h2>
-        <div class="mt-6 h-px bg-slate-300 dark:bg-slate-700 w-16"></div>
-      </div>
-      <div class="prose-academic max-w-prose">
-        <p class="dropcap">
-          การศึกษานี้เป็นการศึกษา<strong>กึ่งทดลอง</strong>ในผู้รับบริการโรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม จำนวน 20–44 ราย
-          โดยทดลองใช้สื่อการให้ข้อมูลผ่านแอพพลิเคชันในมือถือ ได้แก่ <em>Aurasma</em> ซึ่งเป็นเทคโนโลยี Augmented Reality และ <em>QR code LINE</em>
-          เพื่อพัฒนารูปแบบการให้ข้อมูลผู้รับบริการจากเดิมที่ใช้เอกสารกระดาษ ให้เข้าถึงสะดวก ลดต้นทุน และทันยุคสมัย
-        </p>
-        <p>
-          ดำเนินการระหว่างเดือน<strong>เมษายน ถึง สิงหาคม พ.ศ. 2560</strong> ครอบคลุมกลุ่มโรค<em>แผลเรื้อรัง</em> ผู้ป่วยที่มี<em>อุปกรณ์ต่อพ่วง</em>
-          และผู้ป่วยมะเร็งระยะแพร่กระจาย ประเมินผลผ่านแบบประเมินออนไลน์โดยการสแกน QR code
-        </p>
-        <div class="mt-8 pt-6 border-t border-slate-300 dark:border-slate-700 flex flex-wrap gap-x-6 gap-y-2 text-sm font-sans text-slate-600 dark:text-slate-400">
-          <span><strong class="text-slate-900 dark:text-slate-100">คำสำคัญ:</strong></span>
-          <span>Augmented Reality</span><span>·</span>
-          <span>Aurasma</span><span>·</span>
-          <span>QR code</span><span>·</span>
-          <span>การพยาบาล</span><span>·</span>
-          <span>โรงพยาบาลนภาลัย</span>
+  <section class="relative paper-bg-alt">
+    <div class="max-w-5xl mx-auto px-6 md:px-10 py-24 md:py-32">
+      <div class="grid lg:grid-cols-[220px_1fr] gap-14 lg:gap-20">
+        <div>
+          <div class="eyebrow mb-5" style="color: #B8954A;">บทคัดย่อ</div>
+          <h2 class="font-display italic text-3xl md:text-5xl leading-[1.15]">The <em class="text-gold">Abstract</em></h2>
+          <div class="gold-line w-16 mt-6"></div>
+        </div>
+        <div class="prose-ct max-w-prose font-serif">
+          <p class="drop-cap text-lg leading-[1.9]">
+            การศึกษานี้เป็นการศึกษา<strong>กึ่งทดลอง</strong>ในผู้รับบริการโรงพยาบาลนภาลัย ตำบลกระดังงา อำเภอบางคนที จังหวัดสมุทรสงคราม จำนวน 20–44 ราย
+            โดยทดลองใช้สื่อการให้ข้อมูลผ่านแอพพลิเคชันในมือถือ ได้แก่ <em>Aurasma</em> ซึ่งเป็นเทคโนโลยี Augmented Reality และ <em>QR code LINE</em>
+            เพื่อพัฒนารูปแบบการให้ข้อมูลผู้รับบริการจากเดิมที่ใช้เอกสารกระดาษ
+          </p>
+          <p>
+            ดำเนินการระหว่างเดือน<strong>เมษายน ถึง สิงหาคม พ.ศ. 2560</strong> ครอบคลุมกลุ่มโรค<em>แผลเรื้อรัง</em> ผู้ป่วยที่มี<em>อุปกรณ์ต่อพ่วง</em>
+            และผู้ป่วยมะเร็งระยะแพร่กระจาย ประเมินผลผ่านแบบประเมินออนไลน์โดยการสแกน QR code
+          </p>
+          <div class="mt-10 pt-8 border-t hairline flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-[0.2em] font-sans font-semibold text-sepia">
+            <span class="text-ink dark:text-cream">Keywords</span>
+            <span>Augmented Reality</span>
+            <span>·</span>
+            <span>Aurasma</span>
+            <span>·</span>
+            <span>QR code</span>
+            <span>·</span>
+            <span>Nursing communication</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Tech Stack -->
-  <section class="relative border-y border-slate-200 dark:border-slate-800">
-    <div class="absolute inset-0 ar-grid-bg opacity-50" aria-hidden="true"></div>
-    <div class="relative max-w-5xl mx-auto px-6 py-24">
-      <div class="max-w-2xl">
-        <div class="title-eyebrow">เทคโนโลยีที่ใช้</div>
-        <h2 class="mt-5 font-serif text-3xl md:text-[2.5rem] font-bold leading-[1.2]">สองสื่อสำคัญ<br/>สู่การให้ข้อมูลยุคใหม่</h2>
-        <p class="mt-5 text-slate-600 dark:text-slate-400 leading-relaxed font-serif text-lg">
-          การศึกษาเลือกใช้เทคโนโลยีสื่อมือถือ 2 รูปแบบ เพื่อให้ผู้รับบริการเข้าถึงข้อมูลสุขภาพได้ทั้งบน iOS และ Android
+  <!-- Two Technologies: full-bleed spread -->
+  <section class="relative ink-bg overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.05]" aria-hidden="true"
+      style="background-image: radial-gradient(rgba(245,239,228,0.5) 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <div class="relative max-w-6xl mx-auto px-6 md:px-10 py-28 md:py-36">
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <div class="eyebrow justify-center" style="color: #B8954A;">Two Technologies</div>
+        <h2 class="mt-6 font-display italic text-4xl md:text-6xl leading-[1.1]">
+          Two mediums<br/>
+          <em class="text-gold">one mission</em>
+        </h2>
+        <p class="mt-6 font-serif text-lg text-cream/75 leading-[1.85]">
+          สองสื่อสำคัญที่เลือกใช้ในการศึกษา เพื่อให้ผู้รับบริการเข้าถึงข้อมูลสุขภาพได้ทั้งบน iOS และ Android
         </p>
       </div>
 
-      <div class="mt-14 grid md:grid-cols-2 gap-8 md:gap-10">
-        <div class="paper rounded-lg p-8 md:p-10 flex flex-col gap-8 relative overflow-hidden">
-          <div class="absolute -top-16 -right-16 w-40 h-40 ar-gradient opacity-[0.08] rounded-full blur-2xl"></div>
-          <div class="flex justify-center py-4">
-            <div class="scene-3d"><ARCube size={140} label="AR" /></div>
+      <div class="grid md:grid-cols-2 gap-16 md:gap-24">
+        <div class="relative">
+          <div class="flex justify-center py-8">
+            <div class="scene-3d"><ARCube size={180} label="AR" /></div>
           </div>
-          <div>
-            <div class="title-eyebrow">เทคโนโลยี AR</div>
-            <h3 class="mt-3 font-serif text-2xl font-bold">แอพพลิเคชัน Aurasma</h3>
-            <p class="mt-4 text-base text-slate-700 dark:text-slate-300 leading-[1.85]">
-              ผสานโลกจริงกับสื่อดิจิทัล — ส่องกล้องมือถือแล้วเห็นภาพ 3 มิติ วิดีโอ หรือคำอธิบายลอยขึ้นมาในหน้ากระดาษได้โดยไม่ต้องใช้ Marker
+          <div class="gold-line w-16 mx-auto my-8"></div>
+          <div class="text-center">
+            <div class="eyebrow justify-center" style="color: #B8954A;">Augmented Reality</div>
+            <h3 class="mt-4 font-display italic text-3xl md:text-4xl text-cream">Aurasma</h3>
+            <p class="mt-5 font-serif text-base md:text-lg text-cream/75 leading-[1.85] max-w-sm mx-auto">
+              ผสานโลกจริงกับสื่อดิจิทัล ส่องกล้องมือถือแล้วเห็นภาพ 3 มิติ วิดีโอ หรือคำอธิบายลอยขึ้นในหน้ากระดาษ
+              โดยไม่ต้องใช้ Marker
             </p>
           </div>
         </div>
 
-        <div class="paper rounded-lg p-8 md:p-10 flex flex-col gap-8 relative overflow-hidden">
-          <div class="absolute -top-16 -right-16 w-40 h-40 bg-cyan-500 opacity-[0.08] rounded-full blur-2xl"></div>
-          <div class="flex justify-center">
+        <div class="relative">
+          <div class="flex justify-center py-8">
             <Phone3D variant="qr" />
           </div>
-          <div>
-            <div class="title-eyebrow text-cyan-700 dark:text-cyan-300">เทคโนโลยี QR</div>
-            <h3 class="mt-3 font-serif text-2xl font-bold">QR code ใน LINE</h3>
-            <p class="mt-4 text-base text-slate-700 dark:text-slate-300 leading-[1.85]">
-              สแกนผ่าน LINE ที่ทุกเครื่องมีอยู่แล้ว เชื่อมไปยังคลิปวีดีโอ คู่มือ หรือแบบประเมินออนไลน์ได้ทันทีโดยไม่ต้องพิมพ์ URL
+          <div class="gold-line w-16 mx-auto my-8"></div>
+          <div class="text-center">
+            <div class="eyebrow justify-center" style="color: #B8954A;">Quick Response</div>
+            <h3 class="mt-4 font-display italic text-3xl md:text-4xl text-cream">QR · LINE</h3>
+            <p class="mt-5 font-serif text-base md:text-lg text-cream/75 leading-[1.85] max-w-sm mx-auto">
+              สแกนผ่าน LINE ที่ทุกเครื่องมีอยู่แล้ว เชื่อมไปยังคลิปวีดีโอ คู่มือ หรือแบบประเมินออนไลน์ทันที
+              ไม่ต้องพิมพ์ URL
             </p>
           </div>
         </div>
@@ -95,56 +133,50 @@ const chapters = [
   </section>
 
   <!-- Table of Contents -->
-  <section id="toc" class="max-w-5xl mx-auto px-6 py-24 md:py-28">
-    <div class="flex items-end justify-between mb-14 pb-8 border-b border-slate-300 dark:border-slate-700">
+  <section class="max-w-5xl mx-auto px-6 md:px-10 py-28 md:py-36">
+    <div class="grid lg:grid-cols-[220px_1fr] gap-14 lg:gap-20">
       <div>
-        <div class="title-eyebrow">สารบัญ · Contents</div>
-        <h2 class="mt-5 font-serif text-3xl md:text-[2.5rem] font-bold leading-[1.15]">เนื้อหาทั้งหมด</h2>
+        <div class="eyebrow mb-5" style="color: #B8954A;">สารบัญ · Contents</div>
+        <h2 class="font-display italic text-4xl md:text-5xl leading-[1.1]">The <em class="text-gold">three</em> chapters</h2>
+        <div class="gold-line w-16 mt-6"></div>
       </div>
-      <div class="text-sm font-sans text-slate-500 font-semibold tnum">3 บท</div>
+      <ol class="divide-y hairline">
+        {chapters.map((c) => (
+          <li>
+            <a href={c.href} class="group block py-10 md:py-12">
+              <div class="grid grid-cols-[60px_1fr_auto] gap-6 md:gap-8 items-baseline">
+                <span class="display-num italic text-4xl md:text-5xl text-gold leading-none">{c.n}</span>
+                <div>
+                  <div class="eyebrow" style="color: #B8954A;">{c.en}</div>
+                  <h3 class="mt-3 font-display italic text-2xl md:text-4xl leading-[1.2] text-ink dark:text-cream group-hover:text-gold transition-colors">{c.title}</h3>
+                  <p class="mt-3 font-serif text-base md:text-lg text-sepia leading-[1.7] max-w-xl">{c.blurb}</p>
+                </div>
+                <div class="text-right hidden sm:block">
+                  <div class="eyebrow justify-end" style="color: #B8954A;">Page</div>
+                  <div class="mt-2 font-display italic text-xl tnum text-sepia">{c.page}</div>
+                </div>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ol>
     </div>
-
-    <ol class="divide-y divide-slate-300 dark:divide-slate-700">
-      {chapters.map((c, i) => (
-        <li>
-          <a href={c.href} class="group py-8 md:py-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start md:items-center transition hover:bg-slate-50/60 dark:hover:bg-slate-900/30 -mx-4 px-4 rounded">
-            <div class="shrink-0 w-full md:w-[140px]">
-              <div class="display-num text-6xl md:text-7xl ar-gradient-text leading-none">{c.n}</div>
-              <div class="mt-2 text-[10px] uppercase tracking-[0.25em] text-slate-500 font-sans">{c.en}</div>
-            </div>
-
-            <div class="flex-1 min-w-0 max-w-3xl">
-              <h3 class="font-serif text-xl md:text-2xl font-bold leading-tight">{c.title}</h3>
-              <p class="mt-3 text-base text-slate-600 dark:text-slate-400 leading-[1.85] font-serif max-w-2xl">{c.blurb}</p>
-              <ul class="mt-4 flex flex-wrap gap-x-5 gap-y-1.5 text-sm font-sans text-slate-500 dark:text-slate-400">
-                {c.items.map((it) => (<li class="flex gap-1.5 items-center"><span class="w-1 h-1 rounded-full bg-purple-700 dark:bg-purple-400"></span>{it}</li>))}
-              </ul>
-            </div>
-
-            <div class="hidden md:block text-purple-700 dark:text-purple-300 text-3xl transition-transform group-hover:translate-x-1 shrink-0">→</div>
-          </a>
-        </li>
-      ))}
-    </ol>
   </section>
 
-  <!-- CTA -->
-  <section class="max-w-5xl mx-auto px-6 pb-24">
-    <div class="relative overflow-hidden rounded-lg ar-gradient p-10 md:p-14 text-white">
-      <div class="absolute inset-0 ar-dot-bg opacity-20" style="color: white;"></div>
-      <div class="relative grid md:grid-cols-[1.6fr_1fr] gap-10 items-center">
-        <div>
-          <div class="title-eyebrow" style="color: rgba(255,255,255,0.8);">Interactive Demo</div>
-          <h3 class="mt-4 font-serif text-3xl md:text-4xl font-bold leading-tight">ลองเล่นเทคโนโลยี AR จริง<br/>ในบทที่ 2</h3>
-          <p class="mt-4 text-white/90 font-serif text-lg">มีแบบจำลอง 3 มิติให้ส่องดูผ่านมือถือ — รองรับทั้ง iOS และ Android</p>
-          <a href={`${base}/chapter-2`} class="inline-flex mt-7 items-center gap-2 px-7 py-3.5 bg-white text-slate-900 rounded-lg font-serif font-semibold hover:scale-[1.02] transition">
-            ไปบทที่ 2 →
-          </a>
-        </div>
-        <div class="flex justify-center md:justify-end">
-          <ARCube size={140} label="AR" />
-        </div>
-      </div>
+  <!-- Closing pullquote -->
+  <section class="paper-bg-alt">
+    <div class="max-w-4xl mx-auto px-6 md:px-10 py-28 md:py-36 text-center">
+      <div class="ornament justify-center flex mb-10" style="color: #B8954A;">§</div>
+      <blockquote class="font-display italic text-3xl md:text-5xl leading-[1.3] text-ink dark:text-cream">
+        <span class="text-gold">"</span>เปลี่ยนการให้คำแนะนำทางด้านสุขภาพ<br/>
+        จาก<em class="text-gold">เอกสาร</em> เป็น<em class="text-gold">สื่อมีชีวิต</em><span class="text-gold">"</span>
+      </blockquote>
+      <div class="mt-8 text-xs uppercase tracking-[0.35em] text-sepia">— หนึ่งในห้าประโยชน์ที่คาดว่าจะได้รับ</div>
+      <div class="gold-line w-32 mx-auto my-12"></div>
+      <a href={`${base}/chapter-1`} class="inline-flex items-center gap-3 px-8 py-3.5 bg-ink text-cream rounded-none font-sans font-semibold tracking-wider text-sm uppercase hover:bg-burgundy transition">
+        เริ่มอ่านบทที่ I
+        <span>→</span>
+      </a>
     </div>
   </section>
 </BaseLayout>

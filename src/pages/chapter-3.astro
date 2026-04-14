@@ -4,80 +4,69 @@ import ChapterIntro from '../components/ChapterIntro.astro';
 import ChapterSidebar from '../components/ChapterSidebar.astro';
 import ScrollReveal from '../components/ScrollReveal.astro';
 import Section from '../components/Section.astro';
-import HeartbeatIcon from '../components/HeartbeatIcon.astro';
+import Pullquote from '../components/Pullquote.astro';
 import Phone3D from '../components/Phone3D.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const toc = [
-  { id: 'section-overview', label: 'ภาพรวมการศึกษา' },
+  { id: 'section-overview', label: 'ภาพรวม' },
   { id: 'section-3-1', label: '3.1 ขั้นเตรียมการ' },
   { id: 'section-3-2', label: '3.2 ขั้นดำเนินการ' },
   { id: 'section-3-3', label: '3.3 สรุปประเมินผล' },
   { id: 'section-3-4', label: '3.4 การพิทักษ์สิทธิ์' },
 ];
 ---
-<BaseLayout title="บทที่ 3 · วิธีดำเนินการวิจัย · รายงาน AR">
+<BaseLayout title="บทที่ III · วิธีดำเนินการวิจัย · AR Research">
   <ChapterIntro
-    number="03"
+    number="III"
+    kicker="Chapter Three"
     title="วิธีดำเนินการวิจัย"
     subtitle="การออกแบบการศึกษากึ่งทดลอง กลุ่มตัวอย่าง เครื่องมือที่ใช้ และการพิทักษ์สิทธิ์ผู้เข้าร่วมการศึกษา"
     meta={[
-      { label: 'หน้าต้นฉบับ', value: '2 หน้า' },
-      { label: 'จำนวนคำ', value: '525 คำ' },
-      { label: 'กลุ่มตัวอย่าง', value: '44 ราย' },
+      { label: 'Pages', value: '2 หน้า' },
+      { label: 'Words', value: '525 คำ' },
+      { label: 'Sample', value: '44 ราย' },
+      { label: 'Tools', value: '6 ชนิด' },
     ]}
   />
 
-  <div class="max-w-6xl mx-auto px-6 py-14 md:py-16">
-    <div class="grid lg:grid-cols-[240px_1fr] gap-10 lg:gap-14">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-24">
+    <div class="grid lg:grid-cols-[220px_1fr] gap-12 lg:gap-20">
       <ChapterSidebar items={toc} current={3} />
 
-      <div class="min-w-0 space-y-20">
+      <div class="min-w-0 space-y-24">
         <ScrollReveal>
           <Section anchor="section-overview">
-            <p>
+            <p class="drop-cap">
               การศึกษาเรื่อง <strong>"ผลการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ด้วยสื่อมือถือ"</strong> เป็นการศึกษาแบบ<strong>กึ่งทดลอง</strong> โดยศึกษาการใช้สื่อการให้ข้อมูลผู้รับบริการ โรงพยาบาลนภาลัย ตำบลกระดังงา จังหวัดสมุทรสงคราม จำนวน <strong>20–30 ราย</strong> โดยใช้สื่อแอพพลิเคชันในมือถือ รายละเอียดของวิธีดำเนินการศึกษามีดังนี้
             </p>
-
-            <div class="not-prose grid sm:grid-cols-3 gap-3 mt-6">
-              <div class="paper rounded-xl p-5 text-center">
-                <div class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">รูปแบบ</div>
-                <div class="mt-2 text-lg font-bold">กึ่งทดลอง</div>
-              </div>
-              <div class="paper rounded-xl p-5 text-center">
-                <div class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">ระยะเวลา</div>
-                <div class="mt-2 text-lg font-bold">เม.ย.–ส.ค. 2560</div>
-              </div>
-              <div class="paper rounded-xl p-5 text-center">
-                <div class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">กลุ่มตัวอย่าง</div>
-                <div class="mt-2 text-lg font-bold">44 ราย</div>
-              </div>
-            </div>
           </Section>
         </ScrollReveal>
 
         <ScrollReveal>
           <Section num="3.1" title="ขั้นเตรียมการ" anchor="section-3-1">
-            <div class="not-prose space-y-5">
-              <div class="paper rounded-2xl p-6 md:p-7 border-l-4 border-purple-600 dark:border-purple-400">
-                <h3 class="font-bold text-lg flex items-baseline gap-3"><span class="section-num">3.1.1</span>ค้นหาปัญหา</h3>
-                <p class="mt-3 text-slate-700 dark:text-slate-300 leading-[1.9]">
+            <div class="not-prose space-y-8 border-t hairline pt-8">
+              <div>
+                <h3 class="font-display italic text-2xl md:text-3xl text-gold"><span class="section-num mr-3">3.1.1</span>ค้นหาปัญหา</h3>
+                <p class="mt-4 prose-ct">
                   พบว่าเดิมการให้คำแนะนำ การสอนผู้ดูแลให้กลับไปปฏิบัติตนที่บ้านเราใช้เอกสารซึ่งเป็นกระดาษเป็นหลัก การเก็บเอกสารกลับบ้านมีปัญหาชำรุด จำไม่ได้ อาจต้องนำมาอ่านดูซ้ำซึ่งบางรายสูญหายไปแล้ว หรืออ่านแล้วไม่เข้าใจ
                 </p>
               </div>
-              <div class="paper rounded-2xl p-6 md:p-7 border-l-4 border-pink-600 dark:border-pink-400">
-                <h3 class="font-bold text-lg flex items-baseline gap-3"><span class="section-num">3.1.2</span>ศึกษานวัตกรรมการสอนอื่นๆ</h3>
-                <p class="mt-3 text-slate-700 dark:text-slate-300 leading-[1.9]">
-                  เพื่อการให้ข้อมูล มาใช้ในการให้ข้อมูลผู้รับบริการในโรงพยาบาลนภาลัย โดยใช้หลัก <strong>สะดวก เข้าถึงข้อมูลง่าย ทันกับยุคสมัยปัจจุบัน ลดต้นทุนในการผลิตสื่อ</strong>การให้ข้อมูลหรือสอน ซึ่งผู้ศึกษาได้ใช้สื่อมือถือและคัดเลือกแอพพลิเคชันในมือถือมา 2 แบบ ได้แก่
+              <div class="border-t hairline pt-8">
+                <h3 class="font-display italic text-2xl md:text-3xl text-gold"><span class="section-num mr-3">3.1.2</span>ศึกษานวัตกรรมการสอนอื่น</h3>
+                <p class="mt-4 prose-ct">
+                  เพื่อการให้ข้อมูล มาใช้ในการให้ข้อมูลผู้รับบริการในโรงพยาบาลนภาลัย โดยใช้หลัก <strong>สะดวก เข้าถึงข้อมูลง่าย ทันกับยุคสมัยปัจจุบัน ลดต้นทุนในการผลิตสื่อ</strong> ซึ่งผู้ศึกษาได้ใช้สื่อมือถือและคัดเลือกแอพพลิเคชันในมือถือมา 2 แบบ ได้แก่
                 </p>
-                <div class="grid sm:grid-cols-2 gap-3 mt-4">
-                  <div class="rounded-xl p-4 bg-slate-50 dark:bg-slate-800/40 flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg ar-gradient grid place-items-center text-white text-xs font-bold">AR</div>
-                    <div><strong>Aurasma</strong><br/><span class="text-xs text-slate-500">Augmented Reality</span></div>
+                <div class="mt-6 grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <div class="eyebrow" style="color: #B8954A;">หนึ่ง</div>
+                    <h4 class="mt-3 font-display italic text-2xl">Aurasma</h4>
+                    <p class="mt-2 font-serif text-sepia text-sm italic">Augmented Reality application</p>
                   </div>
-                  <div class="rounded-xl p-4 bg-slate-50 dark:bg-slate-800/40 flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-green-500 grid place-items-center text-white text-xs font-bold">QR</div>
-                    <div><strong>QR code LINE</strong><br/><span class="text-xs text-slate-500">Scan & Go</span></div>
+                  <div>
+                    <div class="eyebrow" style="color: #B8954A;">สอง</div>
+                    <h4 class="mt-3 font-display italic text-2xl">QR code LINE</h4>
+                    <p class="mt-2 font-serif text-sepia text-sm italic">Scan & Go</p>
                   </div>
                 </div>
               </div>
@@ -87,70 +76,67 @@ const toc = [
 
         <ScrollReveal>
           <Section num="3.2" title="ขั้นดำเนินการ" anchor="section-3-2">
-            <div class="not-prose space-y-5">
+            <div class="not-prose space-y-16 border-t hairline pt-8">
 
-              <div class="paper rounded-2xl p-6 md:p-7">
-                <h3 class="font-bold text-lg flex items-baseline gap-3"><span class="section-num">3.2.1</span>ปรับเนื้อหาให้ทันสมัย</h3>
-                <p class="mt-3 text-slate-700 dark:text-slate-300 leading-[1.9]">
+              <div>
+                <h3 class="font-display italic text-2xl md:text-3xl text-gold"><span class="section-num mr-3">3.2.1</span>ปรับเนื้อหาให้ทันสมัย</h3>
+                <p class="mt-4 prose-ct">
                   นำเอกสารหรือข้อมูลคำแนะนำการปฏิบัติตนที่มีใช้ในโรงพยาบาลนภาลัยมาปรับให้ทันสมัย ถูกต้องตามหลักวิชาการปัจจุบัน โดยในระยะแรกเริ่มทำในกลุ่มโรคที่ผู้ศึกษาได้ทำการศึกษาและผลิตสื่อแผ่นพับ คู่มือการปฏิบัติตนต่างๆ ได้แก่
                 </p>
-                <ul class="mt-3 space-y-2">
-                  <li class="flex gap-3 items-start"><HeartbeatIcon size={24} /><span class="pt-0.5 text-sm">การดูแลผู้ป่วยที่ช่วยเหลือตนเองได้น้อยเพื่อป้องกันโรคแทรกซ้อน เช่น แผลกดทับ</span></li>
-                  <li class="flex gap-3 items-start"><HeartbeatIcon size={24} /><span class="pt-0.5 text-sm">การดูแลแผลเรื้อรังและอุปกรณ์ต่อพ่วง</span></li>
-                  <li class="flex gap-3 items-start"><HeartbeatIcon size={24} /><span class="pt-0.5 text-sm">การดูแลผู้ป่วยมะเร็ง</span></li>
+                <ul class="mt-5 space-y-3 font-serif border-l-2 border-gold pl-6">
+                  <li>การดูแลผู้ป่วยที่ช่วยเหลือตนเองได้น้อยเพื่อป้องกันโรคแทรกซ้อน เช่น แผลกดทับ</li>
+                  <li>การดูแลแผลเรื้อรังและอุปกรณ์ต่อพ่วง</li>
+                  <li>การดูแลผู้ป่วยมะเร็ง</li>
                 </ul>
-                <p class="mt-4 text-slate-700 dark:text-slate-300 leading-[1.9]">
+                <p class="mt-6 prose-ct">
                   ค้นหาคัดเลือกภาพนิ่งหรือภาพเคลื่อนไหว Clip VDO ในฐานข้อมูลอิเล็กทรอนิกส์ นำไปให้ผู้เชี่ยวชาญแต่ละสาขาวิชาตรวจความตรง ความถูกต้องและความเที่ยง แล้วนำข้อมูลมาปรับเปลี่ยนเป็นภาพหรือสื่อมีเดียต่างๆ เตรียมผลิตเป็นสื่อการให้ข้อมูลผู้รับบริการทางการพยาบาลโดยใช้สื่อเทคโนโลยีเรียนรู้ผ่านสื่อบนมือถือ
                 </p>
-                <p class="mt-3 text-slate-700 dark:text-slate-300 leading-[1.9]">
+                <p class="mt-4 prose-ct">
                   ผู้ศึกษาคัดเลือกเนื้อหาจากผลงานของตนเองที่ทำการศึกษาวิจัยจากงานประจำที่ปฏิบัติอยู่ในปี พ.ศ. 2556 ถึง พ.ศ. 2559 อันได้แก่
                 </p>
-                <div class="mt-3 grid sm:grid-cols-2 gap-2">
-                  <div class="rounded-lg p-3 bg-slate-50 dark:bg-slate-800/40 text-sm">📘 คู่มือการดูแลผู้ป่วยที่มีแผลเรื้อรังและอุปกรณ์ต่อพ่วง</div>
-                  <div class="rounded-lg p-3 bg-slate-50 dark:bg-slate-800/40 text-sm">📘 คู่มือการดูแลผู้ป่วยมะเร็งระยะแพร่กระจาย</div>
-                  <div class="rounded-lg p-3 bg-slate-50 dark:bg-slate-800/40 text-sm">📘 การจัดการความปวดในผู้ป่วยมะเร็ง</div>
-                  <div class="rounded-lg p-3 bg-slate-50 dark:bg-slate-800/40 text-sm">📘 ฐานข้อมูลอิเล็กทรอนิกส์ จุฬาลงกรณ์มหาวิทยาลัย</div>
-                </div>
+                <ul class="mt-5 space-y-3 font-serif italic border-l-2 border-gold pl-6">
+                  <li>"คู่มือการดูแลผู้ป่วยที่มีแผลเรื้อรังและอุปกรณ์ต่อพ่วง"</li>
+                  <li>"คู่มือการดูแลผู้ป่วยมะเร็งระยะแพร่กระจาย"</li>
+                  <li>"การจัดการความปวดในผู้ป่วยมะเร็ง"</li>
+                  <li class="not-italic">เอกสารจากฐานข้อมูลอิเล็กทรอนิกส์ เช่น จุฬาลงกรณ์มหาวิทยาลัย</li>
+                </ul>
               </div>
 
-              <div class="paper rounded-2xl p-6 md:p-7">
-                <h3 class="font-bold text-lg flex items-baseline gap-3"><span class="section-num">3.2.2</span>สร้างสื่อด้วย Aurasma และ QR code LINE</h3>
-                <p class="mt-3 text-slate-700 dark:text-slate-300 leading-[1.9]">
+              <div class="border-t hairline pt-8">
+                <h3 class="font-display italic text-2xl md:text-3xl text-gold"><span class="section-num mr-3">3.2.2</span>สร้างสื่อ Aurasma + QR LINE</h3>
+                <p class="mt-4 prose-ct">
                   สร้างสื่อการให้ข้อมูลหรือการสอนโดยใช้แอพพลิเคชัน <strong>Aurasma</strong> และ <strong>QR code LINE</strong>
                 </p>
-                <div class="grid sm:grid-cols-2 gap-6 mt-5 items-center">
+                <div class="mt-8 grid sm:grid-cols-2 gap-8 items-center">
                   <div class="flex justify-center"><Phone3D variant="ar" /></div>
                   <div class="flex justify-center"><Phone3D variant="qr" /></div>
                 </div>
               </div>
 
-              <div class="paper rounded-2xl p-6 md:p-7 relative overflow-hidden">
-                <div class="absolute -top-16 -right-16 w-48 h-48 ar-gradient opacity-10 blur-3xl rounded-full"></div>
-                <div class="relative">
-                  <h3 class="font-bold text-lg flex items-baseline gap-3"><span class="section-num">3.2.3</span>ทดลองใช้จริง</h3>
-                  <p class="mt-3 text-slate-700 dark:text-slate-300 leading-[1.9]">
-                    ทดลองใช้กับผู้รับบริการทางสุขภาพในโรงพยาบาลนภาลัย จังหวัดสมุทรสงคราม ระหว่างเดือน<strong>เมษายน พ.ศ. 2560 ถึง สิงหาคม พ.ศ. 2560</strong> จำนวน <strong class="ar-gradient-text">44 ราย</strong> โดยใช้เครื่องมือดังนี้
-                  </p>
+              <div class="border-t hairline pt-8">
+                <h3 class="font-display italic text-2xl md:text-3xl text-gold"><span class="section-num mr-3">3.2.3</span>ทดลองใช้จริง</h3>
+                <Pullquote cite="ระหว่างเมษายน – สิงหาคม พ.ศ. 2560">ทดลองใช้กับผู้รับบริการ<br/><em>จำนวน 44 ราย</em></Pullquote>
 
-                  <ol class="mt-6 space-y-3">
-                    {[
-                      { n: 1, title: 'เอกสารให้ความรู้โรคแผลเรื้อรัง', desc: 'แผลกดทับ แผลเบาหวาน แผลผ่าตัดทวารหนักทางหน้าท้อง' },
-                      { n: 2, title: 'คู่มือผู้ป่วยที่มีอุปกรณ์ต่อพ่วง', desc: 'สายให้อาหารทางสายยาง สายสวนปัสสาวะ ท่อหายใจที่คอ · คู่มือผู้ป่วยมะเร็งระยะแพร่กระจาย' },
-                      { n: 3, title: 'แผ่นพับการจัดการความปวด', desc: 'การดูแลผู้ป่วยมะเร็ง ป้องกันแผลกดทับ ดูแลแผลเรื้อรัง' },
-                      { n: 4, title: 'คลิปวีดีโอใน YouTube', desc: 'การให้อาหารสายยาง · การเคลื่อนย้ายผู้ป่วยอัมพาตครึ่งซีก · การฟื้นฟูผู้ป่วยหลอดเลือดสมอง · การทำความสะอาดท่อหายใจที่คอ · การป้องกันแผลกดทับและแผลเบาหวาน' },
-                      { n: 5, title: 'อุปกรณ์การทดลอง', desc: 'โทรศัพท์มือถือ · iPad · iPhone' },
-                      { n: 6, title: 'แบบประเมินผล', desc: '"ผลการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัยโดยสื่อมือถือ"' },
-                    ].map((it) => (
-                      <li class="flex gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/40">
-                        <span class="flex-shrink-0 w-10 h-10 rounded-lg ar-gradient text-white display-num font-bold grid place-items-center">{it.n}</span>
-                        <div>
-                          <div class="font-bold">{it.title}</div>
-                          <div class="text-sm text-slate-600 dark:text-slate-400 mt-1">{it.desc}</div>
-                        </div>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
+                <p class="prose-ct">โดยใช้เครื่องมือดังนี้</p>
+
+                <ol class="mt-8 space-y-6 border-t hairline">
+                  {[
+                    { n: 'I', title: 'เอกสารให้ความรู้โรคแผลเรื้อรัง', desc: 'แผลกดทับ · แผลเบาหวาน · แผลผ่าตัดทวารหนักทางหน้าท้อง' },
+                    { n: 'II', title: 'คู่มือผู้ป่วยที่มีอุปกรณ์ต่อพ่วง', desc: 'สายให้อาหารทางสายยาง · สายสวนปัสสาวะ · ท่อหายใจที่คอ · คู่มือผู้ป่วยมะเร็งระยะแพร่กระจาย' },
+                    { n: 'III', title: 'แผ่นพับการจัดการความปวด', desc: 'การดูแลผู้ป่วยมะเร็ง · ป้องกันแผลกดทับแทรกซ้อน · ดูแลแผลเรื้อรัง' },
+                    { n: 'IV', title: 'คลิปวีดีโอใน YouTube', desc: 'การให้อาหารสายยาง · เคลื่อนย้ายผู้ป่วยอัมพาตครึ่งซีก · ฟื้นฟูหลอดเลือดสมอง · ทำความสะอาดท่อหายใจที่คอ · ป้องกันแผลกดทับและเบาหวาน' },
+                    { n: 'V',  title: 'อุปกรณ์การทดลอง', desc: 'โทรศัพท์มือถือ · iPad · iPhone' },
+                    { n: 'VI', title: 'แบบประเมินผล', desc: '"ผลการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัยโดยสื่อมือถือ"' },
+                  ].map((it) => (
+                    <li class="pt-6 border-b hairline pb-6 grid grid-cols-[70px_1fr] gap-5 items-baseline">
+                      <span class="display-num italic text-3xl md:text-4xl text-gold leading-none">{it.n}</span>
+                      <div>
+                        <h4 class="font-display italic text-xl md:text-2xl leading-tight">{it.title}</h4>
+                        <p class="mt-2 font-serif text-sepia text-sm md:text-base leading-relaxed">{it.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
               </div>
             </div>
           </Section>
@@ -159,9 +145,9 @@ const toc = [
         <ScrollReveal>
           <Section num="3.3" title="สรุป ประเมินผล" anchor="section-3-3">
             <p>
-              สรุปและประเมินผลการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัยด้วยสื่อมือถือ และความพึงพอใจ ด้วย<strong>แบบประเมิน online ผ่านการสแกน QR code</strong>
+              สรุปและประเมินผลการให้ข้อมูลผู้รับบริการโรงพยาบาลนภาลัยด้วยสื่อมือถือ และความพึงพอใจ ด้วย<strong>แบบประเมินออนไลน์ผ่านการสแกน QR code</strong>
             </p>
-            <div class="not-prose my-6 flex justify-center">
+            <div class="not-prose my-12 flex justify-center">
               <Phone3D variant="qr" />
             </div>
           </Section>
@@ -169,28 +155,20 @@ const toc = [
 
         <ScrollReveal>
           <Section num="3.4" title="การพิทักษ์สิทธิ์" anchor="section-3-4">
-            <div class="not-prose paper rounded-2xl p-6 md:p-8 border-l-4 border-purple-600 dark:border-purple-400 relative overflow-hidden">
-              <div class="absolute -bottom-12 -right-12 w-40 h-40 ar-gradient opacity-5 blur-2xl rounded-full"></div>
-              <div class="relative flex gap-5 items-start">
-                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950 grid place-items-center">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6 text-purple-700 dark:text-purple-300"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <div>
-                  <h3 class="font-bold text-lg">การพิทักษ์สิทธิ์ผู้เข้าร่วมการศึกษา</h3>
-                  <p class="mt-3 text-slate-700 dark:text-slate-300 leading-[1.9]">
-                    เนื่องจากการศึกษานี้มีความเสี่ยงต่ออาสาสมัครน้อย ผู้ศึกษาได้เขียนบันทึกขออนุญาตผู้อำนวยการโรงพยาบาลเจ้าของสถานที่และได้รับอนุญาตให้ศึกษาได้ก่อนทำการศึกษาเมื่อ<strong>วันที่ 21 เมษายน 2560</strong> ผู้ที่กรอกแบบประเมินถือว่ายินยอมในการศึกษาในครั้งนี้
-                  </p>
-                </div>
-              </div>
+            <div class="not-prose -mx-6 md:-mx-10 lg:mx-0 ink-bg px-8 md:px-12 py-12 md:py-16 rounded">
+              <div class="ornament mb-6" style="color: #B8954A;">§</div>
+              <p class="font-serif text-lg md:text-xl text-cream leading-[1.85] max-w-3xl">
+                เนื่องจากการศึกษานี้มีความเสี่ยงต่ออาสาสมัครน้อย ผู้ศึกษาได้เขียนบันทึกขออนุญาตผู้อำนวยการโรงพยาบาลเจ้าของสถานที่และได้รับอนุญาตให้ศึกษาได้ก่อนทำการศึกษาเมื่อ<em class="text-gold">วันที่ 21 เมษายน 2560</em> ผู้ที่กรอกแบบประเมินถือว่ายินยอมในการศึกษาในครั้งนี้
+              </p>
             </div>
           </Section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <nav class="flex items-center justify-between pt-10 border-t border-slate-200 dark:border-slate-800">
-            <a href={`${base}/chapter-2`} class="text-sm text-slate-500 dark:text-slate-400 hover:text-purple-700">← บทที่ 2 · วรรณกรรมและงานวิจัย</a>
-            <a href={`${base}/`} class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">กลับหน้าหลัก</a>
-          </nav>
+          <div class="pt-12 border-t hairline flex items-center justify-between">
+            <a href={`${base}/chapter-2`} class="font-serif italic text-sepia hover:text-gold">← บทที่ II</a>
+            <a href={`${base}/`} class="font-display italic text-gold text-xl md:text-2xl hover:text-burgundy transition">Return home →</a>
+          </div>
         </ScrollReveal>
       </div>
     </div>
