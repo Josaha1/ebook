@@ -7,14 +7,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const chapters = [
   { n: '01', href: `${base}/chapter-1`, title: 'บทนำ', en: 'Introduction',
-    blurb: 'ความเป็นมาของปัญหาการสื่อสารทางการพยาบาล และที่มาของการนำ AR เข้ามาใช้ในการให้ข้อมูลผู้รับบริการ',
-    tags: ['ความเป็นมา', 'วัตถุประสงค์', 'ขอบเขต', 'นิยามศัพท์'] },
+    blurb: 'ความเป็นมาของปัญหาการสื่อสารทางการพยาบาล และที่มาของการนำ AR เข้ามาใช้ในการให้ข้อมูลผู้รับบริการ' },
   { n: '02', href: `${base}/chapter-2`, title: 'วรรณกรรมและงานวิจัย', en: 'Literature Review',
-    blurb: 'ทฤษฎีการสื่อสาร เทคโนโลยีอุปกรณ์เคลื่อนที่ QR Code และแอพพลิเคชัน Aurasma พร้อมตัวอย่างการประยุกต์ใช้งาน',
-    tags: ['Communication', 'QR Code', 'Aurasma', '7 ภาพ'] },
+    blurb: 'ทฤษฎีการสื่อสาร เทคโนโลยีอุปกรณ์เคลื่อนที่ QR Code และแอพพลิเคชัน Aurasma พร้อมตัวอย่างการประยุกต์ใช้งาน' },
   { n: '03', href: `${base}/chapter-3`, title: 'วิธีดำเนินการวิจัย', en: 'Methodology',
-    blurb: 'ขั้นตอนการศึกษากึ่งทดลอง เครื่องมือที่ใช้ การทดสอบจริง 44 ราย และการพิทักษ์สิทธิ์',
-    tags: ['กึ่งทดลอง', '44 ราย', '6 เครื่องมือ'] },
+    blurb: 'ขั้นตอนการศึกษากึ่งทดลอง เครื่องมือที่ใช้ การทดสอบจริง 44 ราย และการพิทักษ์สิทธิ์' },
 ];
 ---
 <BaseLayout title="AR E-Book · ผลการให้ข้อมูลผู้รับบริการ รพ.นภาลัย ด้วยสื่อมือถือ">
@@ -123,9 +120,6 @@ const chapters = [
               <div class="min-w-0">
                 <h3 class="font-semibold leading-tight" style="font-size: clamp(1.25rem, 2.5vw, 1.625rem);">{c.title}</h3>
                 <p class="mt-2 text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">{c.blurb}</p>
-                <div class="mt-4 flex flex-wrap gap-1.5">
-                  {c.tags.map((t) => (<span class="chip text-xs">{t}</span>))}
-                </div>
               </div>
               <div class="hidden sm:flex text-indigo-600 dark:text-indigo-400 text-2xl items-center h-full group-hover:translate-x-1 transition">→</div>
             </div>
